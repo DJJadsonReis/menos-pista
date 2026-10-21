@@ -31,7 +31,7 @@
       <h2>2. Resumo rápido</h2>
       <ul>
         <li>O app lê <b>só as ofertas</b> dos apps de corrida e entrega que você liga, para mostrar se a corrida vale a pena. Essa leitura acontece no seu celular.</li>
-        <li>Prints de ofertas e gravações da câmera de segurança <b>ficam só no aparelho</b>.</li>
+        <li>Prints de ofertas, <b>endereços de embarque e destino</b> lidos nas ofertas, fechamentos do dia, contas fixas, manutenção, orçamentos de corrida particular e gravações da câmera de segurança <b>ficam só no aparelho</b>. Os avisos por voz são gerados no celular (texto para fala do Android).</li>
         <li>Para usar o app é preciso entrar com sua conta Google. O perfil, o histórico de ofertas e as Finanças ficam guardados na sua conta, no Firebase (Google).</li>
         <li>E-mails e notificações de novidades e ofertas, <b>só se você marcar</b> essa opção, e você pode desmarcar quando quiser.</li>
         <li>O app nunca recebe dados do seu cartão. Doações são pagas no Mercado Pago (Mercado Livre).</li>
@@ -57,9 +57,9 @@
       <ul>
         <li><b>Perfil:</b> nome, e-mail, foto, data de cadastro, último login e último uso, versão do app, apps de corrida que você liga, plano (free ou doador) e sua escolha sobre novidades (com data).</li>
         <li><b>Aparelhos:</b> token de notificação (push) e modelo do celular.</li>
-        <li><b>Ofertas analisadas:</b> data, app, valor, distâncias, tempos, R$/km, R$/hora, lucro e custo estimados, nota do passageiro mostrada na oferta, resultado do semáforo e o veículo usado no cálculo. O print em si não é enviado.</li>
+        <li><b>Ofertas analisadas:</b> data, app, valor, distâncias, tempos, R$/km, R$/hora, lucro e custo estimados, nota do passageiro mostrada na oferta, resultado do semáforo e o veículo usado no cálculo. O print e os endereços não são enviados.</li>
         <li><b>Finanças:</b> entradas e despesas que você lança (valor, categoria, descrição, observação e data).</li>
-        <li><b>Doações:</b> status, valor, data, periodicidade (mensal ou anual) e o identificador do pagamento no Mercado Pago (item 9).</li>
+        <li><b>Doações:</b> status, valor, data, periodicidade (mensal, trimestral ou anual) e o identificador do pagamento no Mercado Pago (item 9).</li>
         <li><b>Suporte:</b> chamados que você abrir e as mensagens trocadas (item 10).</li>
       </ul>
       <p>Os dados ficam nos servidores do Google (Firebase), que podem estar fora do Brasil, com as garantias previstas na LGPD para transferência internacional. Cada usuário só acessa os próprios dados; o acesso administrativo é restrito ao responsável.</p>
@@ -82,7 +82,7 @@
       <p>Quando você abre um chamado no app ou escreve para o suporte, guardamos o assunto, as mensagens, seu e-mail e dados técnicos do aparelho e do app (modelo, versão do Android, versão do app e status da leitura), para resolver o problema. Os chamados ficam guardados enquanto a conta existir.</p>
 
       <h2>11. Câmera de segurança</h2>
-      <p>Se você ligar a câmera de segurança (quando o recurso estiver disponível na sua versão), ela grava com aviso fixo na notificação e salva os vídeos <b>só no seu celular</b>, numa pasta própria, apagando os trechos mais antigos quando o espaço reservado acaba. As gravações não são enviadas para nós. Você é responsável por avisar os passageiros sobre a gravação.</p>
+      <p>Se você ligar a câmera de segurança (quando o recurso estiver disponível na sua versão), ela só liga quando você toca em Iniciar, grava com aviso fixo na notificação e salva os vídeos <b>só no seu celular</b>, numa pasta própria, apagando os trechos mais antigos quando o espaço reservado acaba. As gravações não são enviadas para nós nem para a internet; só saem do celular se você tocar em Compartilhar. Você é responsável por avisar os passageiros sobre a gravação.</p>
 
       <h2>12. Relatórios de erro</h2>
       <p>Usamos o Firebase Crashlytics para receber relatórios de travamento (modelo do aparelho, versão do Android e do app e o ponto do erro), para corrigir falhas.</p>
