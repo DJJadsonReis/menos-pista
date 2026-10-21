@@ -31,22 +31,48 @@
         sync();
       }).catch(function () { /* mantém os valores fixos */ });
   }
-  var g = document.getElementById('gallery');
-  if (g && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    var items = g.querySelectorAll('.g-item'), raf = 0;
-    var paint = function () {
-      raf = 0; var mid = g.getBoundingClientRect().left + g.clientWidth / 2;
-      items.forEach(function (it) {
-        var r = it.getBoundingClientRect(), d = (r.left + r.width / 2 - mid) / r.width;
-        var c = Math.max(-2, Math.min(2, d));
-        it.style.setProperty('--ry', (c * -22) + 'deg');
-        it.style.setProperty('--sc', (1 - Math.min(Math.abs(c), 1.5) * 0.1).toFixed(3));
-        it.style.setProperty('--op', (1 - Math.min(Math.abs(c), 1.6) * 0.3).toFixed(2));
+  var car = document.getElementById('carousel');
+  if (car) {
+    var track = car.querySelector('.car-track'), items = [].slice.call(car.querySelectorAll('.g-item')), dots = [].slice.call(car.parentNode.querySelectorAll('#carDots button'));
+    var tEl = document.getElementById('carTitle'), dEl = document.getElementById('carDesc'), n = items.length, cur = 0, timer = 0;
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches, desk = matchMedia('(min-width: 900px)');
+    var mark = function (i) {
+      cur = (i + n) % n;
+      items.forEach(function (it, k) {
+        it.classList.toggle('is-active', k === cur);
+        it.classList.toggle('is-prev', k === (cur - 1 + n) % n);
+        it.classList.toggle('is-next', k === (cur + 1) % n);
+        it.setAttribute('aria-hidden', String(k !== cur));
       });
+      dots.forEach(function (d, k) { d.setAttribute('aria-current', String(k === cur)); });
+      tEl.textContent = items[cur].dataset.title; dEl.textContent = items[cur].dataset.desc;
     };
-    g.addEventListener('scroll', function () { if (!raf) raf = requestAnimationFrame(paint); }, { passive: true });
-    addEventListener('resize', paint); paint();
-    // começa centrado na 3ª tela (detalhe da oferta)
-    if (items[2]) g.scrollLeft = items[2].offsetLeft - (g.clientWidth - items[2].clientWidth) / 2;
+    var go = function (i, user) {
+      mark(i);
+      if (!desk.matches) track.scrollTo({ left: items[cur].offsetLeft - (track.clientWidth - items[cur].offsetWidth) / 2, behavior: reduce ? 'auto' : 'smooth' });
+      if (user) restart();
+    };
+    var restart = function () { clearInterval(timer); if (!reduce) timer = setInterval(function () { if (!document.hidden) go(cur + 1); }, 5000); };
+    car.querySelector('.prev').addEventListener('click', function () { go(cur - 1, true); });
+    car.querySelector('.next').addEventListener('click', function () { go(cur + 1, true); });
+    dots.forEach(function (d, k) { d.addEventListener('click', function () { go(k, true); }); });
+    items.forEach(function (it, k) { it.addEventListener('click', function () { if (k !== cur && desk.matches) go(k, true); }); });
+    track.addEventListener('keydown', function (e) { if (e.key === 'ArrowLeft') go(cur - 1, true); if (e.key === 'ArrowRight') go(cur + 1, true); });
+    car.addEventListener('mouseenter', function () { clearInterval(timer); }); car.addEventListener('mouseleave', restart);
+    car.addEventListener('focusin', function () { clearInterval(timer); });
+    // swipe no desktop (toque em tela grande) e leitura do scroll-snap no celular
+    var x0 = null;
+    track.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', function (e) { if (x0 === null || !desk.matches) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) go(cur + (dx < 0 ? 1 : -1), true); x0 = null; }, { passive: true });
+    var st = 0;
+    track.addEventListener('scroll', function () {
+      if (desk.matches) return; clearTimeout(st);
+      st = setTimeout(function () {
+        var mid = track.scrollLeft + track.clientWidth / 2, best = 0, bd = 1e9;
+        items.forEach(function (it, k) { var d = Math.abs(it.offsetLeft + it.offsetWidth / 2 - mid); if (d < bd) { bd = d; best = k; } });
+        if (best !== cur) { mark(best); restart(); }
+      }, 90);
+    }, { passive: true });
+    mark(0); if (!desk.matches) track.scrollLeft = 0; restart();
   }
 })();
