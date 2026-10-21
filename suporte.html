@@ -33,12 +33,42 @@
       <h1>Suporte</h1>
       <p class="lead">Respostas rápidas para as dúvidas mais comuns. Se não resolver, fale com a gente.</p>
 
-      <div class="card">
-        <h3>Fale com o suporte</h3>
-        <p><b>No app:</b> abra um chamado em Ajustes. Você acompanha a resposta por lá e recebe uma notificação.</p>
-        <p><b>Por e-mail:</b> <a href="mailto:grupojadson@gmail.com?subject=Suporte%20Menos%20Pista">grupojadson@gmail.com</a>. Conte o modelo do celular, a versão do Android e o que aconteceu.</p>
-        <p><b>Comercial e parcerias:</b> Grupo Jadson · <a href="https://www.instagram.com/grupojadson/" target="_blank" rel="noopener noreferrer">@grupojadson</a> · <a href="mailto:grupojadson@gmail.com">grupojadson@gmail.com</a></p>
-      </div>
+      <section class="sp" aria-labelledby="spTitle">
+        <div class="sp-head"><div><h2 id="spTitle">Abrir chamado</h2><p class="small">Resposta da equipe aqui mesmo, ao vivo. Use a mesma conta Google do app.</p></div></div>
+        <div id="spOut" class="card sp-gate">
+          <p>Entre com o Google para abrir um chamado e acompanhar as respostas.</p>
+          <button class="btn btn-primary" id="spLogin" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.3z"/><path fill="#fff" opacity=".8" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22z"/></svg>Entrar com Google</button>
+          <p class="small">Prefere e-mail? <a href="mailto:grupojadson@gmail.com?subject=Suporte%20Menos%20Pista">grupojadson@gmail.com</a></p>
+        </div>
+        <div id="spIn" hidden>
+          <div class="card sp-user"><img id="spAvatar" alt="" width="40" height="40" referrerpolicy="no-referrer" hidden><div><b id="spWho"></b><small id="spEmail"></small></div><button class="btn btn-secondary sp-sm" id="spLogout" type="button">Trocar conta</button></div>
+          <div class="sp-grid">
+            <form id="spForm" class="card sp-form" novalidate>
+              <h3>Novo chamado</h3>
+              <label>Assunto<input id="spSubject" maxlength="140" required placeholder="Ex.: a leitura das ofertas parou"></label>
+              <label>Categoria<select id="spCategory"><option>Pagamento ou apoio</option><option>Conta</option><option>Bug</option><option>Sugestão</option><option>Outro</option></select></label>
+              <label>Mensagem<textarea id="spText" maxlength="5000" rows="5" required placeholder="Conte o que aconteceu, o modelo do celular e a versão do Android."></textarea></label>
+              <button class="btn btn-primary" id="spSend" type="submit">Enviar chamado</button>
+              <p id="spFormMsg" class="sp-msg" role="status"></p>
+            </form>
+            <div class="card sp-mine">
+              <h3>Meus chamados <span id="spCount" class="sp-count"></span></h3>
+              <div id="spList" class="sp-list"><p class="small">Carregando…</p></div>
+            </div>
+          </div>
+          <div id="spChat" class="card sp-chat" hidden>
+            <div class="sp-chat-head"><h3 id="spChatTitle"></h3><span id="spChatStatus" class="sp-st"></span></div>
+            <div id="spThread" class="sp-thread" aria-live="polite"></div>
+            <p id="spReopenHint" class="small" hidden>Este chamado foi resolvido. Se responder, ele é reaberto.</p>
+            <form id="spReplyForm" class="sp-reply"><textarea id="spReply" maxlength="5000" rows="2" placeholder="Escreva sua resposta"></textarea><button class="btn btn-primary" id="spReplySend" type="submit">Enviar</button></form>
+            <p id="spReplyMsg" class="sp-msg" role="status"></p>
+          </div>
+        </div>
+        <div class="card">
+          <p><b>Por e-mail:</b> <a href="mailto:grupojadson@gmail.com?subject=Suporte%20Menos%20Pista">grupojadson@gmail.com</a>. Conte o modelo do celular, a versão do Android e o que aconteceu.</p>
+          <p><b>Comercial e parcerias:</b> Grupo Jadson · <a href="https://www.instagram.com/grupojadson/" target="_blank" rel="noopener noreferrer">@grupojadson</a></p>
+        </div>
+      </section>
 
       <h2>Perguntas frequentes</h2>
 
@@ -90,5 +120,6 @@
     </div>
   </footer>
   <script src="site.js" defer></script>
+  <script type="module" src="suporte.js"></script>
 </body>
 </html>
