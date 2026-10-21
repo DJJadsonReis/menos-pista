@@ -3,23 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0F1115">
+  <meta name="theme-color" content="#0B0D12">
   <meta name="description" content="Ajuda e contato do Menos Pista.">
   <title>Suporte · Menos Pista</title>
   <link rel="icon" type="image/svg+xml" href="assets/branding/02_Vetores_SVG/simbolo_transparente.svg">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
   <header class="header">
-    <div class="container nav subhead">
-      <a class="brand" href="index.html" aria-label="Menos Pista — início"><img src="assets/branding/01_Logos_PNG/logo_horizontal_transparente_2400.png" alt="Menos Pista" width="2400" height="800"></a>
-      <nav class="subnav" aria-label="Navegação principal">
-        <a href="index.html">Início</a><a href="download.html">Baixar</a><a href="apoiar.html">Apoiar</a><a href="privacidade.html">Privacidade</a><a href="termos.html">Termos</a><a href="suporte.html" aria-current="page">Suporte</a><a href="excluir-conta.html">Excluir conta</a>
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Menos Pista — início"><img src="assets/img/logo-h.webp" alt="Menos Pista" width="520" height="188"></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="navlinks" id="navLinks" aria-label="Navegação principal">
+        <a href="index.html#recursos">Recursos</a><a href="index.html#como-funciona">Como funciona</a><a href="index.html#faq">Dúvidas</a><a href="apoiar.html">Apoiar</a><a href="suporte.html" aria-current="page">Suporte</a>
+        <a class="nav-cta" href="download.html">Baixar grátis</a>
       </nav>
     </div>
   </header>
 
-  <main class="page">
+  <main class="page" id="conteudo">
+    <div class="bg-grid"></div><div class="glow glow-a"></div>
     <div class="container doc">
       <span class="eyebrow">Ajuda</span>
       <h1>Suporte</h1>
@@ -71,13 +79,16 @@
     </div>
   </main>
 
-  <footer class="site-footer">
+  <footer>
     <div class="container">
-      <nav class="subnav" aria-label="Links do rodapé">
-        <a href="index.html">Início</a><a href="download.html">Baixar</a><a href="apoiar.html">Apoiar</a><a href="privacidade.html">Política de privacidade</a><a href="termos.html">Termos de uso</a><a href="suporte.html">Suporte</a><a href="excluir-conta.html">Excluir conta</a>
-      </nav>
-      <p class="small">© 2026 Grupo Jadson · <a href="https://www.instagram.com/grupojadson/" target="_blank" rel="noopener noreferrer">@grupojadson</a></p>
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" aria-label="Menos Pista — início"><img src="assets/img/logo-h.webp" alt="Menos Pista" width="520" height="188" loading="lazy"></a><p>Mais lucro. Menos quilômetros à toa. O copiloto que mostra, na hora, se a corrida vale a pena.</p></div>
+        <div class="footer-col"><h3>Produto</h3><ul class="footer-links"><li><a href="index.html#recursos">Recursos</a></li><li><a href="index.html#como-funciona">Como funciona</a></li><li><a href="index.html#faq">Dúvidas</a></li><li><a href="download.html">Baixar o app</a></li><li><a href="apoiar.html">Apoiar</a></li></ul></div>
+        <div class="footer-col"><h3>Ajuda e legal</h3><ul class="footer-links"><li><a href="suporte.html">Suporte</a></li><li><a href="privacidade.html">Política de privacidade</a></li><li><a href="termos.html">Termos de uso</a></li><li><a href="excluir-conta.html">Excluir conta</a></li><li><a href="app-ads.txt">Arquivo app-ads.txt</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 Grupo Jadson · <a href="https://www.instagram.com/grupojadson/" target="_blank" rel="noopener noreferrer">@grupojadson</a></p><a href="#conteudo">Voltar ao topo ↑</a></div>
     </div>
   </footer>
+  <script src="site.js" defer></script>
 </body>
 </html>

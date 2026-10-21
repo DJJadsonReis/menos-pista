@@ -3,45 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0F1115">
+  <meta name="theme-color" content="#0B0D12">
   <meta name="description" content="Termos de uso do app Menos Pista.">
   <title>Termos de uso · Menos Pista</title>
   <link rel="icon" type="image/svg+xml" href="assets/branding/02_Vetores_SVG/simbolo_transparente.svg">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
   <header class="header">
-    <div class="container nav subhead">
-      <a class="brand" href="index.html" aria-label="Menos Pista — início"><img src="assets/branding/01_Logos_PNG/logo_horizontal_transparente_2400.png" alt="Menos Pista" width="2400" height="800"></a>
-      <nav class="subnav" aria-label="Navegação principal">
-        <a href="index.html">Início</a><a href="download.html">Baixar</a><a href="apoiar.html">Apoiar</a><a href="privacidade.html">Privacidade</a><a href="termos.html" aria-current="page">Termos</a><a href="suporte.html">Suporte</a><a href="excluir-conta.html">Excluir conta</a>
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Menos Pista — início"><img src="assets/img/logo-h.webp" alt="Menos Pista" width="520" height="188"></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="navlinks" id="navLinks" aria-label="Navegação principal">
+        <a href="index.html#recursos">Recursos</a><a href="index.html#como-funciona">Como funciona</a><a href="index.html#faq">Dúvidas</a><a href="apoiar.html">Apoiar</a><a href="suporte.html">Suporte</a>
+        <a class="nav-cta" href="download.html">Baixar grátis</a>
       </nav>
     </div>
   </header>
 
-  <main class="page">
+  <main class="page" id="conteudo">
+    <div class="bg-grid"></div><div class="glow glow-a"></div>
     <div class="container doc">
       <span class="eyebrow">Regras de uso</span>
       <h1>Termos de uso</h1>
       <p class="lead">Vigentes desde 21/10/2026. Ao criar uma conta ou usar o Menos Pista, você concorda com estes termos e com a <a href="privacidade.html">Política de privacidade</a>.</p>
+      <nav class="toc" aria-label="Nesta página"><a href="#s1">1. Quem oferece o app</a><a href="#s2">2. O que é o Menos Pista</a><a href="#s3">3. Sem vínculo com as plataformas</a><a href="#s4">4. Conta</a><a href="#s5">5. Uso permitido</a><a href="#s6">6. Estimativas, sem garantia</a><a href="#s7">7. Modo free e anúncios</a><a href="#s8">8. Doações (apoio) e plano Pro</a><a href="#s9">9. Suporte</a><a href="#s10">10. Atualizações e encerramento</a><a href="#s11">11. Limitação de responsabilidade</a><a href="#s12">12. Lei e foro</a><a href="#s13">13. Contato</a></nav>
 
-      <h2>1. Quem oferece o app</h2>
+      <h2 id="s1">1. Quem oferece o app</h2>
       <p>O Menos Pista é oferecido pelo <b>Grupo Jadson</b>. Os contatos estão no item 13.</p>
 
-      <h2>2. O que é o Menos Pista</h2>
+      <h2 id="s2">2. O que é o Menos Pista</h2>
       <p>Um copiloto para motoristas e entregadores: lê as ofertas que chegam nos apps de corrida e entrega que você escolher e mostra estimativas (R$/km, R$/hora, lucro com o custo do veículo) para ajudar você a decidir. Também oferece histórico, Finanças e outros recursos de organização.</p>
 
-      <h2>3. Sem vínculo com as plataformas</h2>
+      <h2 id="s3">3. Sem vínculo com as plataformas</h2>
       <p>O Menos Pista <b>não é afiliado, patrocinado nem aprovado</b> por Uber, 99, inDrive, iFood, Rappi, Lalamove, Loggi, Cabify, Keeta ou qualquer outra plataforma. As marcas citadas pertencem aos seus donos e aparecem só para identificar com quais apps o Menos Pista funciona.</p>
 
-      <h2>4. Conta</h2>
+      <h2 id="s4">4. Conta</h2>
       <ul>
         <li>É preciso entrar com uma conta Google e ter 18 anos ou mais.</li>
         <li>Você é responsável pela sua conta e pelo uso feito nela. Uma conta é pessoal e não deve ser compartilhada.</li>
         <li>Você pode excluir a conta quando quiser (<a href="excluir-conta.html">como excluir</a>).</li>
       </ul>
 
-      <h2>5. Uso permitido</h2>
+      <h2 id="s5">5. Uso permitido</h2>
       <ul>
         <li>Use o app para avaliar e organizar o seu próprio trabalho, respeitando a lei e as regras de cada plataforma.</li>
         <li>Não use o app enquanto dirige de forma que tire sua atenção do trânsito. A segurança vem primeiro.</li>
@@ -50,13 +59,13 @@
         <li>Se você usar a câmera de segurança, avise os passageiros e respeite a lei.</li>
       </ul>
 
-      <h2>6. Estimativas, sem garantia</h2>
+      <h2 id="s6">6. Estimativas, sem garantia</h2>
       <p>Os números mostrados são <b>estimativas</b> baseadas no texto da oferta e nos custos que você informou. Podem conter erros de leitura, as plataformas podem mudar a tela sem aviso e o resultado real da corrida pode ser diferente. A decisão de aceitar ou recusar é sempre <b>sua</b>. O app é oferecido “no estado em que se encontra”, sem garantia de que vá funcionar sem interrupções em todos os aparelhos e apps.</p>
 
-      <h2>7. Modo free e anúncios</h2>
+      <h2 id="s7">7. Modo free e anúncios</h2>
       <p>O modo <b>free</b> é gratuito e mantido por anúncios do Google AdMob. Os anúncios não aparecem enquanto há uma oferta na tela.</p>
 
-      <h2>8. Doações (apoio) e plano Pro</h2>
+      <h2 id="s8">8. Doações (apoio) e plano Pro</h2>
       <ul>
         <li>Você pode apoiar o projeto com uma doação voluntária <b>mensal, trimestral ou anual</b>, paga <b>só no site</b>, na página <a href="apoiar.html">Apoiar</a>, pelo <b>Mercado Pago</b> (Mercado Livre): como assinatura recorrente ou como pagamento avulso com Pix ou cartão. Os valores aparecem antes do pagamento.</li>
         <li>Como agradecimento, enquanto o apoio estiver ativo sua conta fica no plano <b>Pro</b>: <b>menos anúncios</b> (remove parte dos anúncios, não todos) e <b>recursos Pro liberados</b>. O app mostra “Apoio ativo até…”.</li>
@@ -65,34 +74,37 @@
         <li>Se o Mercado Pago estornar, reembolsar ou cancelar o pagamento, ou houver contestação (chargeback), os benefícios são removidos automaticamente.</li>
       </ul>
 
-      <h2>9. Suporte</h2>
+      <h2 id="s9">9. Suporte</h2>
       <p>O suporte é feito pelo app (abrindo um chamado) e pelo e-mail de contato (item 13). Respondemos o mais rápido possível, em dias úteis. Veja a página <a href="suporte.html">Suporte</a>.</p>
 
-      <h2>10. Atualizações e encerramento</h2>
+      <h2 id="s10">10. Atualizações e encerramento</h2>
       <ul>
         <li>O app pode mudar, ganhar ou perder recursos. Versões muito antigas podem deixar de funcionar e precisar de atualização.</li>
         <li>Podemos suspender ou encerrar contas que violem estes termos, com aviso quando possível.</li>
         <li>Se o serviço for encerrado, avisaremos com antecedência razoável, e doações de períodos não usados serão tratadas conforme a lei.</li>
       </ul>
 
-      <h2>11. Limitação de responsabilidade</h2>
+      <h2 id="s11">11. Limitação de responsabilidade</h2>
       <p>Na máxima extensão permitida pela lei, o Grupo Jadson não responde por decisões tomadas com base nas estimativas, por ganhos que deixaram de acontecer, por bloqueios ou penalidades aplicadas pelas plataformas, por multas de trânsito ou por falhas causadas pelo aparelho, pelo Android ou por outros apps. Nada nestes termos limita os direitos que o Código de Defesa do Consumidor garante a você.</p>
 
-      <h2>12. Lei e foro</h2>
+      <h2 id="s12">12. Lei e foro</h2>
       <p>Estes termos seguem as leis do Brasil. Fica eleito o foro do domicílio do usuário consumidor.</p>
 
-      <h2>13. Contato</h2>
+      <h2 id="s13">13. Contato</h2>
       <p>Grupo Jadson · <a href="mailto:grupojadson@gmail.com">grupojadson@gmail.com</a></p>
     </div>
   </main>
 
-  <footer class="site-footer">
+  <footer>
     <div class="container">
-      <nav class="subnav" aria-label="Links do rodapé">
-        <a href="index.html">Início</a><a href="download.html">Baixar</a><a href="apoiar.html">Apoiar</a><a href="privacidade.html">Política de privacidade</a><a href="termos.html">Termos de uso</a><a href="suporte.html">Suporte</a><a href="excluir-conta.html">Excluir conta</a>
-      </nav>
-      <p class="small">© 2026 Grupo Jadson · <a href="https://www.instagram.com/grupojadson/" target="_blank" rel="noopener noreferrer">@grupojadson</a></p>
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" aria-label="Menos Pista — início"><img src="assets/img/logo-h.webp" alt="Menos Pista" width="520" height="188" loading="lazy"></a><p>Mais lucro. Menos quilômetros à toa. O copiloto que mostra, na hora, se a corrida vale a pena.</p></div>
+        <div class="footer-col"><h3>Produto</h3><ul class="footer-links"><li><a href="index.html#recursos">Recursos</a></li><li><a href="index.html#como-funciona">Como funciona</a></li><li><a href="index.html#faq">Dúvidas</a></li><li><a href="download.html">Baixar o app</a></li><li><a href="apoiar.html">Apoiar</a></li></ul></div>
+        <div class="footer-col"><h3>Ajuda e legal</h3><ul class="footer-links"><li><a href="suporte.html">Suporte</a></li><li><a href="privacidade.html">Política de privacidade</a></li><li><a href="termos.html">Termos de uso</a></li><li><a href="excluir-conta.html">Excluir conta</a></li><li><a href="app-ads.txt">Arquivo app-ads.txt</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 Grupo Jadson · <a href="https://www.instagram.com/grupojadson/" target="_blank" rel="noopener noreferrer">@grupojadson</a></p><a href="#conteudo">Voltar ao topo ↑</a></div>
     </div>
   </footer>
+  <script src="site.js" defer></script>
 </body>
 </html>
