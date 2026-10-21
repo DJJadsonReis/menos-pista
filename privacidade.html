@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0F1115">
+  <meta name="description" content="Como o Menos Pista trata seus dados pessoais, de acordo com a LGPD.">
+  <title>Política de privacidade · Menos Pista</title>
+  <link rel="icon" type="image/svg+xml" href="assets/branding/02_Vetores_SVG/simbolo_transparente.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav subhead">
+      <a class="brand" href="index.html" aria-label="Menos Pista — início"><img src="assets/branding/01_Logos_PNG/logo_horizontal_transparente_2400.png" alt="Menos Pista" width="2400" height="800"></a>
+      <nav class="subnav" aria-label="Navegação principal">
+        <a href="index.html">Início</a><a href="download.html">Baixar</a><a href="privacidade.html" aria-current="page">Privacidade</a><a href="termos.html">Termos</a><a href="suporte.html">Suporte</a><a href="excluir-conta.html">Excluir conta</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container doc">
+      <span class="eyebrow">LGPD</span>
+      <h1>Política de privacidade</h1>
+      <p class="lead">Vigente desde 21/10/2026. Explica, em linguagem simples, quais dados o Menos Pista usa, por quê, onde ficam e como você controla tudo isso, conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).</p>
+
+      <h2>1. Quem é o responsável</h2>
+      <p>O controlador dos dados é o <b>Grupo Jadson</b>, responsável pelo app Menos Pista. Para qualquer assunto de privacidade, inclusive para falar com o encarregado (DPO), escreva para <a href="mailto:grupojadson@gmail.com">grupojadson@gmail.com</a>.</p>
+
+      <h2>2. Resumo rápido</h2>
+      <ul>
+        <li>O app lê <b>só as ofertas</b> dos apps de corrida e entrega que você liga, para mostrar se a corrida vale a pena. Essa leitura acontece no seu celular.</li>
+        <li>Prints de ofertas e gravações da câmera de segurança <b>ficam só no aparelho</b>.</li>
+        <li>Para usar o app é preciso entrar com sua conta Google. O perfil, o histórico de ofertas e as Finanças ficam guardados na sua conta, no Firebase (Google).</li>
+        <li>E-mails e notificações de novidades e ofertas, <b>só se você marcar</b> essa opção, e você pode desmarcar quando quiser.</li>
+        <li>O app nunca recebe dados do seu cartão. Doações são pagas no Mercado Pago (Mercado Livre).</li>
+        <li>Você pode <a href="excluir-conta.html">excluir sua conta</a> a qualquer momento.</li>
+      </ul>
+
+      <h2>3. Serviço de Acessibilidade (divulgação em destaque)</h2>
+      <div class="card">
+        <p>O Menos Pista usa o <b>serviço de Acessibilidade do Android</b> para ler o texto das ofertas que aparecem na tela dos apps de corrida e entrega que você escolhe em Ajustes (por exemplo Uber, 99, inDrive, iFood, Rappi, Lalamove, Loggi, Cabify, Keeta ou outro app que você ligar). Com esse texto ele calcula valor por km, por hora e lucro estimado e mostra o card “vale a pena?”.</p>
+        <ul>
+          <li>O conteúdo da tela é processado <b>no próprio celular</b>. O texto da tela não é enviado para servidores; só o resultado de cada oferta analisada vai para o seu histórico (item 5).</li>
+          <li>O app <b>ignora</b> o teclado, a tela inicial, as configurações do sistema e os apps que não são de corrida ou entrega. Ele <b>não coleta senhas, mensagens, contatos nem dados bancários</b>.</li>
+          <li>Quando a oferta não expõe texto, o app pode tirar um print pela própria Acessibilidade (Android 11+) e ler o texto com reconhecimento local (ML Kit, no aparelho). O print fica só no celular.</li>
+          <li>O app <b>não aceita nem recusa corridas</b> por você e não toca na tela de outros apps.</li>
+          <li>Antes de pedir a permissão, o app mostra um aviso com essas informações e os botões “Aceito e quero ativar” e “Agora não”. Você pode desligar a Acessibilidade a qualquer momento em Configurações do Android.</li>
+        </ul>
+      </div>
+
+      <h2>4. Conta e login</h2>
+      <p>O login é obrigatório e feito com a <b>conta Google</b>, pelo Firebase Authentication. Recebemos do Google seu nome, e-mail, foto do perfil e um identificador da conta. Não recebemos sua senha.</p>
+
+      <h2>5. O que fica guardado na nuvem (Cloud Firestore)</h2>
+      <ul>
+        <li><b>Perfil:</b> nome, e-mail, foto, data de cadastro, último login e último uso, versão do app, apps de corrida que você liga, plano (free ou doador) e sua escolha sobre novidades (com data).</li>
+        <li><b>Aparelhos:</b> token de notificação (push) e modelo do celular.</li>
+        <li><b>Ofertas analisadas:</b> data, app, valor, distâncias, tempos, R$/km, R$/hora, lucro e custo estimados, nota do passageiro mostrada na oferta, resultado do semáforo e o veículo usado no cálculo. O print em si não é enviado.</li>
+        <li><b>Finanças:</b> entradas e despesas que você lança (valor, categoria, descrição, observação e data).</li>
+        <li><b>Doações:</b> status, valor, data, periodicidade (mensal ou anual) e o identificador do pagamento no Mercado Pago (item 9).</li>
+        <li><b>Suporte:</b> chamados que você abrir e as mensagens trocadas (item 10).</li>
+      </ul>
+      <p>Os dados ficam nos servidores do Google (Firebase), que podem estar fora do Brasil, com as garantias previstas na LGPD para transferência internacional. Cada usuário só acessa os próprios dados; o acesso administrativo é restrito ao responsável.</p>
+      <p><b>Retenção:</b> os dados ficam guardados enquanto sua conta existir. Ao excluir a conta, eles são apagados (veja <a href="excluir-conta.html">Excluir conta</a>), exceto registros de pagamento que a lei manda guardar. O histórico no celular pode ser apagado automaticamente após o número de dias que você escolher em Ajustes.</p>
+
+      <h2>6. Novidades e ofertas (opt-in de marketing)</h2>
+      <p>No cadastro há uma caixa separada, <b>desmarcada</b>, para receber novidades e ofertas por e-mail e notificação. Só enviamos se você marcar. Você pode retirar o consentimento quando quiser no app (Ajustes) ou por e-mail, sem afetar o uso do app.</p>
+
+      <h2>7. Notificações (push)</h2>
+      <p>Usamos o Firebase Cloud Messaging para avisos do serviço (por exemplo, “a leitura parou”, respostas do suporte, confirmação de doação) e, se você aceitou, novidades. Você pode desligar as notificações nas configurações do Android.</p>
+
+      <h2>8. Anúncios (Google AdMob)</h2>
+      <p>O modo <b>free</b> é mantido por anúncios do Google AdMob. O Google pode usar o ID de publicidade do aparelho, endereço IP, dados do aparelho e interações com os anúncios para exibir e medir anúncios. Pedimos seu consentimento pela ferramenta do Google (UMP), quando aplicável, e você pode rever essa escolha no app. Você também pode redefinir ou excluir o ID de publicidade nas configurações do Android. Os anúncios não aparecem enquanto uma oferta está na tela. Veja a <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Política de Privacidade do Google</a>.</p>
+      <p>O modo <b>doador</b> (doação mensal ou anual) fica isento de <b>alguns</b> anúncios, não de todos.</p>
+
+      <h2>9. Doações (Mercado Livre / Mercado Pago)</h2>
+      <p>As doações mensais e anuais são pagas no <b>Mercado Pago</b>, a plataforma de pagamentos do Mercado Livre. Os dados de pagamento (cartão, Pix, CPF do pagador) são informados diretamente ao Mercado Pago e tratados por ele, conforme a <a href="https://www.mercadopago.com.br/privacidade" target="_blank" rel="noopener noreferrer">política de privacidade do Mercado Pago</a>. <b>O app não recebe nem guarda dados do seu cartão.</b> Guardamos apenas status, valor, data, periodicidade e o identificador do pagamento, para liberar o modo doador e para a contabilidade.</p>
+
+      <h2>10. Suporte</h2>
+      <p>Quando você abre um chamado no app ou escreve para o suporte, guardamos o assunto, as mensagens, seu e-mail e dados técnicos do aparelho e do app (modelo, versão do Android, versão do app e status da leitura), para resolver o problema. Os chamados ficam guardados enquanto a conta existir.</p>
+
+      <h2>11. Câmera de segurança</h2>
+      <p>Se você ligar a câmera de segurança (quando o recurso estiver disponível na sua versão), ela grava com aviso fixo na notificação e salva os vídeos <b>só no seu celular</b>, numa pasta própria, apagando os trechos mais antigos quando o espaço reservado acaba. As gravações não são enviadas para nós. Você é responsável por avisar os passageiros sobre a gravação.</p>
+
+      <h2>12. Relatórios de erro</h2>
+      <p>Usamos o Firebase Crashlytics para receber relatórios de travamento (modelo do aparelho, versão do Android e do app e o ponto do erro), para corrigir falhas.</p>
+
+      <h2>13. Bases legais</h2>
+      <ul>
+        <li><b>Execução do contrato</b> (art. 7º, V): conta, leitura e cálculo das ofertas, histórico, Finanças, cópia na nuvem, doações e suporte.</li>
+        <li><b>Consentimento</b> (art. 7º, I): novidades e ofertas (marketing) e anúncios personalizados, quando exigido.</li>
+        <li><b>Legítimo interesse</b> (art. 7º, IX): segurança, prevenção de fraude, relatórios de erro e melhoria do app.</li>
+        <li><b>Obrigação legal</b> (art. 7º, II): guarda de registros de pagamento e de acesso pelo prazo legal.</li>
+      </ul>
+
+      <h2>14. Com quem compartilhamos</h2>
+      <ul>
+        <li><b>Google / Firebase</b> (login, banco de dados, notificações e relatórios de erro).</li>
+        <li><b>Google AdMob</b> (anúncios).</li>
+        <li><b>Mercado Pago / Mercado Livre</b> (pagamento das doações).</li>
+        <li>Autoridades, quando exigido por lei ou ordem judicial.</li>
+      </ul>
+      <p>Não vendemos seus dados.</p>
+
+      <h2>15. Seus direitos</h2>
+      <p>Você pode pedir confirmação de tratamento, acesso, correção, anonimização ou eliminação, portabilidade, informação sobre compartilhamento e revogação do consentimento (art. 18 da LGPD). No app você já pode exportar seus dados (CSV e backup), desmarcar novidades e excluir a conta. Para o resto, escreva para <a href="mailto:grupojadson@gmail.com">grupojadson@gmail.com</a>; respondemos em até 15 dias. Você também pode reclamar à ANPD.</p>
+
+      <h2>16. Exclusão da conta</h2>
+      <p>Veja como excluir pelo app ou sem o app em <a href="excluir-conta.html">Excluir conta</a>.</p>
+
+      <h2>17. Crianças e adolescentes</h2>
+      <p>O Menos Pista é feito para motoristas e entregadores adultos e não se destina a menores de 18 anos. Se soubermos que uma conta é de menor, ela será excluída.</p>
+
+      <h2>18. Alterações</h2>
+      <p>Podemos atualizar esta política. Mudanças importantes serão avisadas no app ou por e-mail, e a data de vigência no topo será atualizada.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="subnav" aria-label="Links do rodapé">
+        <a href="index.html">Início</a><a href="download.html">Baixar</a><a href="privacidade.html">Política de privacidade</a><a href="termos.html">Termos de uso</a><a href="suporte.html">Suporte</a><a href="excluir-conta.html">Excluir conta</a>
+      </nav>
+      <p class="small">© 2026 Menos Pista · Grupo Jadson · <a href="mailto:grupojadson@gmail.com">grupojadson@gmail.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>
