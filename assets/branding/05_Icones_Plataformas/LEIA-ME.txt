@@ -1,0 +1,24 @@
+MenosPista — Ícones de plataformas (versão corrigida)
+
+Inclui PNG 512x512 e SVG para Uber Driver, 99 Motorista, iFood, Rappi Entregador, inDrive e Outro.
+
+Os desenhos foram reconstruídos para se aproximar dos ícones identificáveis dos aplicativos, usando referências públicas visuais. Não são arquivos oficiais baixados das empresas e podem não reproduzir exatamente a versão mais recente de cada ícone. Para distribuição comercial, confira as diretrizes de marca e substitua por ativos oficiais autorizados quando disponíveis.
+
+Referências visuais consultadas:
+- Uber Driver: https://apps.apple.com/br/app/uber-driver-para-motorista/id1131342792
+- 99 Motorista: https://apps.apple.com/br/app/99-motorista-carro-ou-moto/id1243302859
+- iFood: https://thesvg.org/icon/ifood
+- Rappi Entregador: https://soy-rappi.es.aptoide.com/app
+- inDrive: https://commons.wikimedia.org/wiki/File:InDrive_Logo.svg
+
+
+Atualização — outubro de 2026
+Adicionados ícones PNG 512x512 e SVG para:
+- Lalamove (lalamove.png / lalamove.svg)
+- Loggi (loggi.png / loggi.svg)
+- Cabify (cabify.png / cabify.svg)
+
+Os três novos ícones são versões gráficas reconstruídas para identificação visual no projeto, não arquivos oficiais fornecidos pelas empresas. Confira os portais oficiais de marca antes de usar em materiais comerciais:
+- Cabify: https://brand.cabify.com/
+- Loggi: https://www.loggi.com/
+- Lalamove: https://www.lalamove.com/pt-br/

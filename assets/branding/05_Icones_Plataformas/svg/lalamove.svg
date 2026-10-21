@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<rect width="512" height="512" rx="64" fill="#FF6B00"/>
+<g fill="#FFFFFF">
+<path d="M106 128h48v190h120v44H106z"/>
+<path d="M286 143h45v72h73v45h-73v72h-45v-72h-73v-45h73z" opacity=".95"/>
+<text x="256" y="414" font-family="Arial,Helvetica,sans-serif" font-size="47" font-weight="700" text-anchor="middle" letter-spacing="-1">LALAMOVE</text>
+</g></svg>

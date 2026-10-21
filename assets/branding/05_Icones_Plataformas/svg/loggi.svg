@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<rect width="512" height="512" rx="64" fill="#FFFFFF"/>
+<path d="M96 156h58v199H96z" fill="#5B2B82"/>
+<circle cx="125" cy="115" r="29" fill="#5B2B82"/>
+<text x="285" y="286" font-family="Arial,Helvetica,sans-serif" font-size="105" font-weight="700" text-anchor="middle" fill="#5B2B82" letter-spacing="-5">loggi</text>
+<path d="M142 374h228" stroke="#F5A623" stroke-width="12" stroke-linecap="round"/>
+</svg>
