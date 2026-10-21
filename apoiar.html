@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0B0D12">
-  <meta name="description" content="Apoie o Menos Pista com uma doação mensal, trimestral ou anual pelo Mercado Pago.">
+  <meta name="description" content="Apoie o Menos Pista com uma doação mensal ou anual pelo Mercado Pago. Descontão para apoiadores.">
   <title>Apoiar · Menos Pista</title>
   <link rel="icon" type="image/svg+xml" href="assets/branding/02_Vetores_SVG/simbolo_transparente.svg">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -113,10 +113,12 @@
     const brl = c => (c / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     const fmtDate = t => t && t.toDate ? t.toDate().toLocaleDateString('pt-BR') : '';
     const PLANS = [
-      { id: 'mensal', key: 'monthly', name: 'Mensal', per: 'a cada mês' },
-      { id: 'trimestral', key: 'quarterly', name: 'Trimestral', per: 'a cada 3 meses' },
-      { id: 'anual', key: 'yearly', name: 'Anual', per: 'a cada 12 meses' }
+      { id: 'mensal', key: 'monthly', name: 'Mensal', per: 'a cada mês', months: 1 },
+      { id: 'trimestral', key: 'quarterly', name: 'Trimestral', per: 'a cada 3 meses', months: 3 },
+      { id: 'anual', key: 'yearly', name: 'Anual', per: 'a cada 12 meses', months: 12 }
     ];
+    // Reserva só para exibir, se config/prices não carregar. Quem cobra é o servidor, sempre com config/prices.
+    const FALLBACK = { monthly: 1299, monthlyFrom: 1999, yearly: 9999, yearlyFrom: 23988, plans: ['mensal', 'anual'], recurring: true };
     let user = null, busy = false;
     const say = (t, err) => { $('msg').textContent = t; $('msg').style.color = err ? '#FF9B5B' : ''; };
 
@@ -130,21 +132,29 @@
     if (ST[st]) { $('statusBox').hidden = false; $('statusBox').innerHTML = '<h3>Retorno do pagamento</h3><p></p>'; $('statusBox').querySelector('p').textContent = ST[st]; }
 
     // Valores: config/prices (leitura pública), em centavos.
-    getDoc(doc(db, 'config', 'prices')).then(s => {
-      const p = s.exists() ? s.data() : {};
-      const avail = PLANS.filter(x => Number(p[x.key]) > 0);
+    function showPrices(p) {
+      const avail = PLANS.filter(x => Number(p[x.key]) > 0 && (!Array.isArray(p.plans) || p.plans.includes(x.id)));
       if (!avail.length) { $('pricesMsg').textContent = 'Valores em breve.'; return; }
-      $('pricesMsg').textContent = p.recurring === false ? 'Pagamento avulso com Pix ou cartão.' : 'Assinatura recorrente no Mercado Pago; cancele quando quiser.';
+      $('pricesMsg').textContent = (p.recurring === false ? 'Pagamento avulso com Pix ou cartão.' : 'Assinatura recorrente no Mercado Pago; cancele quando quiser.') + ' Descontão para apoiadores.';
+      $('plans').replaceChildren();
       avail.forEach(x => {
-        const c = document.createElement('div'); c.className = 'card';
-        c.innerHTML = '<h3></h3><p></p><div class="actions"><button class="btn btn-primary" type="button">Apoiar</button></div>';
+        const por = Number(p[x.key]), de = Number(p[x.key + 'From']) || 0;
+        const c = document.createElement('div'); c.className = 'card plan';
+        c.innerHTML = '<div class="plan-top"><h3></h3><span class="save" hidden></span></div><p class="plan-from" hidden><s></s></p><p class="plan-price"><b></b> <span></span></p><p class="small plan-eq" hidden></p><div class="actions"><button class="btn btn-primary" type="button">Apoiar</button></div>';
         c.querySelector('h3').textContent = x.name;
-        c.querySelector('p').innerHTML = '<b></b> ' + x.per;
-        c.querySelector('b').textContent = brl(Number(p[x.key]));
+        c.querySelector('b').textContent = brl(por);
+        c.querySelector('.plan-price span').textContent = x.per;
+        if (de > por) {
+          c.querySelector('.plan-from').hidden = false; c.querySelector('s').textContent = 'de ' + brl(de);
+          const s = c.querySelector('.save'); s.hidden = false; s.textContent = '-' + Math.round((1 - por / de) * 100) + '%';
+        }
+        if (x.months > 1) { const e = c.querySelector('.plan-eq'); e.hidden = false; e.textContent = 'cerca de ' + brl(Math.round(por / x.months)) + '/mês'; }
         c.querySelector('button').onclick = () => go(x.id);
         $('plans').appendChild(c);
       });
-    }).catch(() => { $('pricesMsg').textContent = 'Valores em breve.'; });
+    }
+    getDoc(doc(db, 'config', 'prices')).then(s => showPrices(s.exists() && Number(s.data().monthly) > 0 ? s.data() : FALLBACK))
+      .catch(() => showPrices(FALLBACK));
 
     const ERR = {
       'unauthenticated': 'Entre com sua conta Google antes de apoiar.',

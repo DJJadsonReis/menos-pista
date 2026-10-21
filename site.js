@@ -28,6 +28,16 @@
     items.forEach((el) => io.observe(el));
   }
 
+  // Botão fixo de download no celular: aparece depois do hero e some perto do CTA final
+  const sticky = d.getElementById("stickyDl"), heroEl = d.querySelector(".hero"), finalCta = d.querySelector(".final-cta");
+  if (sticky && heroEl && "IntersectionObserver" in window) {
+    d.body.classList.add("has-sticky");
+    const vis = { hero: true, cta: false };
+    const upd = () => { const on = !vis.hero && !vis.cta; sticky.classList.toggle("show", on); sticky.setAttribute("aria-hidden", String(!on)); sticky.querySelector("a").tabIndex = on ? 0 : -1; };
+    new IntersectionObserver(([e]) => { vis.hero = e.isIntersecting; upd(); }).observe(heroEl);
+    if (finalCta) new IntersectionObserver(([e]) => { vis.cta = e.isIntersecting; upd(); }).observe(finalCta);
+  }
+
   // Contadores
   d.querySelectorAll("[data-count]").forEach((el) => {
     const end = Number(el.dataset.count), suf = el.dataset.suffix || "";
