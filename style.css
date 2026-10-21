@@ -349,3 +349,43 @@ footer,.site-footer{border-top:1px solid var(--border);padding:48px 0 30px;backg
   .sticky-dl{transition:none}
   .phone3d{transform:rotateY(-12deg) rotateX(6deg)}
 }
+
+/* ---- Apoiar: etapas, conta, seletor de plano e checkout transparente ---- */
+.ck-steps{display:flex;gap:8px;list-style:none;padding:0;margin:18px 0 22px;flex-wrap:wrap}
+.ck-steps li{display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px solid var(--border);background:var(--panel);color:var(--muted);font-weight:700;font-size:.9rem;transition:all .3s var(--ease)}
+.ck-steps li span{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--panel2);font-size:.78rem}
+.ck-steps li.on{color:#fff;border-color:rgba(255,106,0,.6);box-shadow:0 0 0 3px rgba(255,106,0,.12)}
+.ck-steps li.on span{background:var(--grad);color:#0B0D12}
+.ck-steps li.done{color:var(--green);border-color:rgba(34,197,94,.4)}
+.ck-steps li.done span{background:var(--green);color:#0B0D12}
+.ck-skel{display:flex;gap:14px;align-items:center}
+.ck-sk{display:block;height:14px;border-radius:8px;background:linear-gradient(90deg,var(--panel2),rgba(255,255,255,.08),var(--panel2));background-size:200% 100%;animation:ckSh 1.2s linear infinite}
+.ck-sk-av{width:56px;height:56px;border-radius:50%}.ck-sk-lines{flex:1;display:grid;gap:10px}.ck-sk-s{width:55%}
+@keyframes ckSh{to{background-position:-200% 0}}
+.ck-google{display:inline-flex;align-items:center;gap:12px;padding:13px 22px;border-radius:14px;border:0;background:#fff;color:#1f2937;font:inherit;font-weight:800;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .2s var(--ease)}
+.ck-google:hover{transform:translateY(-2px)}.ck-google svg{width:22px;height:22px}
+.ck-user{display:flex;gap:14px;align-items:center;margin-bottom:6px}.ck-user img{border-radius:50%;object-fit:cover;border:2px solid var(--border2)}
+.ck-user div{display:grid;gap:2px}.ck-user .small{color:var(--muted)}
+.ck-plan{display:inline-block;margin-top:4px;padding:3px 10px;border-radius:999px;background:var(--panel2);font-size:.8rem;font-weight:800;color:var(--muted);width:max-content}
+.ck-plan.ok{background:rgba(34,197,94,.14);color:var(--green)}
+.ck-plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.ck-plan-opt{position:relative;text-align:left;font:inherit;color:inherit;cursor:pointer;border:2px solid var(--border);transition:border-color .2s,transform .2s var(--ease),box-shadow .2s}
+.ck-plan-opt:hover{transform:translateY(-2px)}
+.ck-plan-opt.selected{border-color:var(--orange);box-shadow:0 0 0 4px rgba(255,106,0,.15),0 18px 40px rgba(255,106,0,.12)}
+.ck-radio{position:absolute;top:16px;right:16px;width:22px;height:22px;border-radius:50%;border:2px solid var(--border2)}
+.ck-plan-opt .plan-top{padding-right:30px}
+.ck-plan-opt.selected .ck-radio{border-color:var(--orange);background:radial-gradient(circle,var(--orange) 45%,transparent 50%)}
+.ck-cta{margin-top:18px}
+.ck-box{margin-top:18px;border:1px solid rgba(255,106,0,.35)}
+.ck-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.ck-x{padding:8px 14px}
+.ck-sum{color:var(--muted)}.ck-sum b{color:#fff}
+#paymentBrick_container{min-height:120px}
+.ck-pix{text-align:center}.ck-pix img{background:#fff;border-radius:14px;padding:10px;margin:10px auto;display:block}
+.ck-copy{display:flex;gap:8px;max-width:520px;margin:8px auto}.ck-copy input{flex:1;min-width:0;padding:12px;border-radius:11px;border:1px solid var(--border);background:var(--panel2);color:#fff;font:inherit;font-size:.8rem}
+.ck-ok{text-align:center;padding:10px 0;animation:ckIn .5s var(--ease)}
+.ck-check{width:84px;height:84px;margin:6px auto;display:block}
+.ck-check circle{fill:none;stroke:var(--green);stroke-width:3;stroke-dasharray:151;stroke-dashoffset:151;animation:ckDraw .6s var(--ease) forwards}
+.ck-check path{fill:none;stroke:var(--green);stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:40;stroke-dashoffset:40;animation:ckDraw .4s .5s var(--ease) forwards}
+@keyframes ckDraw{to{stroke-dashoffset:0}}@keyframes ckIn{from{opacity:0;transform:scale(.96)}}
+.ck-link{background:none;border:0;padding:0;color:var(--orange2);font:inherit;font-weight:700;text-decoration:underline;cursor:pointer}
+@media (prefers-reduced-motion:reduce){.ck-sk,.ck-check circle,.ck-check path,.ck-ok{animation:none;stroke-dashoffset:0}}

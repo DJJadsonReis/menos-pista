@@ -35,29 +35,57 @@
 
       <div class="card" id="statusBox" hidden></div>
 
-      <div class="card">
-        <h3>1. Entre com a mesma conta Google do app</h3>
-        <p id="who">Você ainda não entrou.</p>
-        <div class="actions"><button class="btn btn-primary" id="loginBtn" type="button">Entrar com Google</button><button class="btn btn-secondary" id="logoutBtn" type="button" hidden>Sair</button></div>
-      </div>
+      <ol class="ck-steps" id="ckSteps" aria-label="Etapas do apoio">
+        <li data-step="1"><span>1</span>Entrar</li><li data-step="2"><span>2</span>Escolher plano</li><li data-step="3"><span>3</span>Pagar</li><li data-step="4"><span>4</span>Confirmado</li>
+      </ol>
 
-      <div class="card" id="supportCard" hidden>
-        <h3>Seu apoio</h3>
-        <p id="supportInfo">Carregando…</p>
-      </div>
+      <section class="card ck-account" id="account" aria-live="polite">
+        <div class="ck-skel" id="accSkel" aria-hidden="true"><span class="ck-sk ck-sk-av"></span><span class="ck-sk-lines"><span class="ck-sk"></span><span class="ck-sk ck-sk-s"></span></span></div>
+        <div id="accOut" hidden>
+          <h3>Entre com a mesma conta Google do app</h3>
+          <p class="small">O apoio fica ligado à sua conta: use a <b>mesma conta Google</b> que você usa no app Menos Pista, para o Pro aparecer lá.</p>
+          <div class="actions"><button class="ck-google" id="loginBtn" type="button"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Entrar com Google</button></div>
+        </div>
+        <div id="accIn" hidden>
+          <div class="ck-user"><img id="accPhoto" alt="" width="56" height="56" referrerpolicy="no-referrer"><div><b id="accName"></b><span class="small" id="accEmail"></span><span class="ck-plan" id="accPlan"></span></div></div>
+          <div class="actions"><button class="btn btn-secondary" id="switchBtn" type="button">Trocar conta</button><button class="btn btn-secondary" id="logoutBtn" type="button">Sair</button></div>
+        </div>
+      </section>
 
       <h2>2. Escolha o plano</h2>
       <p id="pricesMsg" class="small">Carregando valores…</p>
-      <div id="plans"></div>
+      <div id="plans" class="ck-plans" role="radiogroup" aria-label="Plano de apoio"></div>
       <p style="margin-top:18px"><label for="coupon"><b>Cupom</b> (opcional)</label><br>
         <input id="coupon" type="text" maxlength="40" autocomplete="off" placeholder="Digite o cupom" style="margin-top:8px;width:100%;max-width:320px;padding:12px 14px;border:1px solid var(--border);border-radius:11px;background:var(--panel2);color:#fff;font:inherit"></p>
+      <div class="actions ck-cta"><button class="btn btn-primary btn-lg" id="payBtn" type="button" disabled>Escolha um plano</button></div>
       <p id="msg" role="status" aria-live="polite" style="margin-top:14px"></p>
+
+      <section class="card ck-box" id="checkout" hidden aria-labelledby="ckTitle">
+        <div class="ck-head"><h3 id="ckTitle">3. Pagar</h3><button class="btn btn-secondary ck-x" id="ckClose" type="button">Trocar plano</button></div>
+        <p class="ck-sum" id="ckSum"></p>
+        <div id="ckBrick"><div id="paymentBrick_container"></div><p class="small" id="ckBrickMsg">Carregando o pagamento seguro do Mercado Pago…</p></div>
+        <div class="ck-pix" id="ckPix" hidden>
+          <h4>Pague com Pix</h4>
+          <p class="small">Abra o app do seu banco, escolha Pix &gt; Ler QR code ou Pix copia e cola. A confirmação aparece aqui sozinha.</p>
+          <img id="pixImg" alt="QR code do Pix" width="220" height="220">
+          <div class="ck-copy"><input id="pixCode" readonly aria-label="Código Pix copia e cola"><button class="btn btn-primary" id="pixCopy" type="button">Copiar código</button></div>
+          <p class="small"><span class="pulse-dot"></span> Aguardando o pagamento… <span id="pixExp"></span> <a id="pixTicket" href="#" target="_blank" rel="noopener noreferrer" hidden>Abrir no Mercado Pago</a></p>
+        </div>
+        <div class="ck-ok" id="ckOk" hidden role="status">
+          <svg class="ck-check" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="m15 27 7 7 15-15"/></svg>
+          <h3>Apoio confirmado!</h3>
+          <p id="okText">Pro ativo. Obrigado por apoiar o Menos Pista.</p>
+          <p class="small">Abra o app com a mesma conta: ele já mostra “Apoio ativo até…”.</p>
+        </div>
+        <p class="small ck-alt" id="ckAlt">Prefere pagar no site do Mercado Pago? <button class="ck-link" id="altBtn" type="button">Pagar no Mercado Pago</button></p>
+        <p class="small fineprint">Doação voluntária, sem reembolso. O pagamento é processado pelo Mercado Pago; o Menos Pista não recebe os dados do seu cartão.</p>
+      </section>
 
       <h2>Como funciona</h2>
       <ol>
-        <li>Você entra com Google, escolhe o plano e é levado ao <b>Mercado Pago</b> (Mercado Livre) para pagar.</li>
-        <li>Planos recorrentes viram uma <b>assinatura</b> no Mercado Pago; quando o pagamento é avulso, você paga com <b>Pix ou cartão</b>.</li>
-        <li>Quando o Mercado Pago confirma, nosso servidor libera o apoio na sua conta, e o app mostra “Apoio ativo até…”. Pode levar alguns minutos.</li>
+        <li>Você entra com Google, escolhe o plano e paga <b>aqui mesmo</b>, com <b>Pix ou cartão</b>, pelo pagamento seguro do <b>Mercado Pago</b> (Mercado Livre). Cada pagamento vale 1 mês (mensal) ou 12 meses (anual).</li>
+        <li>Prefere <b>renovação automática</b>? Use “Pagar no Mercado Pago” para criar uma assinatura lá, que você cancela quando quiser.</li>
+        <li>Quando o Mercado Pago confirma, nosso servidor libera o apoio na sua conta na hora (Pix em segundos), e o app mostra “Apoio ativo até…”.</li>
       </ol>
 
       <h2>Condições</h2>
@@ -76,7 +104,7 @@
       <div class="footer-grid">
         <div class="footer-brand"><a href="index.html" aria-label="Menos Pista — início"><img src="assets/img/logo-h.webp" alt="Menos Pista" width="520" height="188" loading="lazy"></a><p>Mais lucro. Menos quilômetros à toa. O copiloto que mostra, na hora, se a corrida vale a pena.</p></div>
         <div class="footer-col"><h3>Produto</h3><ul class="footer-links"><li><a href="index.html#recursos">Recursos</a></li><li><a href="index.html#como-funciona">Como funciona</a></li><li><a href="index.html#faq">Dúvidas</a></li><li><a href="download.html">Baixar o app</a></li><li><a href="apoiar.html">Apoiar</a></li></ul></div>
-        <div class="footer-col"><h3>Ajuda e legal</h3><ul class="footer-links"><li><a href="suporte.html">Suporte</a></li><li><a href="privacidade.html">Política de privacidade</a></li><li><a href="termos.html">Termos de uso</a></li><li><a href="excluir-conta.html">Excluir conta</a></li><li><a href="app-ads.txt">Arquivo app-ads.txt</a></li></ul></div>
+        <div class="footer-col"><h3>Ajuda e legal</h3><ul class="footer-links"><li><a href="suporte.html">Suporte</a></li><li><a href="privacidade.html">Política de privacidade</a></li><li><a href="termos.html">Termos de uso</a></li><li><a href="excluir-conta.html">Excluir conta</a></li></ul></div>
       </div>
       <div class="footer-bottom"><p>© 2026 Grupo Jadson · <a href="https://www.instagram.com/grupojadson/" target="_blank" rel="noopener noreferrer">@grupojadson</a></p><a href="#conteudo">Voltar ao topo ↑</a></div>
     </div>
@@ -86,7 +114,7 @@
   <script type="module">
     // Config web do Firebase: é pública por design (a segurança está nas regras e no servidor).
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js';
-    import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js';
+    import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult, onAuthStateChanged, signOut, setPersistence, browserLocalPersistence } from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js';
     import { getFirestore, doc, getDoc, onSnapshot } from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js';
 
     const app = initializeApp({
@@ -97,18 +125,21 @@
       messagingSenderId: '213910230748'
     });
     const auth = getAuth(app), db = getFirestore(app);
+    setPersistence(auth, browserLocalPersistence).catch(() => {}); // continua logado ao voltar
     // Servidor de pagamento (Cloudflare Worker menospista-pay). URL publicada do Worker, sem barra no fim.
     const WORKER_URL = 'https://menospista-pay.jadsonr.workers.dev';
-    async function createSupport(data) {
+    // Chamada ao Worker com o ID token do Firebase (o servidor confere o login e define valor e pagador).
+    async function api(path, data) {
       const idToken = await auth.currentUser.getIdToken();
-      const r = await fetch(WORKER_URL + '/create-support', {
-        method: 'POST', headers: { 'Authorization': 'Bearer ' + idToken, 'Content-Type': 'application/json' },
-        body: JSON.stringify(data), credentials: 'omit', referrerPolicy: 'no-referrer'
+      const r = await fetch(WORKER_URL + path, {
+        method: data ? 'POST' : 'GET', headers: { 'Authorization': 'Bearer ' + idToken, ...(data ? { 'Content-Type': 'application/json' } : {}) },
+        body: data ? JSON.stringify(data) : undefined, credentials: 'omit', referrerPolicy: 'no-referrer'
       });
       const j = await r.json().catch(() => ({}));
       if (!r.ok) throw Object.assign(new Error(j.message || 'erro'), { code: j.error || 'internal' });
       return j;
     }
+    const createSupport = (data) => api('/create-support', data);
     const $ = id => document.getElementById(id);
     const brl = c => (c / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     const fmtDate = t => t && t.toDate ? t.toDate().toLocaleDateString('pt-BR') : '';
@@ -135,12 +166,13 @@
     function showPrices(p) {
       const avail = PLANS.filter(x => Number(p[x.key]) > 0 && (!Array.isArray(p.plans) || p.plans.includes(x.id)));
       if (!avail.length) { $('pricesMsg').textContent = 'Valores em breve.'; return; }
-      $('pricesMsg').textContent = (p.recurring === false ? 'Pagamento avulso com Pix ou cartão.' : 'Assinatura recorrente no Mercado Pago; cancele quando quiser.') + ' Descontão para apoiadores.';
+      $('pricesMsg').textContent = 'Pague aqui com Pix ou cartão. Cada pagamento vale o período do plano. Descontão para apoiadores.';
       $('plans').replaceChildren();
       avail.forEach(x => {
         const por = Number(p[x.key]), de = Number(p[x.key + 'From']) || 0;
-        const c = document.createElement('div'); c.className = 'card plan';
-        c.innerHTML = '<div class="plan-top"><h3></h3><span class="save" hidden></span></div><p class="plan-from" hidden><s></s></p><p class="plan-price"><b></b> <span></span></p><p class="small plan-eq" hidden></p><div class="actions"><button class="btn btn-primary" type="button">Apoiar</button></div>';
+        const c = document.createElement('button'); c.type = 'button'; c.className = 'card plan ck-plan-opt'; c.dataset.plan = x.id; c.dataset.amount = por;
+        c.setAttribute('role', 'radio'); c.setAttribute('aria-checked', 'false');
+        c.innerHTML = '<span class="ck-radio" aria-hidden="true"></span><div class="plan-top"><h3></h3><span class="save" hidden></span></div><p class="plan-from" hidden><s></s></p><p class="plan-price"><b></b> <span></span></p><p class="small plan-eq" hidden></p>';
         c.querySelector('h3').textContent = x.name;
         c.querySelector('b').textContent = brl(por);
         c.querySelector('.plan-price span').textContent = x.per;
@@ -149,9 +181,22 @@
           const s = c.querySelector('.save'); s.hidden = false; s.textContent = '-' + Math.round((1 - por / de) * 100) + '%';
         }
         if (x.months > 1) { const e = c.querySelector('.plan-eq'); e.hidden = false; e.textContent = 'cerca de ' + brl(Math.round(por / x.months)) + '/mês'; }
-        c.querySelector('button').onclick = () => go(x.id);
+        c.onclick = () => pickPlan(x.id);
         $('plans').appendChild(c);
       });
+      // ?plan=monthly|yearly (vindo da home) pré-seleciona; sem parâmetro, o anual.
+      const want = { monthly: 'mensal', yearly: 'anual', mensal: 'mensal', anual: 'anual' }[new URLSearchParams(location.search).get('plan')] || 'anual';
+      pickPlan(avail.some(x => x.id === want) ? want : avail[avail.length - 1].id);
+    }
+    let chosen = null;
+    function pickPlan(id) {
+      chosen = id;
+      document.querySelectorAll('.ck-plan-opt').forEach(el => { const on = el.dataset.plan === id; el.classList.toggle('selected', on); el.setAttribute('aria-checked', String(on)); });
+      const el = document.querySelector('.ck-plan-opt.selected');
+      const name = PLANS.find(x => x.id === id)?.name || id;
+      $('payBtn').disabled = false;
+      $('payBtn').textContent = 'Apoiar ' + name.toLowerCase() + ' · ' + brl(Number(el?.dataset.amount || 0));
+      if (!$('checkout').hidden && selected !== id) closeCheckout();
     }
     getDoc(doc(db, 'config', 'prices')).then(s => showPrices(s.exists() && Number(s.data().monthly) > 0 ? s.data() : FALLBACK))
       .catch(() => showPrices(FALLBACK));
@@ -161,50 +206,153 @@
       'invalid-argument': 'Plano ou cupom inválido. Confira o cupom (ou deixe em branco) e tente de novo.',
       'failed-precondition': 'Os valores ainda não foram configurados. Tente novamente mais tarde.',
       'resource-exhausted': 'Muitas tentativas seguidas. Aguarde um minuto e tente de novo.',
-      'unavailable': 'O pagamento está indisponível no momento. Tente mais tarde.'
+      'unavailable': 'O pagamento está indisponível no momento. Tente mais tarde.',
+      'payment-rejected': 'O Mercado Pago recusou o pagamento. Confira os dados ou tente outra forma de pagamento.'
     };
+    // ---- Checkout transparente (Payment Brick): Pix ou cartão sem sair da página ----
+    let selected = null, brick = null, pollT = null, baseline = 0, profile = {}, mpKey;
+    const setStep = n => document.querySelectorAll('#ckSteps li').forEach(li => { const k = Number(li.dataset.step); li.classList.toggle('done', k < n); li.classList.toggle('on', k === n); });
+    const refreshStep = () => setStep(!user ? 1 : !selected ? 2 : 3);
+    const params = () => { const coupon = $('coupon').value.trim(); return coupon ? { planId: selected, coupon } : { planId: selected }; };
+    const loadSdk = () => window.MercadoPago ? Promise.resolve() : new Promise((ok, fail) => {
+      const sc = document.createElement('script'); sc.src = 'https://sdk.mercadopago.com/js/v2'; sc.onload = ok; sc.onerror = fail; document.head.appendChild(sc);
+    });
+    const publicKey = () => mpKey ??= fetch(WORKER_URL + '/public-config', { credentials: 'omit' }).then(r => r.json()).then(j => j.mpPublicKey || null).catch(() => null);
+    function stopPay() { if (pollT) { clearInterval(pollT); pollT = null; } if (brick) { try { brick.unmount(); } catch {} brick = null; } }
+    function closeCheckout() { stopPay(); selected = null; $('checkout').hidden = true; refreshStep(); }
+    $('ckClose').onclick = closeCheckout;
+    $('payBtn').onclick = () => chosen && go(chosen);
+    $('coupon').addEventListener('input', () => { if (!$('checkout').hidden && $('ckOk').hidden) closeCheckout(); });
+
     async function go(planId) {
       if (busy) return;
-      if (!user) { say('Entre com sua conta Google antes de apoiar.', true); return; }
-      busy = true; say('Abrindo o Mercado Pago…');
-      const coupon = $('coupon').value.trim();
+      if (!user) { say('Entre com sua conta Google antes de apoiar.', true); $('account').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+      busy = true; say(''); stopPay(); selected = planId;
       try {
-        const r = await createSupport(coupon ? { planId, coupon } : { planId });
-        if (r.initPoint && /^https:\/\/([a-z0-9-]+\.)*mercadopago\.com(\.br)?\//.test(r.initPoint)) location.href = r.initPoint; else throw new Error('sem initPoint');
+        const q = await api('/quote', params()); // valor SEMPRE do servidor (com o cupom)
+        baseline = profile.proUntil && profile.proUntil.toMillis ? profile.proUntil.toMillis() : 0;
+        $('checkout').hidden = false; $('ckPix').hidden = true; $('ckOk').hidden = true; $('ckBrick').hidden = false; $('ckAlt').hidden = false;
+        $('ckSum').innerHTML = 'Plano <b></b> · <b></b> · vale <b></b> dias · pagador <b></b>';
+        const b = $('ckSum').querySelectorAll('b'); b[0].textContent = q.label; b[1].textContent = brl(q.amount); b[2].textContent = q.days; b[3].textContent = q.payerEmail || user.email;
+        setStep(3); $('checkout').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        await mountBrick(q);
       } catch (e) {
+        selected = null; refreshStep();
         say(ERR[e.code] || 'Não foi possível abrir o pagamento agora. Tente de novo em instantes ou fale com o suporte.', true);
       } finally { busy = false; }
     }
 
-    // Login Google (popup, com redirect de reserva).
+    async function mountBrick(q) {
+      $('ckBrickMsg').textContent = 'Carregando o pagamento seguro do Mercado Pago…'; $('ckBrickMsg').hidden = false;
+      const key = await publicKey();
+      if (!key) { $('ckBrickMsg').textContent = 'O pagamento aqui na página está indisponível agora. Use “Pagar no Mercado Pago” abaixo.'; return; }
+      try { await loadSdk(); } catch { $('ckBrickMsg').textContent = 'Não foi possível carregar o Mercado Pago. Use “Pagar no Mercado Pago” abaixo.'; return; }
+      const mp = new window.MercadoPago(key, { locale: 'pt-BR' });
+      brick = await mp.bricks().create('payment', 'paymentBrick_container', {
+        initialization: { amount: q.amount / 100, payer: { email: q.payerEmail || user.email } },
+        customization: {
+          paymentMethods: { bankTransfer: ['pix'], creditCard: 'all', debitCard: 'all', maxInstallments: 1 },
+          visual: { style: { theme: 'dark', customVariables: { baseColor: '#FF6A00' } } }
+        },
+        callbacks: {
+          onReady: () => { $('ckBrickMsg').hidden = true; },
+          onError: () => { $('ckBrickMsg').hidden = false; $('ckBrickMsg').textContent = 'Algo falhou no formulário. Tente de novo ou use “Pagar no Mercado Pago”.'; },
+          onSubmit: ({ formData }) => pay(formData)
+        }
+      });
+    }
+
+    async function pay(formData) {
+      say('Processando o pagamento…');
+      try {
+        const r = await api('/process-payment', { ...params(), formData, idempotencyKey: crypto.randomUUID() });
+        if (r.status === 'approved') { say(''); return confirmed(); }
+        if (r.pix && (r.pix.qrCode || r.pix.qrCodeBase64)) { say(''); showPix(r); return; }
+        if (r.status === 'rejected') throw Object.assign(new Error(), { code: 'payment-rejected' });
+        say('Pagamento em análise pelo Mercado Pago. Assim que aprovar, o apoio é liberado aqui e no app.'); poll(r.id);
+      } catch (e) {
+        say(ERR[e.code] || 'Não foi possível concluir o pagamento. Confira os dados e tente de novo.', true);
+        throw e; // o Brick volta a liberar o botão
+      }
+    }
+
+    function showPix(r) {
+      stopPay(); $('ckBrick').hidden = true; $('ckPix').hidden = false; $('ckAlt').hidden = true;
+      if (r.pix.qrCodeBase64) $('pixImg').src = 'data:image/png;base64,' + r.pix.qrCodeBase64; else $('pixImg').hidden = true;
+      $('pixCode').value = r.pix.qrCode || '';
+      $('pixCopy').onclick = () => navigator.clipboard.writeText($('pixCode').value).then(() => { $('pixCopy').textContent = 'Copiado!'; setTimeout(() => $('pixCopy').textContent = 'Copiar código', 2000); });
+      if (r.pix.expiresAt) $('pixExp').textContent = 'Vale até ' + new Date(r.pix.expiresAt).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }) + '.';
+      if (r.pix.ticketUrl && /^https:\/\/([a-z0-9-]+\.)*mercadopago\.com(\.br)?\//.test(r.pix.ticketUrl)) { $('pixTicket').href = r.pix.ticketUrl; $('pixTicket').hidden = false; }
+      poll(r.id);
+    }
+
+    // Confirmação: o servidor confere no MP (e o webhook também). Além disso, users/{uid} ao vivo (onSnapshot).
+    function poll(id) {
+      let n = 0;
+      pollT = setInterval(async () => {
+        if (++n > 360) { clearInterval(pollT); pollT = null; return; } // 30 min
+        try { const s2 = await api('/payment-status?id=' + encodeURIComponent(id)); if (s2.status === 'approved') confirmed(); else if (['rejected', 'cancelled'].includes(s2.status)) { stopPay(); say('O pagamento não foi concluído. Você pode tentar de novo.', true); } } catch {}
+      }, 5000);
+    }
+    function confirmed() {
+      if (!$('ckOk').hidden) return;
+      stopPay(); $('checkout').hidden = false; $('ckBrick').hidden = true; $('ckPix').hidden = true; $('ckAlt').hidden = true; $('ckOk').hidden = false;
+      $('ckClose').textContent = 'Fechar'; setStep(5); $('ckOk').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      const t = profile.proUntil && profile.proUntil.toDate ? fmtDate(profile.proUntil) : '';
+      $('okText').textContent = t ? 'Pro ativo até ' + t + '. Obrigado por apoiar o Menos Pista!' : 'Pro ativo. Obrigado por apoiar o Menos Pista!';
+    }
+
+    // Alternativa: checkout por redirecionamento (assinatura recorrente, quando ligada, ou pagamento no site do MP).
+    $('altBtn').onclick = async () => {
+      if (!user || !selected || busy) return;
+      busy = true; say('Abrindo o Mercado Pago…');
+      try {
+        const r = await createSupport(params());
+        if (r.initPoint && /^https:\/\/([a-z0-9-]+\.)*mercadopago\.com(\.br)?\//.test(r.initPoint)) location.href = r.initPoint; else throw new Error('sem initPoint');
+      } catch (e) { say(ERR[e.code] || 'Não foi possível abrir o Mercado Pago agora.', true); } finally { busy = false; }
+    };
+
+    // Login Google (popup, com redirect de reserva). Sessão persistente: quem já entrou é reconhecido ao abrir.
     const provider = new GoogleAuthProvider();
     getRedirectResult(auth).catch(() => {});
-    $('loginBtn').onclick = async () => {
+    async function login(pick) {
+      provider.setCustomParameters(pick ? { prompt: 'select_account' } : {});
       try { await signInWithPopup(auth, provider); }
       catch (e) {
         if (['auth/popup-blocked', 'auth/operation-not-supported-in-this-environment', 'auth/cancelled-popup-request'].includes(e.code)) return signInWithRedirect(auth, provider);
         if (e.code !== 'auth/popup-closed-by-user') say(e.code === 'auth/unauthorized-domain' ? 'Login indisponível neste endereço no momento. Tente mais tarde.' : 'Não foi possível entrar. Tente de novo.', true);
       }
-    };
-    $('logoutBtn').onclick = () => signOut(auth);
+    }
+    $('loginBtn').onclick = () => login(false);
+    $('switchBtn').onclick = () => login(true);
+    $('logoutBtn').onclick = () => { closeCheckout(); signOut(auth); };
+
+    function planText(d) {
+      const until = d.proUntil && d.proUntil.toDate ? d.proUntil.toDate() : null;
+      const active = d.plan === 'pro' && until && until > new Date();
+      if (active) return { t: 'Pro ativo até ' + fmtDate(d.proUntil) + (d.supportPlan ? ' · plano ' + d.supportPlan : ''), k: 'ok' };
+      if (d.supportStatus === 'chargeback') return { t: 'Free · apoio encerrado por contestação', k: '' };
+      if (d.supportStatus === 'cancelled') return { t: 'Free · apoio cancelado', k: '' };
+      return { t: 'Free', k: '' };
+    }
 
     let unsub = null;
     onAuthStateChanged(auth, u => {
       user = u; if (unsub) { unsub(); unsub = null; }
-      $('loginBtn').hidden = !!u; $('logoutBtn').hidden = !u; $('supportCard').hidden = !u;
-      $('who').textContent = u ? 'Conectado como ' + (u.email || u.displayName || 'sua conta') + '.' : 'Você ainda não entrou.';
-      if (!u) return;
-      // Status do apoio em users/{uid} (o dono pode ler; só o servidor grava).
+      $('accSkel').hidden = true; $('accOut').hidden = !!u; $('accIn').hidden = !u;
+      if (!u) { profile = {}; closeCheckout(); return; }
+      $('accName').textContent = u.displayName || 'Sua conta';
+      $('accEmail').textContent = u.email || '';
+      if (u.photoURL && /^https:\/\//.test(u.photoURL)) { $('accPhoto').src = u.photoURL; $('accPhoto').hidden = false; } else $('accPhoto').hidden = true;
+      $('accPlan').textContent = 'Carregando plano…'; $('accPlan').className = 'ck-plan';
+      refreshStep();
+      // Plano em users/{uid}, ao vivo (o dono lê; só o servidor grava). Confirma o apoio assim que o servidor liberar.
       unsub = onSnapshot(doc(db, 'users', u.uid), s => {
-        const d = s.exists() ? s.data() : {};
-        const until = d.proUntil && d.proUntil.toDate ? d.proUntil.toDate() : null;
-        const active = d.plan === 'pro' && d.supportStatus === 'active' && until && until > new Date();
-        $('supportInfo').textContent = active
-          ? 'Apoio ativo até ' + fmtDate(d.proUntil) + (d.supportPlan ? ' (plano ' + d.supportPlan + ')' : '') + '. Obrigado!'
-          : d.supportStatus === 'chargeback' ? 'Apoio encerrado por contestação do pagamento.'
-          : d.supportStatus === 'cancelled' ? 'Apoio cancelado. Você pode apoiar de novo quando quiser.'
-          : 'Nenhum apoio ativo nesta conta.';
-      }, () => { $('supportInfo').textContent = 'Não foi possível ler o status agora. O app mostra o status do apoio em tempo real.'; });
+        profile = s.exists() ? s.data() : {};
+        const p = planText(profile); $('accPlan').textContent = p.t; $('accPlan').className = 'ck-plan ' + p.k;
+        const until = profile.proUntil && profile.proUntil.toMillis ? profile.proUntil.toMillis() : 0;
+        if (selected && profile.plan === 'pro' && profile.supportStatus === 'active' && until > baseline) confirmed();
+      }, () => { $('accPlan').textContent = 'Não foi possível ler o plano agora.'; });
     });
   </script>
 </body>
