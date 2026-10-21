@@ -14,8 +14,9 @@
   <meta property="og:title" content="Menos Pista — Mais lucro. Menos quilômetros à toa.">
   <meta property="og:description" content="Copiloto grátis para motoristas e entregadores: mostra na hora se a corrida vale a pena.">
   <meta property="og:type" content="website">
-  <link rel="preload" as="image" href="assets/img/logo-h.webp">
+  <link rel="preload" as="image" href="assets/screens/oferta-avaliar.webp">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
 </head>
 <body>
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -26,7 +27,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
       <nav class="navlinks" id="navLinks" aria-label="Navegação principal">
-        <a href="index.html#recursos">Recursos</a><a href="index.html#como-funciona">Como funciona</a><a href="index.html#faq">Dúvidas</a><a href="apoiar.html">Apoiar</a><a href="suporte.html">Suporte</a>
+        <a href="index.html#telas">Telas</a><a href="index.html#recursos">Recursos</a><a href="index.html#como-funciona">Como funciona</a><a href="index.html#faq">Dúvidas</a><a href="apoiar.html">Apoiar</a><a href="suporte.html">Suporte</a>
         <a class="nav-cta" href="download">Baixar grátis</a>
       </nav>
     </div>
@@ -37,145 +38,106 @@
       <div class="bg-grid"></div><div class="glow glow-a"></div><div class="glow glow-b"></div>
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="pill reveal"><span class="pulse-dot"></span> Versão 3.2 no ar · grátis para Android</div>
+          <div class="pill reveal"><span class="pulse-dot"></span> Versão 3.2 · grátis para Android</div>
           <h1 class="reveal d1">Pare de aceitar <span class="strike-word">corrida ruim</span>.<br><span class="gradient-text">Ganhe mais por km.</span></h1>
-          <p class="reveal d2">Quando a oferta chega na <b>Uber, 99, inDrive ou iFood</b>, o Menos Pista mostra na hora quanto ela paga por km, por hora e quanto sobra depois do combustível e do desgaste do carro. <b>Verde, aceita. Vermelho, deixa passar.</b></p>
+          <p class="reveal d2">Quando a oferta chega na <b>Uber, 99, inDrive ou iFood</b>, o Menos Pista lê a tela, calcula R$/km, R$/hora, lucro % e nota e mostra o veredito na hora: <b class="v-txt g">ACEITAR</b>, <b class="v-txt y">AVALIAR</b> ou <b class="v-txt r">RECUSAR</b>.</p>
           <div class="actions reveal d3">
             <a class="btn btn-primary btn-xl btn-glow" href="download">Baixar grátis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></a>
-            <a class="btn btn-secondary btn-xl" href="#antes-depois">Ver a diferença no bolso</a>
+            <a class="btn btn-secondary btn-xl" href="#telas">Ver as telas do app</a>
           </div>
-          <div class="trust reveal d3">
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>Grátis, sem mensalidade</span>
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>Android 8.0 ou mais novo</span>
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>Você decide, o app não aceita por você</span>
-          </div>
+          <p class="hero-meta reveal d3">Versão 3.2 · Android 8.0 ou mais novo · 24,7 MB · APK oficial</p>
         </div>
-        <div class="stage" role="img" aria-label="Exemplo ilustrativo: celular com o card do Menos Pista mostrando valor da corrida, R$ por km e o veredito">
+        <div class="stage" role="img" aria-label="Tela real do Menos Pista: detalhe de uma oferta da Uber com veredito AVALIAR, R$/km, R$/hora, lucro % e nota">
           <div class="ring" aria-hidden="true"></div>
           <div class="floor" aria-hidden="true"></div>
-          <div class="phone3d cycle" aria-hidden="true">
+          <div class="phone3d" aria-hidden="true">
             <div class="phone-back"></div>
-            <div class="phone-body"><div class="screen">
-              <div class="island"></div>
-              <div class="status"><span>9:41</span><span>4G ▮▮▮</span></div>
-              <div class="map"><i></i></div>
+            <div class="phone-body"><div class="screen shot">
+              <img src="assets/screens/oferta-avaliar.webp" alt="" width="439" height="946" fetchpriority="high">
               <div class="sheen"></div>
-              <div class="offer o1">
-                <div class="offer-top"><span class="offer-app"><img src="assets/branding/05_Icones_Plataformas/svg/uber.svg" alt="" width="20" height="20">Uber · nova oferta</span><span>Menos Pista</span></div>
-                <div class="offer-price">R$ 18,40</div>
-                <div class="offer-stats"><div><small>R$/km</small><b>2,97</b></div><div><small>R$/hora</small><b>46,00</b></div><div><small>Lucro</small><b>R$ 13,10</b></div></div>
-                <div class="verdict"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>VALE A PENA</div>
-              </div>
-              <div class="offer o2">
-                <div class="offer-top"><span class="offer-app"><img src="assets/branding/05_Icones_Plataformas/svg/99.svg" alt="" width="20" height="20">99 · nova oferta</span><span>Menos Pista</span></div>
-                <div class="offer-price">R$ 11,20</div>
-                <div class="offer-stats"><div><small>R$/km</small><b>1,60</b></div><div><small>R$/hora</small><b>28,00</b></div><div><small>Lucro</small><b>R$ 5,90</b></div></div>
-                <div class="verdict v-yellow">ATENÇÃO · AVALIE</div>
-              </div>
-              <div class="offer o3">
-                <div class="offer-top"><span class="offer-app"><img src="assets/branding/05_Icones_Plataformas/svg/ifood.svg" alt="" width="20" height="20">iFood · nova entrega</span><span>Menos Pista</span></div>
-                <div class="offer-price">R$ 6,50</div>
-                <div class="offer-stats"><div><small>R$/km</small><b>0,81</b></div><div><small>R$/hora</small><b>15,60</b></div><div><small>Lucro</small><b>R$ 1,20</b></div></div>
-                <div class="verdict v-red">NÃO COMPENSA</div>
-              </div>
             </div></div>
-            <div class="fly fly-a"><img src="assets/branding/05_Icones_Plataformas/svg/indrive.svg" alt="" width="28" height="28"><span><small>inDrive · R$ 22,00</small><b>R$ 2,44/km</b></span><i class="dot g"></i></div>
-            <div class="fly fly-b"><img src="assets/branding/05_Icones_Plataformas/svg/ifood.svg" alt="" width="28" height="28"><span><small>iFood · R$ 6,50</small><b>R$ 0,81/km</b></span><i class="dot r"></i></div>
-            <div class="chip chip-b"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-9"/><path d="M15 6h6v6"/></svg></span><span><small>Lucro real</small><b>já sem custos</b></span></div>
+            <div class="fly fly-a"><span class="lights3"><i class="g"></i><i class="y"></i><i class="r"></i></span><span><small>Veredito</small><b>na hora</b></span></div>
+            <div class="fly fly-b"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg></span><span><small>Leitura</small><b>no seu celular</b></span></div>
           </div>
-          <p class="stage-note">Exemplo ilustrativo</p>
+          <p class="stage-note">Tela real do app · versão 3.2</p>
         </div>
       </div>
     </section>
 
-    <section class="apps-strip" aria-label="Apps suportados">
-      <p class="apps-label">Lê as ofertas dos apps que você já usa</p>
-      <div class="marquee">
-        <div class="platform"><img src="assets/branding/05_Icones_Plataformas/svg/uber.svg" alt="" width="30" height="30">Uber</div>
-        <div class="platform"><img src="assets/branding/05_Icones_Plataformas/svg/99.svg" alt="" width="30" height="30">99</div>
-        <div class="platform"><img src="assets/branding/05_Icones_Plataformas/svg/indrive.svg" alt="" width="30" height="30">inDrive</div>
-        <div class="platform"><img src="assets/branding/05_Icones_Plataformas/svg/ifood.svg" alt="" width="30" height="30">iFood</div>
-        <div class="platform"><img src="assets/branding/05_Icones_Plataformas/svg/lalamove.svg" alt="" width="30" height="30">Lalamove</div>
-        <div class="platform"><img src="assets/branding/05_Icones_Plataformas/svg/loggi.svg" alt="" width="30" height="30">Loggi</div>
-        <div class="platform"><img src="assets/branding/05_Icones_Plataformas/svg/cabify.svg" alt="" width="30" height="30">Cabify</div>
-        <div class="platform" aria-hidden="true"><img src="assets/branding/05_Icones_Plataformas/svg/uber.svg" alt="" width="30" height="30">Uber</div>
-        <div class="platform" aria-hidden="true"><img src="assets/branding/05_Icones_Plataformas/svg/99.svg" alt="" width="30" height="30">99</div>
-        <div class="platform" aria-hidden="true"><img src="assets/branding/05_Icones_Plataformas/svg/indrive.svg" alt="" width="30" height="30">inDrive</div>
-        <div class="platform" aria-hidden="true"><img src="assets/branding/05_Icones_Plataformas/svg/ifood.svg" alt="" width="30" height="30">iFood</div>
-        <div class="platform" aria-hidden="true"><img src="assets/branding/05_Icones_Plataformas/svg/lalamove.svg" alt="" width="30" height="30">Lalamove</div>
-        <div class="platform" aria-hidden="true"><img src="assets/branding/05_Icones_Plataformas/svg/loggi.svg" alt="" width="30" height="30">Loggi</div>
-        <div class="platform" aria-hidden="true"><img src="assets/branding/05_Icones_Plataformas/svg/cabify.svg" alt="" width="30" height="30">Cabify</div>
+    <section class="apps-band" aria-label="Apps suportados">
+      <p class="apps-label">Lê as ofertas de</p>
+      <div class="wordmarks">
+        <div class="wm-track">
+          <span>Uber</span><span>99</span><span>inDrive</span><span>iFood</span><span>Rappi</span><span>Lalamove</span><span>Loggi</span><span>Cabify</span><span class="wm-more">+ outros apps</span>
+          <span aria-hidden="true">Uber</span><span aria-hidden="true">99</span><span aria-hidden="true">inDrive</span><span aria-hidden="true">iFood</span><span aria-hidden="true">Rappi</span><span aria-hidden="true">Lalamove</span><span aria-hidden="true">Loggi</span><span aria-hidden="true">Cabify</span><span aria-hidden="true" class="wm-more">+ outros apps</span>
+        </div>
       </div>
     </section>
 
-    <section class="section section-tight" aria-label="Números do Menos Pista">
-      <div class="container proof">
-        <div class="stat reveal"><strong class="gradient-text">R$ 0</strong><span>para baixar e usar o essencial</span></div>
-        <div class="stat reveal d1"><strong class="gradient-text"><span data-count="8" data-suffix="+">8+</span></strong><span>apps de corrida e entrega lidos</span></div>
-        <div class="stat reveal d2"><strong class="gradient-text">1 olhada</strong><span>verde, amarelo ou vermelho na tela</span></div>
-        <div class="stat reveal d3"><strong class="gradient-text">100%</strong><span>da leitura das ofertas feita no seu celular</span></div>
+    <section class="facts" aria-label="O Menos Pista em números">
+      <div class="container facts-grid">
+        <div class="fact reveal"><strong>Grátis</strong><span>para baixar e usar</span></div>
+        <div class="fact reveal d1"><strong>8 apps</strong><span>de corrida e entrega, + outros</span></div>
+        <div class="fact reveal d2"><strong>No celular</strong><span>a leitura é feita no aparelho</span></div>
+        <div class="fact reveal d3"><strong>24,7 MB</strong><span>Android 8.0 ou mais novo</span></div>
       </div>
     </section>
 
-    <section class="section" id="antes-depois">
+    <section class="section" id="veredito">
+      <div class="container split">
+        <div class="reveal">
+          <span class="eyebrow">O veredito</span>
+          <h2 class="heading">Em uma olhada, você sabe se <span class="orange">compensa.</span></h2>
+          <p class="lead-sm">O Menos Pista compara cada oferta com as faixas de R$/km e R$/hora que você configura e com o custo do seu veículo. Na tela de detalhe, a <b>Análise</b> explica o motivo em linhas curtas.</p>
+          <ul class="verdicts">
+            <li><span class="vd g">ACEITAR</span><p>Passa nas suas faixas de valor por km e por hora.</p></li>
+            <li><span class="vd y">AVALIAR</span><p>Fica perto do limite. Vale olhar destino e horário.</p></li>
+            <li><span class="vd r">RECUSAR</span><p>Abaixo do que você definiu: roda muito para ganhar pouco.</p></li>
+          </ul>
+          <p class="small">O app só mostra a análise. Ele nunca toca na tela, não aceita nem recusa corridas por você.</p>
+        </div>
+        <div class="duo reveal d1" aria-label="Duas telas reais de detalhe de oferta">
+          <figure class="mini-phone tilt-l"><img src="assets/screens/oferta-recusar.webp" alt="Tela real: oferta da Uber de R$ 30,73 com veredito RECUSAR e análise dos motivos" width="412" height="935" loading="lazy"><figcaption>RECUSAR, com o motivo</figcaption></figure>
+          <figure class="mini-phone tilt-r"><img src="assets/screens/oferta-avaliar.webp" alt="Tela real: oferta da Uber de R$ 16,08 com veredito AVALIAR" width="439" height="946" loading="lazy"><figcaption>AVALIAR, perto do limite</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery-sec" id="telas">
       <div class="container">
-        <div class="section-head reveal"><span class="eyebrow">Antes e depois</span><h2 class="heading">O mesmo dia de trabalho.<br><span class="orange">Muito mais no bolso.</span></h2><p class="subheading">Quem aceita tudo roda muito para ganhar pouco. Filtrando pelas suas regras, cada quilômetro passa a valer mais.</p></div>
-        <div class="ba">
-          <article class="ba-card before reveal">
-            <span class="ba-tag">Antes · aceitando tudo</span>
-            <div class="ba-big"><small>Lucro por km</small><strong>R$ 0,92</strong></div>
-            <div class="ba-bar"><i style="--w:38%"></i></div>
-            <ul><li>Corridas longas até o passageiro</li><li>Entregas que mal pagam o combustível</li><li>Fim do dia sem saber quanto sobrou</li></ul>
-          </article>
-          <div class="ba-arrow reveal d1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-          <article class="ba-card after reveal d2">
-            <span class="ba-tag">Depois · com o Menos Pista</span>
-            <div class="ba-big"><small>Lucro por km</small><strong class="gradient-text">R$ 1,68</strong></div>
-            <div class="ba-bar"><i style="--w:82%"></i></div>
-            <ul><li>Só aceita o que passa nos seus limites</li><li>Lucro já descontando o custo do carro</li><li>Metas do dia, da semana e do mês</li></ul>
-          </article>
-        </div>
-        <p class="fineprint center">Simulação ilustrativa com valores fictícios para explicar o conceito. O resultado real depende da sua cidade, do seu veículo, dos custos informados e das ofertas que chegarem.</p>
+        <div class="section-head reveal"><span class="eyebrow">Telas reais</span><h2 class="heading">Por dentro do <span class="orange">Menos Pista 3.2</span></h2><p class="subheading">Prints do app rodando num celular Android. Arraste para ver.</p></div>
+      </div>
+      <div class="gallery" id="gallery" tabindex="0" aria-label="Galeria de telas do app">
+        <figure class="g-item"><img src="assets/screens/copiloto.webp" alt="Tela inicial com o Copiloto lendo ofertas, ofertas na sessão e o app de corrida ativo" width="422" height="445" loading="lazy"><figcaption><b>Copiloto</b><span>Mostra que está lendo as ofertas e de qual app</span></figcaption></figure>
+        <figure class="g-item"><img src="assets/screens/apps-monitorados.webp" alt="Tela Apps monitorados com Uber, 99, iFood, Rappi, inDrive, Lalamove, Loggi, Cabify e Outros apps" width="426" height="936" loading="lazy"><figcaption><b>Apps monitorados</b><span>Você escolhe quais apps o Copiloto lê</span></figcaption></figure>
+        <figure class="g-item"><img src="assets/screens/oferta-recusar.webp" alt="Detalhe da oferta com distância total, tempo total, R$/km, R$/hora, lucro % e análise" width="412" height="935" loading="lazy"><figcaption><b>Detalhe da oferta</b><span>Distância, tempo, R$/km, R$/hora, lucro % e nota</span></figcaption></figure>
+        <figure class="g-item"><img src="assets/screens/historico.webp" alt="Histórico com filtros Hoje, 7 dias, 30 dias e Tudo, ofertas, média de R$/km e de R$/hora" width="421" height="509" loading="lazy"><figcaption><b>Histórico</b><span>Filtros por período e médias de R$/km e R$/h</span></figcaption></figure>
+        <figure class="g-item"><img src="assets/screens/leitura-da-tela.webp" alt="Tela Leitura da tela com Acessibilidade, leitura por print com OCR no aparelho e economia de bateria" width="414" height="931" loading="lazy"><figcaption><b>Leitura da tela</b><span>Acessibilidade e OCR no próprio celular</span></figcaption></figure>
+        <figure class="g-item"><img src="assets/screens/permissoes.webp" alt="Tela Permissões com Acessibilidade, sem restrição de bateria, notificações e sobrepor a outros apps" width="424" height="568" loading="lazy"><figcaption><b>Permissões</b><span>Mostra o que falta ligar, com um toque</span></figcaption></figure>
       </div>
     </section>
 
     <section class="section features" id="recursos">
       <div class="container">
-        <div class="section-head reveal"><span class="eyebrow">Feito para a sua rotina</span><h2 class="heading">Seu corre merece <span class="orange">render mais.</span></h2><p class="subheading">Ferramentas pensadas para ajudar você a tomar decisões melhores e enxergar o resultado real do seu trabalho.</p></div>
+        <div class="section-head reveal"><span class="eyebrow">Funcionalidades</span><h2 class="heading">Tudo o que o app faz <span class="orange">por você.</span></h2></div>
         <div class="feature-grid">
-          <article class="feature reveal"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>Vale a pena? Na hora.</h3><p>Lê as ofertas da Uber, 99, inDrive, iFood, Rappi, Lalamove, Loggi, Cabify e outros apps e mostra um semáforo verde, amarelo ou vermelho com R$/km, R$/hora e distância até o passageiro.</p></article>
-          <article class="feature reveal d1"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M7 10h3M7 14h2M15 9v6M12 12h6"/></svg></div><h3>Lucro de verdade</h3><p>Calcula o lucro com o custo do seu veículo (combustível, manutenção, pneus, depreciação e custos fixos) e respeita os seus limites de distância, tempo e valor mínimo.</p></article>
-          <article class="feature reveal d2"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></div><h3>Histórico e finanças</h3><p>Guarde as ofertas analisadas, registre entradas e despesas, acompanhe metas do dia, da semana e do mês e exporte seus dados quando quiser.</p></article>
-          <article class="feature reveal"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Você no controle</h3><p>O app só mostra a análise. Ele não aceita nem recusa corridas por você e não lê senhas nem mensagens.</p></article>
-          <article class="feature reveal d1"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div><h3>Grátis para todos</h3><p>As ferramentas essenciais não têm mensalidade. Os anúncios do Google AdMob nunca aparecem enquanto uma oferta está na tela.</p></article>
-          <article class="feature reveal d2"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></div><h3>Sempre atualizado</h3><p>Baixe uma vez pelo link oficial. Depois, o próprio app avisa quando houver versão nova e confere o arquivo antes de instalar.</p></article>
+          <article class="feature reveal"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>Pop-up com o veredito</h3><p>Assim que a oferta aparece, um card na tela mostra o valor, R$/km, R$/hora, lucro % e nota, com ACEITAR, AVALIAR ou RECUSAR.</p></article>
+          <article class="feature reveal d1"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M7 10h3M7 14h2M15 9v6M12 12h6"/></svg></div><h3>Lucro estimado</h3><p>Estima o lucro com o custo por km do seu veículo (combustível, manutenção, pneus e depreciação), configurado em Ajustes &gt; Veículos.</p></article>
+          <article class="feature reveal d2"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Busca e viagem separadas</h3><p>Mostra a distância e o tempo até o passageiro e da viagem, e a distância e o tempo totais da corrida.</p></article>
+          <article class="feature reveal"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></div><h3>Histórico e finanças</h3><p>Guarde as ofertas analisadas, filtre por Hoje, 7 dias ou 30 dias, veja médias de R$/km e R$/h, registre entradas e despesas e acompanhe metas do dia, da semana e do mês.</p></article>
+          <article class="feature reveal d1"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Leitura no aparelho</h3><p>Lê a oferta pela Acessibilidade e, quando precisa, por print com OCR no próprio celular. Não lê senhas nem mensagens.</p></article>
+          <article class="feature reveal d2"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20V10M12 20V4M18 20v-6"/></svg></div><h3>Turno e economia de bateria</h3><p>Marque o início e o fim do turno para medir seu dia. Com economia de bateria ligada, o app lê com menos frequência para gastar menos.</p></article>
         </div>
       </div>
     </section>
 
     <section class="section" id="como-funciona">
       <div class="container">
-        <div class="section-head reveal"><span class="eyebrow">Em 3 passos</span><h2 class="heading">Trabalhe com números. Não com <span class="orange">achismos.</span></h2><p class="subheading">Configure uma vez e deixe o copiloto trabalhar enquanto você dirige.</p></div>
+        <div class="section-head reveal"><span class="eyebrow">Em 3 passos</span><h2 class="heading">Configure uma vez. <span class="orange">Decida sempre.</span></h2></div>
         <div class="steps">
-          <div class="step reveal"><span class="step-num">1</span><h3>Baixe e instale</h3><p>Baixe o APK pelo link oficial e siga o passo a passo de instalação, que leva poucos minutos.</p></div>
-          <div class="step reveal d1"><span class="step-num">2</span><h3>Conte seus custos</h3><p>Escolha os apps que você usa e cadastre seu veículo: combustível, manutenção e custos fixos.</p></div>
-          <div class="step reveal d2"><span class="step-num">3</span><h3>Decida na hora</h3><p>Quando uma oferta chega, o card mostra R$/km, R$/hora, lucro e a cor: verde, amarelo ou vermelho.</p></div>
-        </div>
-        <div class="lights">
-          <div class="light reveal" style="--c:var(--green)"><b>Verde</b><p>Passa nos seus limites de valor, distância e tempo. Bom negócio.</p></div>
-          <div class="light reveal d1" style="--c:var(--yellow)"><b>Amarelo</b><p>Fica perto do limite. Vale olhar o destino e a hora antes de aceitar.</p></div>
-          <div class="light reveal d2" style="--c:var(--red)"><b>Vermelho</b><p>Abaixo do que você definiu. Provavelmente roda muito para ganhar pouco.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="depoimentos">
-      <div class="container">
-        <div class="section-head reveal"><span class="eyebrow">Depoimentos</span><h2 class="heading">Feito para quem vive <span class="orange">na rua.</span></h2><p class="subheading">O app acabou de ser lançado. Os depoimentos abaixo são <b>exemplos ilustrativos</b> do tipo de situação que o Menos Pista resolve; os relatos reais de motoristas entram aqui.</p></div>
-        <div class="quotes">
-          <figure class="quote reveal"><span class="q-tag">Exemplo ilustrativo</span><blockquote>“Antes eu aceitava tudo com medo de ficar parado. Agora olho a cor e já sei se compensa.”</blockquote><figcaption><span class="av">M</span><span><b>Motorista de app</b><small>perfil fictício</small></span></figcaption></figure>
-          <figure class="quote reveal d1"><span class="q-tag">Exemplo ilustrativo</span><blockquote>“O que mais pesa é o km até buscar o passageiro. Ver isso na hora muda o dia.”</blockquote><figcaption><span class="av">R</span><span><b>Motorista de 99 e Uber</b><small>perfil fictício</small></span></figcaption></figure>
-          <figure class="quote reveal d2"><span class="q-tag">Exemplo ilustrativo</span><blockquote>“Na moto, entrega barata e longe não paga o pneu. O vermelho já me avisa.”</blockquote><figcaption><span class="av">J</span><span><b>Entregador de iFood</b><small>perfil fictício</small></span></figcaption></figure>
+          <div class="step reveal"><span class="step-num">1</span><h3>Baixe e instale</h3><p>Baixe o APK pelo link oficial e siga o passo a passo. Leva poucos minutos.</p></div>
+          <div class="step reveal d1"><span class="step-num">2</span><h3>Ligue a leitura</h3><p>Ative a Acessibilidade, escolha os apps monitorados e cadastre o seu veículo.</p></div>
+          <div class="step reveal d2"><span class="step-num">3</span><h3>Rode e decida</h3><p>Quando a oferta chega, o veredito aparece na tela. A decisão continua sendo sua.</p></div>
         </div>
       </div>
     </section>
@@ -186,13 +148,37 @@
         <div class="support-grid reveal d1">
           <article class="support-card"><div class="support-top"><div class="support-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div><span class="tag">Modo free</span></div><h3>Grátis, com anúncios</h3><div class="price-now"><b>R$ 0</b><span>para sempre</span></div><p>As ferramentas essenciais são gratuitas, sem assinatura obrigatória. A manutenção do app é financiada por anúncios do Google AdMob.</p><ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Sem mensalidade obrigatória para as ferramentas essenciais.</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Anúncios do Google AdMob, nunca enquanto uma oferta está na tela.</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Feito para motoristas e entregadores.</li></ul><a href="download" class="btn btn-secondary">Baixar grátis</a></article>
           <article class="support-card featured"><div class="support-top"><div class="support-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg></div><span class="tag">Descontão para apoiadores</span></div><h3>Apoie e veja menos anúncios</h3>
-            <div class="price-opts">
-              <div class="price-opt"><div class="po-top"><span>Mensal</span><span class="save">-35%</span></div><s>de R$ 19,99</s><div class="price-now"><b>R$ 12,99</b><span>/mês</span></div></div>
-              <div class="price-opt best"><div class="po-top"><span>Anual</span><span class="save">-58%</span></div><s>de R$ 239,88</s><div class="price-now"><b>R$ 99,99</b><span>/ano</span></div><small>cerca de R$ 8,33/mês</small></div>
-            </div>
-            <p>Com um apoio mensal ou anual pelo Mercado Pago (Mercado Livre), sua conta vira Pro: menos anúncios (remove parte deles, não todos) e recursos Pro liberados enquanto o apoio estiver ativo.</p><ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Assinatura recorrente no Mercado Pago ou pagamento avulso com Pix ou cartão.</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Menos anúncios e recursos Pro liberados enquanto o apoio estiver ativo.</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Doação voluntária, sem reembolso; cancele a assinatura quando quiser no Mercado Pago.</li></ul><a href="apoiar.html" class="btn btn-primary">Quero apoiar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></article>
+            <fieldset class="plan-pick" id="planPick">
+              <legend>Escolha o plano</legend>
+              <label class="pp-opt" data-plan="monthly">
+                <input type="radio" name="plan" value="monthly">
+                <span class="pp-check" aria-hidden="true"></span>
+                <span class="pp-top"><b>Mensal</b><span class="save" data-save="monthly">-35%</span></span>
+                <s data-from="monthly">de R$ 19,99</s>
+                <span class="price-now"><b data-price="monthly">R$ 12,99</b><span>/mês</span></span>
+              </label>
+              <label class="pp-opt" data-plan="yearly">
+                <input type="radio" name="plan" value="yearly" checked>
+                <span class="pp-check" aria-hidden="true"></span>
+                <span class="pp-badge">Melhor valor</span>
+                <span class="pp-top"><b>Anual</b><span class="save" data-save="yearly">-58%</span></span>
+                <s data-from="yearly">de R$ 239,88</s>
+                <span class="price-now"><b data-price="yearly">R$ 99,99</b><span>/ano</span></span>
+                <small data-eq="yearly">cerca de R$ 8,33/mês</small>
+              </label>
+            </fieldset>
+            <p>Com um apoio mensal ou anual pelo Mercado Pago (Mercado Livre), sua conta vira Pro: menos anúncios (remove parte deles, não todos) e recursos Pro liberados enquanto o apoio estiver ativo.</p><ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Assinatura recorrente no Mercado Pago ou pagamento avulso com Pix ou cartão.</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Menos anúncios e recursos Pro liberados enquanto o apoio estiver ativo.</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Doação voluntária, sem reembolso; cancele a assinatura quando quiser no Mercado Pago.</li></ul>
+            <a href="apoiar?plan=yearly" class="btn btn-primary btn-xl plan-cta" id="planCta">Apoiar por R$ 99,99/ano <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></article>
         </div>
         <div class="notice reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 11v5M12 7h.01"/></svg><p><strong style="color:#fff">Importante:</strong> o apoio é pago só no site, na página <a href="apoiar.html" style="color:var(--orange2);text-decoration:underline">Apoiar</a>, pelo Mercado Pago; o Menos Pista não recebe dados do seu cartão. O apoio é doação voluntária, sem reembolso, e os benefícios saem automaticamente em caso de estorno, contestação ou cancelamento no Mercado Pago. Veja as condições nos <a href="termos.html" style="color:var(--orange2);text-decoration:underline">Termos de uso</a> e na <a href="privacidade.html" style="color:var(--orange2);text-decoration:underline">Política de privacidade</a>.</p></div>
+      </div>
+    </section>
+
+    <!-- Depoimentos reais: preencher com relatos autorizados e remover o atributo hidden. Nunca usar texto inventado. -->
+    <section class="section" id="depoimentos" hidden>
+      <div class="container">
+        <div class="section-head"><span class="eyebrow">Depoimentos</span><h2 class="heading">Quem usa, <span class="orange">conta.</span></h2></div>
+        <div class="quotes"></div>
       </div>
     </section>
 
@@ -213,14 +199,14 @@
     </section>
 
     <section class="final-cta">
-      <div class="container"><div class="cta-panel reveal"><div class="bg-grid"></div><span class="eyebrow">O seu trabalho vale muito</span><h2 class="heading">Chega de rodar<br><span class="gradient-text">no prejuízo.</span></h2><p>Baixe o Menos Pista e veja, em cada oferta, quanto realmente sobra no seu bolso. Leva poucos minutos para instalar.</p><a href="download" class="cta-action">BAIXAR GRÁTIS <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></a>
-        <div class="cta-meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 4 4L19 6"/></svg>Versão 3.2</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 4 4L19 6"/></svg>Android 8.0+</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 4 4L19 6"/></svg>APK oficial no GitHub</span></div>
+      <div class="container"><div class="cta-panel reveal"><div class="bg-grid"></div><span class="eyebrow">O seu trabalho vale muito</span><h2 class="heading">Chega de rodar<br><span class="gradient-text">no prejuízo.</span></h2><p>Baixe o Menos Pista e veja, em cada oferta, quanto ela paga por km e por hora antes de aceitar.</p><a href="download" class="cta-action">BAIXAR GRÁTIS <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></a>
+        <div class="cta-meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 4 4L19 6"/></svg>Versão 3.2</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 4 4L19 6"/></svg>Android 8.0+</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 4 4L19 6"/></svg>24,7 MB</span></div>
         <span class="cta-caption">Feito para quem faz da rua o seu local de trabalho.</span></div></div>
     </section>
   </main>
 
   <div class="sticky-dl" id="stickyDl" aria-hidden="true">
-    <div><b>Menos Pista 3.2</b><small>Grátis · Android 8.0+</small></div>
+    <div><b>Menos Pista 3.2</b><small>Grátis · Android 8.0+ · 24,7 MB</small></div>
     <a class="btn btn-primary" href="download" tabindex="-1">Baixar grátis</a>
   </div>
 
@@ -229,11 +215,12 @@
       <div class="footer-grid">
         <div class="footer-brand"><a href="index.html" aria-label="Menos Pista — início"><img src="assets/img/logo-h.webp" alt="Menos Pista" width="520" height="188" loading="lazy"></a><p>Mais lucro. Menos quilômetros à toa. O copiloto que mostra, na hora, se a corrida vale a pena.</p></div>
         <div class="footer-col"><h3>Produto</h3><ul class="footer-links"><li><a href="index.html#recursos">Recursos</a></li><li><a href="index.html#como-funciona">Como funciona</a></li><li><a href="index.html#faq">Dúvidas</a></li><li><a href="download.html">Baixar o app</a></li><li><a href="apoiar.html">Apoiar</a></li></ul></div>
-        <div class="footer-col"><h3>Ajuda e legal</h3><ul class="footer-links"><li><a href="suporte.html">Suporte</a></li><li><a href="privacidade.html">Política de privacidade</a></li><li><a href="termos.html">Termos de uso</a></li><li><a href="excluir-conta.html">Excluir conta</a></li><li><a href="app-ads.txt">Arquivo app-ads.txt</a></li></ul></div>
+        <div class="footer-col"><h3>Ajuda e legal</h3><ul class="footer-links"><li><a href="suporte.html">Suporte</a></li><li><a href="privacidade.html">Política de privacidade</a></li><li><a href="termos.html">Termos de uso</a></li><li><a href="excluir-conta.html">Excluir conta</a></li></ul></div>
       </div>
       <div class="footer-bottom"><p>© 2026 Grupo Jadson · <a href="https://www.instagram.com/grupojadson/" target="_blank" rel="noopener noreferrer">@grupojadson</a></p><a href="#conteudo">Voltar ao topo ↑</a></div>
     </div>
   </footer>
   <script src="site.js" defer></script>
+  <script src="home.js" defer></script>
 </body>
 </html>
