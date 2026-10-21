@@ -77,7 +77,6 @@
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js';
     import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js';
     import { getFirestore, doc, getDoc, onSnapshot } from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js';
-    import { getFunctions, httpsCallable } from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-functions.js';
 
     const app = initializeApp({
       apiKey: 'AIzaSyA1R525o7a3ThSC4BEv-k2J0iaMal_JBN4',
@@ -87,7 +86,18 @@
       messagingSenderId: '213910230748'
     });
     const auth = getAuth(app), db = getFirestore(app);
-    const createSupport = httpsCallable(getFunctions(app, 'southamerica-east1'), 'createSupport');
+    // Servidor de pagamento (Cloudflare Worker menospista-pay). URL publicada do Worker, sem barra no fim.
+    const WORKER_URL = 'https://menospista-pay.jadsonr.workers.dev';
+    async function createSupport(data) {
+      const idToken = await auth.currentUser.getIdToken();
+      const r = await fetch(WORKER_URL + '/create-support', {
+        method: 'POST', headers: { 'Authorization': 'Bearer ' + idToken, 'Content-Type': 'application/json' },
+        body: JSON.stringify(data), credentials: 'omit', referrerPolicy: 'no-referrer'
+      });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok) throw Object.assign(new Error(j.message || 'erro'), { code: j.error || 'internal' });
+      return j;
+    }
     const $ = id => document.getElementById(id);
     const brl = c => (c / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     const fmtDate = t => t && t.toDate ? t.toDate().toLocaleDateString('pt-BR') : '';
@@ -126,9 +136,11 @@
     }).catch(() => { $('pricesMsg').textContent = 'Valores em breve.'; });
 
     const ERR = {
-      'functions/unauthenticated': 'Entre com sua conta Google antes de apoiar.',
-      'functions/invalid-argument': 'Plano ou cupom inválido. Confira o cupom (ou deixe em branco) e tente de novo.',
-      'functions/failed-precondition': 'Os valores ainda não foram configurados. Tente novamente mais tarde.'
+      'unauthenticated': 'Entre com sua conta Google antes de apoiar.',
+      'invalid-argument': 'Plano ou cupom inválido. Confira o cupom (ou deixe em branco) e tente de novo.',
+      'failed-precondition': 'Os valores ainda não foram configurados. Tente novamente mais tarde.',
+      'resource-exhausted': 'Muitas tentativas seguidas. Aguarde um minuto e tente de novo.',
+      'unavailable': 'O pagamento está indisponível no momento. Tente mais tarde.'
     };
     async function go(planId) {
       if (busy) return;
@@ -137,7 +149,7 @@
       const coupon = $('coupon').value.trim();
       try {
         const r = await createSupport(coupon ? { planId, coupon } : { planId });
-        if (r.data && r.data.initPoint) location.href = r.data.initPoint; else throw new Error('sem initPoint');
+        if (r.initPoint && /^https:\/\/([a-z0-9-]+\.)*mercadopago\.com(\.br)?\//.test(r.initPoint)) location.href = r.initPoint; else throw new Error('sem initPoint');
       } catch (e) {
         say(ERR[e.code] || 'Não foi possível abrir o pagamento agora. Tente de novo em instantes ou fale com o suporte.', true);
       } finally { busy = false; }
