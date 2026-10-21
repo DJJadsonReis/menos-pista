@@ -1,1 +1,0 @@
-Cor do fundo: #0B0B0D\nForeground: ic_launcher_foreground_432.png\n
