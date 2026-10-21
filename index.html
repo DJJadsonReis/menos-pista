@@ -3,93 +3,156 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0F1115">
+  <meta name="theme-color" content="#0B0D12">
   <meta name="description" content="Menos Pista — mais lucro, menos quilômetros à toa. Organize ganhos, acompanhe despesas e entenda melhor o resultado do seu trabalho na rua.">
   <meta name="robots" content="index, follow">
   <title>Menos Pista — Mais lucro. Menos quilômetros à toa.</title>
   <link rel="icon" type="image/svg+xml" href="assets/branding/02_Vetores_SVG/simbolo_transparente.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Menos Pista — Mais lucro. Menos quilômetros à toa.">
+  <meta property="og:description" content="Copiloto grátis para motoristas e entregadores: mostra na hora se a corrida vale a pena.">
+  <meta property="og:type" content="website">
+  <link rel="preload" as="image" href="assets/img/logo-h.webp">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
   <header class="header">
     <div class="container nav">
-      <a class="brand" href="#inicio" aria-label="Menos Pista — início">
-        <img src="assets/branding/01_Logos_PNG/logo_horizontal_transparente_2400.png" alt="Menos Pista" width="2400" height="800">
-      </a>
+      <a class="brand" href="index.html" aria-label="Menos Pista — início"><img src="assets/img/logo-h.webp" alt="Menos Pista" width="520" height="188"></a>
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
       <nav class="navlinks" id="navLinks" aria-label="Navegação principal">
-        <a href="#recursos">Recursos</a><a href="#como-funciona">Como funciona</a><a href="#modelo">Modelo &amp; doação</a><a href="apoiar.html">Apoiar</a>
-        <a href="privacidade.html">Privacidade</a><a href="termos.html">Termos de uso</a><a href="suporte.html">Suporte</a>
-        <a class="nav-cta" href="download.html">Baixar o app ↓</a>
+        <a href="index.html#recursos">Recursos</a><a href="index.html#como-funciona">Como funciona</a><a href="index.html#faq">Dúvidas</a><a href="apoiar.html">Apoiar</a><a href="suporte.html">Suporte</a>
+        <a class="nav-cta" href="download.html">Baixar grátis</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="conteudo">
     <section class="hero" id="inicio">
+      <div class="bg-grid"></div><div class="glow glow-a"></div><div class="glow glow-b"></div>
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="pill"><span class="pulse-dot"></span> Copiloto grátis para Android</div>
-          <h1>Mais lucro.<br><span class="gradient-text">Menos quilômetros</span> à toa.</h1>
-          <p>O Menos Pista é um copiloto para motoristas de aplicativo e entregadores: ele lê as ofertas que chegam na Uber, 99, inDrive, iFood e outros apps e mostra na hora, num card na tela, se a corrida vale a pena — com R$/km, R$/hora e o lucro já descontando o custo do seu veículo.</p>
-          <div class="actions">
-            <a class="btn btn-primary" href="download.html">Baixar para Android <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            <a class="btn btn-secondary" href="#recursos">Ver recursos</a>
+          <div class="pill reveal"><span class="pulse-dot"></span> Copiloto grátis para Android</div>
+          <h1 class="reveal d1">Mais lucro.<br><span class="gradient-text">Menos quilômetros</span> à toa.</h1>
+          <p class="reveal d2">O Menos Pista lê as ofertas que chegam na <b>Uber, 99, inDrive, iFood</b> e outros apps e mostra na hora, num card na tela, se a corrida vale a pena — com R$/km, R$/hora e o lucro já descontando o custo do seu veículo.</p>
+          <div class="actions reveal d3">
+            <a class="btn btn-primary btn-lg" href="download.html">Baixar grátis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></a>
+            <a class="btn btn-secondary btn-lg" href="#como-funciona">Ver como funciona</a>
           </div>
-          <div class="trust-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> Ferramentas essenciais gratuitas, mantidas com anúncios e doações.</div>
+          <div class="trust reveal d3">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>Grátis, sem mensalidade</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>Android 8.0 ou mais novo</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>Você decide, o app não aceita por você</span>
+          </div>
         </div>
-        <div class="hero-visual" aria-label="Mockup visual do Menos Pista">
-          <div class="orb"></div><div class="orbit"></div>
-          <div class="phone"><div class="phone-screen"><div class="notch"></div>
-            <div class="phone-logo"><img src="assets/branding/01_Logos_PNG/logo_vertical_transparente_1800.png" alt="Logo vertical Menos Pista" width="1800" height="2400"></div><div class="reflection"></div>
-          </div></div>
-          <div class="float-card float-top"><div class="float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-9"/><path d="M15 6h6v6"/></svg></div><div class="float-text"><small>Seu trabalho, seus números</small><strong>Mais controle</strong></div></div>
-          <div class="float-card float-bottom"><div class="float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div class="float-text"><small>Custos sob controle</small><strong>Lucro mais claro</strong></div></div>
+        <div class="stage" role="img" aria-label="Exemplo ilustrativo: celular mostrando o card do Menos Pista com o valor da corrida, R$ por km e o veredito vale a pena">
+          <div class="ring" aria-hidden="true"></div>
+          <div class="phone3d cycle" aria-hidden="true">
+            <div class="phone-body"><div class="screen">
+              <div class="island"></div>
+              <div class="status"><span>9:41</span><span>4G ▮▮▮</span></div>
+              <div class="map"><i></i></div>
+              <div class="offer o1">
+                <div class="offer-top"><span class="offer-app"><img src="assets/branding/05_Icones_Plataformas/svg/uber.svg" alt="" width="20" height="20">Uber · nova oferta</span><span>Menos Pista</span></div>
+                <div class="offer-price">R$ 18,40</div>
+                <div class="offer-stats"><div><small>R$/km</small><b>2,97</b></div><div><small>R$/hora</small><b>46,00</b></div><div><small>Lucro</small><b>R$ 13,10</b></div></div>
+                <div class="verdict"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>VALE A PENA</div>
+              </div>
+              <div class="offer o2">
+                <div class="offer-top"><span class="offer-app"><img src="assets/branding/05_Icones_Plataformas/svg/99.svg" alt="" width="20" height="20">99 · nova oferta</span><span>Menos Pista</span></div>
+                <div class="offer-price">R$ 11,20</div>
+                <div class="offer-stats"><div><small>R$/km</small><b>1,60</b></div><div><small>R$/hora</small><b>28,00</b></div><div><small>Lucro</small><b>R$ 5,90</b></div></div>
+                <div class="verdict v-yellow">ATENÇÃO · AVALIE</div>
+              </div>
+              <div class="offer o3">
+                <div class="offer-top"><span class="offer-app"><img src="assets/branding/05_Icones_Plataformas/svg/ifood.svg" alt="" width="20" height="20">iFood · nova entrega</span><span>Menos Pista</span></div>
+                <div class="offer-price">R$ 6,50</div>
+                <div class="offer-stats"><div><small>R$/km</small><b>0,81</b></div><div><small>R$/hora</small><b>15,60</b></div><div><small>Lucro</small><b>R$ 1,20</b></div></div>
+                <div class="verdict v-red">NÃO COMPENSA</div>
+              </div>
+            </div></div>
+            <div class="chip chip-a"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-9"/><path d="M15 6h6v6"/></svg></span><span><small>Lucro real</small><b>já sem custos</b></span></div>
+            <div class="chip chip-b"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><small>Decisão</small><b>na hora</b></span></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="platform-strip" aria-label="Plataformas utilizadas por motoristas e entregadores">
-      <div class="container platform-inner">
-        <p class="platform-label">Feito para a rotina de quem roda com diferentes plataformas</p>
-        <div class="platforms">
-          <div class="platform"><img src="assets/branding/05_Icones_Plataformas/svg/uber.svg" alt="" aria-hidden="true">Uber</div>
-          <div class="platform"><img src="assets/branding/05_Icones_Plataformas/svg/99.svg" alt="" aria-hidden="true">99</div>
-          <div class="platform"><img src="assets/branding/05_Icones_Plataformas/svg/indrive.svg" alt="" aria-hidden="true">inDrive</div>
-          <div class="platform"><img src="assets/branding/05_Icones_Plataformas/svg/ifood.svg" alt="" aria-hidden="true">iFood</div>
-          <div class="platform"><img src="assets/branding/05_Icones_Plataformas/svg/lalamove.svg" alt="" aria-hidden="true">Lalamove</div>
-          <div class="platform"><img src="assets/branding/05_Icones_Plataformas/svg/loggi.svg" alt="" aria-hidden="true">Loggi</div>
-          <div class="platform"><img src="assets/branding/05_Icones_Plataformas/svg/cabify.svg" alt="" aria-hidden="true">Cabify</div>
-        </div>
+    <section class="apps-strip" aria-label="Apps suportados">
+      <p class="apps-label">Lê as ofertas dos apps que você já usa</p>
+      <div class="marquee">
+        <div class="platform"><img src="assets/branding/05_Icones_Plataformas/svg/uber.svg" alt="" width="30" height="30">Uber</div>
+        <div class="platform"><img src="assets/branding/05_Icones_Plataformas/svg/99.svg" alt="" width="30" height="30">99</div>
+        <div class="platform"><img src="assets/branding/05_Icones_Plataformas/svg/indrive.svg" alt="" width="30" height="30">inDrive</div>
+        <div class="platform"><img src="assets/branding/05_Icones_Plataformas/svg/ifood.svg" alt="" width="30" height="30">iFood</div>
+        <div class="platform"><img src="assets/branding/05_Icones_Plataformas/svg/lalamove.svg" alt="" width="30" height="30">Lalamove</div>
+        <div class="platform"><img src="assets/branding/05_Icones_Plataformas/svg/loggi.svg" alt="" width="30" height="30">Loggi</div>
+        <div class="platform"><img src="assets/branding/05_Icones_Plataformas/svg/cabify.svg" alt="" width="30" height="30">Cabify</div>
+        <div class="platform" aria-hidden="true"><img src="assets/branding/05_Icones_Plataformas/svg/uber.svg" alt="" width="30" height="30">Uber</div>
+        <div class="platform" aria-hidden="true"><img src="assets/branding/05_Icones_Plataformas/svg/99.svg" alt="" width="30" height="30">99</div>
+        <div class="platform" aria-hidden="true"><img src="assets/branding/05_Icones_Plataformas/svg/indrive.svg" alt="" width="30" height="30">inDrive</div>
+        <div class="platform" aria-hidden="true"><img src="assets/branding/05_Icones_Plataformas/svg/ifood.svg" alt="" width="30" height="30">iFood</div>
+        <div class="platform" aria-hidden="true"><img src="assets/branding/05_Icones_Plataformas/svg/lalamove.svg" alt="" width="30" height="30">Lalamove</div>
+        <div class="platform" aria-hidden="true"><img src="assets/branding/05_Icones_Plataformas/svg/loggi.svg" alt="" width="30" height="30">Loggi</div>
+        <div class="platform" aria-hidden="true"><img src="assets/branding/05_Icones_Plataformas/svg/cabify.svg" alt="" width="30" height="30">Cabify</div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Números do Menos Pista">
+      <div class="container proof">
+        <div class="stat reveal"><strong class="gradient-text">R$ 0</strong><span>para baixar e usar o essencial</span></div>
+        <div class="stat reveal d1"><strong class="gradient-text"><span data-count="8" data-suffix="+">8+</span></strong><span>apps de corrida e entrega lidos</span></div>
+        <div class="stat reveal d2"><strong class="gradient-text">3 cores</strong><span>verde, amarelo ou vermelho: decisão em 1 olhada</span></div>
+        <div class="stat reveal d3"><strong class="gradient-text">100%</strong><span>da leitura das ofertas feita no seu celular</span></div>
       </div>
     </section>
 
     <section class="section features" id="recursos">
       <div class="container">
-        <div class="section-head"><span class="eyebrow">Feito para a sua rotina</span><h2 class="heading">Seu corre merece <span class="orange">render mais.</span></h2><p class="subheading">Ferramentas pensadas para ajudar você a tomar decisões melhores e enxergar o resultado real do seu trabalho.</p></div>
+        <div class="section-head reveal"><span class="eyebrow">Feito para a sua rotina</span><h2 class="heading">Seu corre merece <span class="orange">render mais.</span></h2><p class="subheading">Ferramentas pensadas para ajudar você a tomar decisões melhores e enxergar o resultado real do seu trabalho.</p></div>
         <div class="feature-grid">
-          <article class="feature"><span class="feature-num">01</span><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h12M3 18h7"/><path d="m17 15 3 3 3-3M20 18V9"/></svg></div><h3>Vale a pena? Na hora.</h3><p>Lê as ofertas da Uber, 99, inDrive, iFood, Rappi, Lalamove, Loggi, Cabify e outros apps e mostra um semáforo verde, amarelo ou vermelho com R$/km, R$/hora e distância até o passageiro.</p></article>
-          <article class="feature"><span class="feature-num">02</span><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M7 10h3M7 14h2M15 9v6M12 12h6"/></svg></div><h3>Lucro de verdade</h3><p>Calcula o lucro com o custo do seu veículo (combustível, manutenção, pneus, depreciação e custos fixos) e respeita os seus limites de distância, tempo e valor mínimo.</p></article>
-          <article class="feature"><span class="feature-num">03</span><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6M12 3v2M21 12h-2"/></svg></div><h3>Histórico e finanças</h3><p>Guarde as ofertas analisadas, registre entradas e despesas, acompanhe metas do dia, da semana e do mês e exporte seus dados quando quiser.</p></article>
+          <article class="feature reveal"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>Vale a pena? Na hora.</h3><p>Lê as ofertas da Uber, 99, inDrive, iFood, Rappi, Lalamove, Loggi, Cabify e outros apps e mostra um semáforo verde, amarelo ou vermelho com R$/km, R$/hora e distância até o passageiro.</p></article>
+          <article class="feature reveal d1"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M7 10h3M7 14h2M15 9v6M12 12h6"/></svg></div><h3>Lucro de verdade</h3><p>Calcula o lucro com o custo do seu veículo (combustível, manutenção, pneus, depreciação e custos fixos) e respeita os seus limites de distância, tempo e valor mínimo.</p></article>
+          <article class="feature reveal d2"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></div><h3>Histórico e finanças</h3><p>Guarde as ofertas analisadas, registre entradas e despesas, acompanhe metas do dia, da semana e do mês e exporte seus dados quando quiser.</p></article>
+          <article class="feature reveal"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Você no controle</h3><p>O app só mostra a análise. Ele não aceita nem recusa corridas por você e não lê senhas nem mensagens.</p></article>
+          <article class="feature reveal d1"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div><h3>Grátis para todos</h3><p>As ferramentas essenciais não têm mensalidade. Os anúncios do Google AdMob nunca aparecem enquanto uma oferta está na tela.</p></article>
+          <article class="feature reveal d2"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></div><h3>Sempre atualizado</h3><p>Baixe uma vez pelo link oficial. Depois, o próprio app avisa quando houver versão nova e confere o arquivo antes de instalar.</p></article>
         </div>
       </div>
     </section>
 
     <section class="section" id="como-funciona">
-      <div class="container how-grid">
-        <div class="how-copy"><span class="eyebrow">Do início ao resultado</span><h2 class="heading">Trabalhe com números. Não com <span class="orange">achismos.</span></h2><p class="subheading">Saber quanto entrou não significa saber quanto sobrou. O Menos Pista ajuda você a enxergar os custos que ficam pelo caminho.</p>
-          <div class="steps">
-            <div class="step"><div class="step-num">01</div><div><h3>Registre sua rotina</h3><p>Organize ganhos, despesas, quilometragem e horas de trabalho.</p></div></div>
-            <div class="step"><div class="step-num">02</div><div><h3>Acompanhe seus custos</h3><p>Considere combustível, manutenção e outros gastos da atividade.</p></div></div>
-            <div class="step"><div class="step-num">03</div><div><h3>Entenda seu resultado</h3><p>Use indicadores para avaliar seu lucro estimado e planejar melhor a rotina.</p></div></div>
-          </div>
+      <div class="container">
+        <div class="section-head reveal"><span class="eyebrow">Em 3 passos</span><h2 class="heading">Trabalhe com números. Não com <span class="orange">achismos.</span></h2><p class="subheading">Configure uma vez e deixe o copiloto trabalhar enquanto você dirige.</p></div>
+        <div class="steps">
+          <div class="step reveal"><span class="step-num">1</span><h3>Baixe e instale</h3><p>Baixe o APK pelo link oficial e siga o passo a passo de instalação, que leva poucos minutos.</p></div>
+          <div class="step reveal d1"><span class="step-num">2</span><h3>Conte seus custos</h3><p>Escolha os apps que você usa e cadastre seu veículo: combustível, manutenção e custos fixos.</p></div>
+          <div class="step reveal d2"><span class="step-num">3</span><h3>Decida na hora</h3><p>Quando uma oferta chega, o card mostra R$/km, R$/hora, lucro e a cor: verde, amarelo ou vermelho.</p></div>
         </div>
-        <div class="dashboard">
+        <div class="lights" style="margin-top:22px">
+          <div class="light reveal" style="--c:var(--green)"><b>Verde</b><p>Passa nos seus limites de valor, distância e tempo. Bom negócio.</p></div>
+          <div class="light reveal d1" style="--c:var(--yellow)"><b>Amarelo</b><p>Fica perto do limite. Vale olhar o destino e a hora antes de aceitar.</p></div>
+          <div class="light reveal d2" style="--c:var(--red)"><b>Vermelho</b><p>Abaixo do que você definiu. Provavelmente roda muito para ganhar pouco.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split">
+        <div class="reveal"><span class="eyebrow">Do início ao resultado</span><h2 class="heading">Saber quanto entrou não é saber quanto <span class="orange">sobrou.</span></h2><p class="subheading" style="margin-left:0">O Menos Pista ajuda você a enxergar os custos que ficam pelo caminho.</p>
+          <ul class="checks">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 4 4L19 6"/></svg>Organize ganhos, despesas, quilometragem e horas de trabalho.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 4 4L19 6"/></svg>Considere combustível, manutenção e outros gastos da atividade.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 4 4L19 6"/></svg>Use indicadores para avaliar seu lucro estimado e planejar melhor a rotina.</li>
+          </ul>
+          <a class="btn btn-primary" href="download.html">Baixar grátis</a>
+        </div>
+        <div class="dashboard reveal d1">
           <div class="dash-head"><h3>Resumo da operação</h3><span class="demo-tag">EXEMPLO ILUSTRATIVO</span></div>
           <div class="dash-total"><span>Resultado líquido estimado</span><strong>R$ 185,00</strong><small>Exemplo fictício para demonstrar o conceito</small></div>
           <div class="metrics"><div class="metric"><span>Ganhos brutos</span><strong>R$ 280,00</strong></div><div class="metric"><span>Despesas</span><strong>R$ 95,00</strong></div><div class="metric"><span>Distância</span><strong>120 km</strong></div><div class="metric"><span>Lucro estimado/km</span><strong class="orange">R$ 1,54</strong></div></div>
@@ -98,66 +161,50 @@
       </div>
     </section>
 
-    <section class="section support" id="modelo">
+<section class="section support" id="modelo">
       <div class="container">
-        <div class="section-head"><span class="eyebrow">Transparência em primeiro lugar</span><h2 class="heading">Ferramentas para todos.<br><span class="orange">Apoio para continuar.</span></h2><p class="subheading">Ninguém precisa pagar assinatura para usar as ferramentas essenciais. O modo free é gratuito e mantido por anúncios; quem quiser apoiar o projeto vira doador.</p></div>
-        <div class="support-grid">
+        <div class="section-head reveal"><span class="eyebrow">Transparência em primeiro lugar</span><h2 class="heading">Ferramentas para todos.<br><span class="orange">Apoio para continuar.</span></h2><p class="subheading">Ninguém precisa pagar assinatura para usar as ferramentas essenciais. O modo free é gratuito e mantido por anúncios; quem quiser apoiar o projeto vira doador.</p></div>
+        <div class="support-grid reveal d1">
           <article class="support-card"><div class="support-top"><div class="support-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div><span class="tag">Modo free</span></div><h3>Grátis, com anúncios</h3><p>As ferramentas essenciais são gratuitas, sem assinatura obrigatória. A manutenção do app é financiada por anúncios do Google AdMob.</p><ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Sem mensalidade obrigatória para as ferramentas essenciais.</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Anúncios do Google AdMob, nunca enquanto uma oferta está na tela.</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Feito para motoristas e entregadores.</li></ul><a href="download.html" class="btn btn-secondary">Baixar grátis</a></article>
           <article class="support-card featured"><div class="support-top"><div class="support-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg></div><span class="tag">Modo doador</span></div><h3>Apoie e veja menos anúncios</h3><p>Com um apoio mensal, trimestral ou anual pelo Mercado Pago (Mercado Livre), sua conta vira Pro: menos anúncios (remove parte deles, não todos) e recursos Pro liberados enquanto o apoio estiver ativo.</p><ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Assinatura recorrente no Mercado Pago ou pagamento avulso com Pix ou cartão.</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Menos anúncios e recursos Pro liberados enquanto o apoio estiver ativo.</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Doação voluntária, sem reembolso; cancele a assinatura quando quiser no Mercado Pago.</li></ul><a href="apoiar.html" class="btn btn-primary">Quero apoiar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></article>
         </div>
-        <div class="notice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 11v5M12 7h.01"/></svg><p><strong style="color:#fff">Importante:</strong> o apoio é pago só no site, na página <a href="apoiar.html" style="color:var(--orange2);text-decoration:underline">Apoiar</a>, pelo Mercado Pago; o Menos Pista não recebe dados do seu cartão. O apoio é doação voluntária, sem reembolso, e os benefícios saem automaticamente em caso de estorno, contestação ou cancelamento no Mercado Pago. Veja as condições nos <a href="termos.html" style="color:var(--orange2);text-decoration:underline">Termos de uso</a> e na <a href="privacidade.html" style="color:var(--orange2);text-decoration:underline">Política de privacidade</a>.</p></div>
+        <div class="notice reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 11v5M12 7h.01"/></svg><p><strong style="color:#fff">Importante:</strong> o apoio é pago só no site, na página <a href="apoiar.html" style="color:var(--orange2);text-decoration:underline">Apoiar</a>, pelo Mercado Pago; o Menos Pista não recebe dados do seu cartão. O apoio é doação voluntária, sem reembolso, e os benefícios saem automaticamente em caso de estorno, contestação ou cancelamento no Mercado Pago. Veja as condições nos <a href="termos.html" style="color:var(--orange2);text-decoration:underline">Termos de uso</a> e na <a href="privacidade.html" style="color:var(--orange2);text-decoration:underline">Política de privacidade</a>.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head reveal"><span class="eyebrow">Dúvidas</span><h2 class="heading">Perguntas <span class="orange">frequentes</span></h2></div>
+        <div class="faq reveal">
+          <details><summary>O Menos Pista é grátis?</summary><p>Sim. As ferramentas essenciais são gratuitas, sem mensalidade obrigatória. A manutenção do app é financiada por anúncios do Google AdMob, que nunca aparecem enquanto uma oferta está na tela, e por doações de quem quiser apoiar.</p></details>
+          <details><summary>Quais apps ele lê?</summary><p>Uber, 99, inDrive, iFood, Rappi, Lalamove, Loggi, Cabify e outros apps de corrida e entrega. Você escolhe quais usa nos ajustes do app.</p></details>
+          <details><summary>Por que o app precisa da Acessibilidade?</summary><p>É assim que ele lê as ofertas na tela dos apps de corrida e entrega e mostra se valem a pena. A leitura acontece no celular, e o app não lê senhas nem mensagens. Detalhes na <a href="privacidade.html">Política de privacidade</a>.</p></details>
+          <details><summary>O app aceita ou recusa corridas por mim?</summary><p>Não. Ele só mostra a análise no card. A decisão de aceitar ou recusar é sempre sua, no app da plataforma.</p></details>
+          <details><summary>Como baixo e atualizo?</summary><p>O app é distribuído direto pelo site oficial, como arquivo APK. Baixe sempre pela página <a href="download.html">Baixar</a>, que tem o passo a passo. Depois de instalado, o próprio app avisa quando houver versão nova.</p></details>
+          <details><summary>Funciona no meu celular?</summary><p>Funciona em celulares Android 8.0 ou mais novos. No Android 13 ou mais novo, é preciso liberar as configurações restritas, como explicado na página de download.</p></details>
+          <details><summary>O que ganho apoiando?</summary><p>Com um apoio mensal, trimestral ou anual pelo Mercado Pago (Mercado Livre), sua conta vira Pro: menos anúncios (remove parte deles, não todos) e recursos Pro liberados enquanto o apoio estiver ativo. É uma doação voluntária, sem reembolso. Veja em <a href="apoiar.html">Apoiar</a>.</p></details>
+          <details><summary>Preciso de ajuda. Onde falo com vocês?</summary><p>Abra um chamado pelo app, em Ajustes, ou veja as respostas rápidas na página <a href="suporte.html">Suporte</a>.</p></details>
+        </div>
       </div>
     </section>
 
     <section class="final-cta">
-      <div class="container"><div class="cta-panel"><span class="eyebrow">O seu trabalho vale muito</span><h2 class="heading">Cada quilômetro conta.<br>Cada real também.</h2><p>Organize seus custos, acompanhe seus resultados e faça escolhas mais conscientes na sua rotina de trabalho.</p><a href="download.html" class="cta-action">BAIXAR O MENOS PISTA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><span class="cta-caption">Feito para quem faz da rua o seu local de trabalho.</span></div></div>
+      <div class="container"><div class="cta-panel reveal"><div class="bg-grid"></div><span class="eyebrow">O seu trabalho vale muito</span><h2 class="heading">Cada quilômetro conta.<br><span class="gradient-text">Cada real também.</span></h2><p>Pare de aceitar corrida no escuro. Baixe o Menos Pista e veja, em cada oferta, quanto realmente sobra no seu bolso.</p><a href="download.html" class="cta-action">BAIXAR GRÁTIS <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></a>
+        <div class="cta-meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 4 4L19 6"/></svg>Grátis</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 4 4L19 6"/></svg>Android 8.0+</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 4 4L19 6"/></svg>Atualiza pelo próprio app</span></div>
+        <span class="cta-caption">Feito para quem faz da rua o seu local de trabalho.</span></div></div>
     </section>
   </main>
 
   <footer>
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand"><a href="#inicio" aria-label="Menos Pista — início"><img src="assets/branding/01_Logos_PNG/logo_horizontal_transparente_2400.png" alt="Menos Pista" width="2400" height="800" loading="lazy"></a><p>Mais lucro. Menos quilômetros à toa. Tecnologia pensada para ajudar quem faz da rua o seu local de trabalho.</p></div>
-        <div class="footer-col"><h3>Navegação</h3><ul class="footer-links"><li><a href="#inicio">Início</a></li><li><a href="#recursos">Recursos</a></li><li><a href="#como-funciona">Como funciona</a></li><li><a href="#modelo">Modelo &amp; doação</a></li><li><a href="apoiar.html">Apoiar</a></li><li><a href="download.html">Baixar o app</a></li></ul></div>
-        <div class="footer-col"><h3>Informações legais</h3><ul class="footer-links"><li><a href="privacidade.html">Política de privacidade</a></li><li><a href="termos.html">Termos de uso</a></li><li><a href="suporte.html">Suporte</a></li><li><a href="excluir-conta.html">Excluir conta</a></li><li><a href="app-ads.txt">Arquivo app-ads.txt</a></li></ul></div>
+        <div class="footer-brand"><a href="index.html" aria-label="Menos Pista — início"><img src="assets/img/logo-h.webp" alt="Menos Pista" width="520" height="188" loading="lazy"></a><p>Mais lucro. Menos quilômetros à toa. O copiloto que mostra, na hora, se a corrida vale a pena.</p></div>
+        <div class="footer-col"><h3>Produto</h3><ul class="footer-links"><li><a href="index.html#recursos">Recursos</a></li><li><a href="index.html#como-funciona">Como funciona</a></li><li><a href="index.html#faq">Dúvidas</a></li><li><a href="download.html">Baixar o app</a></li><li><a href="apoiar.html">Apoiar</a></li></ul></div>
+        <div class="footer-col"><h3>Ajuda e legal</h3><ul class="footer-links"><li><a href="suporte.html">Suporte</a></li><li><a href="privacidade.html">Política de privacidade</a></li><li><a href="termos.html">Termos de uso</a></li><li><a href="excluir-conta.html">Excluir conta</a></li><li><a href="app-ads.txt">Arquivo app-ads.txt</a></li></ul></div>
       </div>
-      <div class="footer-bottom"><p>© 2026 Grupo Jadson · <a href="https://www.instagram.com/grupojadson/" target="_blank" rel="noopener noreferrer">@grupojadson</a></p><a href="#inicio">Voltar ao topo ↑</a></div>
+      <div class="footer-bottom"><p>© 2026 Grupo Jadson · <a href="https://www.instagram.com/grupojadson/" target="_blank" rel="noopener noreferrer">@grupojadson</a></p><a href="#conteudo">Voltar ao topo ↑</a></div>
     </div>
   </footer>
-
-  <script>
-    (() => {
-      "use strict";
-      const toggle = document.getElementById("menuToggle");
-      const nav = document.getElementById("navLinks");
-
-      function closeMenu() {
-        nav.classList.remove("open");
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Abrir menu");
-      }
-      toggle.addEventListener("click", () => {
-        const open = nav.classList.toggle("open");
-        toggle.setAttribute("aria-expanded", String(open));
-        toggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
-      });
-      nav.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
-
-      document.addEventListener("keydown", event => { if (event.key === "Escape") closeMenu(); });
-
-      // Movimento sutil do CTA com ponteiro, sem interferir em telas touch.
-      const cta = document.querySelector(".cta-action");
-      if (cta && window.matchMedia("(hover: hover) and (pointer: fine)").matches &&
-          !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        cta.addEventListener("pointermove", event => {
-          const r = cta.getBoundingClientRect();
-          const x = (event.clientX - r.left) / r.width - .5;
-          const y = (event.clientY - r.top) / r.height - .5;
-          cta.style.transform = `translateY(-4px) perspective(600px) rotateX(${(-y * 4).toFixed(2)}deg) rotateY(${(x * 5).toFixed(2)}deg)`;
-        });
-        cta.addEventListener("pointerleave", () => { cta.style.transform = ""; });
-      }
-    })();
-  </script>
+  <script src="site.js" defer></script>
 </body>
 </html>
