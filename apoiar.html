@@ -9,7 +9,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/branding/02_Vetores_SVG/simbolo_transparente.svg">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20261021b">
 </head>
 <body>
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -36,7 +36,7 @@
       <div class="card" id="statusBox" hidden></div>
 
       <ol class="ck-steps" id="ckSteps" aria-label="Etapas do apoio">
-        <li data-step="1"><span>1</span>Entrar</li><li data-step="2"><span>2</span>Escolher plano</li><li data-step="3"><span>3</span>Pagar</li><li data-step="4"><span>4</span>Confirmado</li>
+        <li data-step="1"><span class="ck-dot">1</span><span class="ck-lbl">Entrar</span></li><li data-step="2"><span class="ck-dot">2</span><span class="ck-lbl">Plano</span></li><li data-step="3"><span class="ck-dot">3</span><span class="ck-lbl">Pagar</span></li><li data-step="4"><span class="ck-dot">4</span><span class="ck-lbl">Confirmado</span></li>
       </ol>
 
       <section class="card ck-account" id="account" aria-live="polite">
@@ -47,8 +47,11 @@
           <div class="actions"><button class="ck-google" id="loginBtn" type="button"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Entrar com Google</button></div>
         </div>
         <div id="accIn" hidden>
-          <div class="ck-user"><img id="accPhoto" alt="" width="56" height="56" referrerpolicy="no-referrer"><div><b id="accName"></b><span class="small" id="accEmail"></span><span class="ck-plan" id="accPlan"></span></div></div>
-          <div class="actions"><button class="btn btn-secondary" id="switchBtn" type="button">Trocar conta</button><button class="btn btn-secondary" id="logoutBtn" type="button">Sair</button></div>
+          <div class="ck-user">
+            <span class="ck-av"><img id="accPhoto" alt="" width="48" height="48" referrerpolicy="no-referrer"><span id="accInitial" aria-hidden="true"></span></span>
+            <div class="ck-who"><div class="ck-name"><b id="accName"></b><span class="ck-plan" id="accPlan"></span></div><span class="ck-mail" id="accEmail"></span></div>
+            <div class="ck-acts"><button class="btn btn-secondary ck-sm" id="switchBtn" type="button">Trocar conta</button><button class="btn btn-secondary ck-sm" id="logoutBtn" type="button">Sair</button></div>
+          </div>
         </div>
       </section>
 
@@ -58,12 +61,13 @@
       <p style="margin-top:18px"><label for="coupon"><b>Cupom</b> (opcional)</label><br>
         <input id="coupon" type="text" maxlength="40" autocomplete="off" placeholder="Digite o cupom" style="margin-top:8px;width:100%;max-width:320px;padding:12px 14px;border:1px solid var(--border);border-radius:11px;background:var(--panel2);color:#fff;font:inherit"></p>
       <div class="actions ck-cta"><button class="btn btn-primary btn-lg" id="payBtn" type="button" disabled>Escolha um plano</button></div>
-      <p id="msg" role="status" aria-live="polite" style="margin-top:14px"></p>
+      <div class="ck-note" id="msg" role="status" aria-live="polite" hidden></div>
 
       <section class="card ck-box" id="checkout" hidden aria-labelledby="ckTitle">
         <div class="ck-head"><h3 id="ckTitle">3. Pagar</h3><button class="btn btn-secondary ck-x" id="ckClose" type="button">Trocar plano</button></div>
         <p class="ck-sum" id="ckSum"></p>
-        <div id="ckBrick"><div id="paymentBrick_container"></div><p class="small" id="ckBrickMsg">Carregando o pagamento seguro do Mercado Pago…</p></div>
+        <div class="ck-note" id="ckMsg" role="alert" hidden></div>
+        <div id="ckBrick"><div id="paymentBrick_container"></div><div class="ck-note info" id="ckBrickMsg">Carregando o pagamento seguro do Mercado Pago…</div></div>
         <div class="ck-pix" id="ckPix" hidden>
           <h4>Pague com Pix</h4>
           <p class="small">Abra o app do seu banco, escolha Pix &gt; Ler QR code ou Pix copia e cola. A confirmação aparece aqui sozinha.</p>
@@ -77,7 +81,7 @@
           <p id="okText">Pro ativo. Obrigado por apoiar o Menos Pista.</p>
           <p class="small">Abra o app com a mesma conta: ele já mostra “Apoio ativo até…”.</p>
         </div>
-        <p class="small ck-alt" id="ckAlt">Prefere pagar no site do Mercado Pago? <button class="ck-link" id="altBtn" type="button">Pagar no Mercado Pago</button></p>
+        <div class="ck-alt" id="ckAlt"><p class="small" id="ckAltTxt">Prefere pagar no site do Mercado Pago?</p><button class="btn btn-secondary" id="altBtn" type="button">Pagar no Mercado Pago</button></div>
         <p class="small fineprint">Doação voluntária, sem reembolso. O pagamento é processado pelo Mercado Pago; o Menos Pista não recebe os dados do seu cartão.</p>
       </section>
 
@@ -136,7 +140,7 @@
         body: data ? JSON.stringify(data) : undefined, credentials: 'omit', referrerPolicy: 'no-referrer'
       });
       const j = await r.json().catch(() => ({}));
-      if (!r.ok) throw Object.assign(new Error(j.message || 'erro'), { code: j.error || 'internal' });
+      if (!r.ok) { console.warn('[apoiar]', path, r.status, j.error); throw Object.assign(new Error(j.message || 'erro'), { code: j.error || 'internal', serverMsg: j.message || '' }); }
       return j;
     }
     const createSupport = (data) => api('/create-support', data);
@@ -151,7 +155,14 @@
     // Reserva só para exibir, se config/prices não carregar. Quem cobra é o servidor, sempre com config/prices.
     const FALLBACK = { monthly: 1299, monthlyFrom: 1999, yearly: 9999, yearlyFrom: 23988, plans: ['mensal', 'anual'], recurring: true };
     let user = null, busy = false;
-    const say = (t, err) => { $('msg').textContent = t; $('msg').style.color = err ? '#FF9B5B' : ''; };
+    // Mensagens sempre visíveis: dentro do checkout quando ele está aberto, senão logo abaixo do botão.
+    const say = (t, err) => {
+      const inBox = !$('checkout').hidden, el = $(inBox ? 'ckMsg' : 'msg'), other = $(inBox ? 'msg' : 'ckMsg');
+      other.hidden = true; el.textContent = t || ''; el.hidden = !t; el.className = 'ck-note ' + (err ? 'err' : 'info');
+      if (t && err) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    };
+    const errText = (e, fallback) => e instanceof TypeError ? 'Sem conexão com o servidor de pagamento. Confira sua internet e tente de novo.'
+      : ERR[e.code] || (e.serverMsg ? e.serverMsg : fallback);
 
     // Retorno do Mercado Pago (?status=ok|pending|fail): só informativo, quem libera é o servidor.
     const st = new URLSearchParams(location.search).get('status');
@@ -207,7 +218,9 @@
       'failed-precondition': 'Os valores ainda não foram configurados. Tente novamente mais tarde.',
       'resource-exhausted': 'Muitas tentativas seguidas. Aguarde um minuto e tente de novo.',
       'unavailable': 'O pagamento está indisponível no momento. Tente mais tarde.',
-      'payment-rejected': 'O Mercado Pago recusou o pagamento. Confira os dados ou tente outra forma de pagamento.'
+      'payment-rejected': 'O Mercado Pago recusou o pagamento. Confira os dados ou tente outra forma de pagamento.',
+      'mp-auth': 'O pagamento está temporariamente indisponível (credencial do Mercado Pago em ajuste). Tente mais tarde ou fale com o suporte.',
+      'internal': 'O servidor de pagamento teve um problema. Tente de novo em instantes ou fale com o suporte.'
     };
     // ---- Checkout transparente (Payment Brick): Pix ou cartão sem sair da página ----
     let selected = null, brick = null, pollT = null, baseline = 0, profile = {}, mpKey;
@@ -219,9 +232,9 @@
     });
     const publicKey = () => mpKey ??= fetch(WORKER_URL + '/public-config', { credentials: 'omit' }).then(r => r.json()).then(j => j.mpPublicKey || null).catch(() => null);
     function stopPay() { if (pollT) { clearInterval(pollT); pollT = null; } if (brick) { try { brick.unmount(); } catch {} brick = null; } }
-    function closeCheckout() { stopPay(); selected = null; $('checkout').hidden = true; refreshStep(); }
+    function closeCheckout() { stopPay(); selected = null; $('checkout').hidden = true; $('ckMsg').hidden = true; refreshStep(); }
     $('ckClose').onclick = closeCheckout;
-    $('payBtn').onclick = () => chosen && go(chosen);
+    $('payBtn').onclick = () => chosen ? go(chosen) : say('Escolha um plano acima para continuar.', true);
     $('coupon').addEventListener('input', () => { if (!$('checkout').hidden && $('ckOk').hidden) closeCheckout(); });
 
     async function go(planId) {
@@ -231,22 +244,23 @@
       try {
         const q = await api('/quote', params()); // valor SEMPRE do servidor (com o cupom)
         baseline = profile.proUntil && profile.proUntil.toMillis ? profile.proUntil.toMillis() : 0;
-        $('checkout').hidden = false; $('ckPix').hidden = true; $('ckOk').hidden = true; $('ckBrick').hidden = false; $('ckAlt').hidden = false;
+        $('checkout').hidden = false; $('ckMsg').hidden = true; $('msg').hidden = true; $('ckPix').hidden = true; $('ckOk').hidden = true; $('ckBrick').hidden = false; $('ckAlt').hidden = false;
         $('ckSum').innerHTML = 'Plano <b></b> · <b></b> · vale <b></b> dias · pagador <b></b>';
         const b = $('ckSum').querySelectorAll('b'); b[0].textContent = q.label; b[1].textContent = brl(q.amount); b[2].textContent = q.days; b[3].textContent = q.payerEmail || user.email;
         setStep(3); $('checkout').scrollIntoView({ behavior: 'smooth', block: 'start' });
         await mountBrick(q);
       } catch (e) {
         selected = null; refreshStep();
-        say(ERR[e.code] || 'Não foi possível abrir o pagamento agora. Tente de novo em instantes ou fale com o suporte.', true);
+        say(errText(e, 'Não foi possível abrir o pagamento agora. Tente de novo em instantes ou fale com o suporte.'), true);
       } finally { busy = false; }
     }
 
     async function mountBrick(q) {
-      $('ckBrickMsg').textContent = 'Carregando o pagamento seguro do Mercado Pago…'; $('ckBrickMsg').hidden = false;
+      $('ckBrickMsg').textContent = 'Carregando o pagamento seguro do Mercado Pago…'; $('ckBrickMsg').hidden = false; $('ckBrickMsg').className = 'ck-note info';
+      altMain(false);
       const key = await publicKey();
-      if (!key) { $('ckBrickMsg').textContent = 'O pagamento aqui na página está indisponível agora. Use “Pagar no Mercado Pago” abaixo.'; return; }
-      try { await loadSdk(); } catch { $('ckBrickMsg').textContent = 'Não foi possível carregar o Mercado Pago. Use “Pagar no Mercado Pago” abaixo.'; return; }
+      if (!key) return altMain(true, 'O pagamento direto nesta página ainda não está disponível. Pague pelo site seguro do Mercado Pago, com Pix ou cartão: você volta para cá ao concluir.');
+      try { await loadSdk(); } catch { return altMain(true, 'Não foi possível carregar o formulário do Mercado Pago (bloqueador de anúncios ou conexão). Pague pelo site do Mercado Pago:'); }
       const mp = new window.MercadoPago(key, { locale: 'pt-BR' });
       brick = await mp.bricks().create('payment', 'paymentBrick_container', {
         initialization: { amount: q.amount / 100, payer: { email: q.payerEmail || user.email } },
@@ -256,10 +270,19 @@
         },
         callbacks: {
           onReady: () => { $('ckBrickMsg').hidden = true; },
-          onError: () => { $('ckBrickMsg').hidden = false; $('ckBrickMsg').textContent = 'Algo falhou no formulário. Tente de novo ou use “Pagar no Mercado Pago”.'; },
+          onError: (err) => { console.warn('[apoiar] brick', err); altMain(true, 'O formulário do Mercado Pago falhou. Tente de novo ou pague pelo site do Mercado Pago:'); },
           onSubmit: ({ formData }) => pay(formData)
         }
       });
+    }
+
+    // Sem o formulário na página, "Pagar no Mercado Pago" vira o botão principal (laranja, grande).
+    function altMain(on, text) {
+      $('altBtn').className = on ? 'btn btn-primary btn-lg ck-alt-main' : 'btn btn-secondary';
+      $('ckAlt').classList.toggle('main', !!on);
+      $('ckAltTxt').textContent = on ? '' : 'Prefere pagar no site do Mercado Pago?'; $('ckAltTxt').hidden = !!on;
+      if (on) { $('ckBrickMsg').hidden = false; $('ckBrickMsg').className = 'ck-note warn'; $('ckBrickMsg').textContent = text; }
+      $('altBtn').textContent = on && selected ? 'Pagar no Mercado Pago · ' + ($('ckSum').querySelectorAll('b')[1]?.textContent || '') : 'Pagar no Mercado Pago';
     }
 
     async function pay(formData) {
@@ -271,7 +294,7 @@
         if (r.status === 'rejected') throw Object.assign(new Error(), { code: 'payment-rejected' });
         say('Pagamento em análise pelo Mercado Pago. Assim que aprovar, o apoio é liberado aqui e no app.'); poll(r.id);
       } catch (e) {
-        say(ERR[e.code] || 'Não foi possível concluir o pagamento. Confira os dados e tente de novo.', true);
+        say(errText(e, 'Não foi possível concluir o pagamento. Confira os dados e tente de novo.'), true);
         throw e; // o Brick volta a liberar o botão
       }
     }
@@ -304,12 +327,16 @@
 
     // Alternativa: checkout por redirecionamento (assinatura recorrente, quando ligada, ou pagamento no site do MP).
     $('altBtn').onclick = async () => {
-      if (!user || !selected || busy) return;
-      busy = true; say('Abrindo o Mercado Pago…');
+      if (!user) return say('Entre com sua conta Google antes de apoiar.', true);
+      if (!selected) return say('Escolha um plano para continuar.', true);
+      if (busy) return;
+      busy = true; const b = $('altBtn'), label = b.textContent; b.disabled = true; b.textContent = 'Abrindo o Mercado Pago…'; say('');
       try {
         const r = await createSupport(params());
-        if (r.initPoint && /^https:\/\/([a-z0-9-]+\.)*mercadopago\.com(\.br)?\//.test(r.initPoint)) location.href = r.initPoint; else throw new Error('sem initPoint');
-      } catch (e) { say(ERR[e.code] || 'Não foi possível abrir o Mercado Pago agora.', true); } finally { busy = false; }
+        if (r.initPoint && /^https:\/\/([a-z0-9-]+\.)*mercadopago\.com(\.br)?\//.test(r.initPoint)) { say('Levando você ao Mercado Pago…'); location.href = r.initPoint; return; }
+        throw Object.assign(new Error(), { code: 'internal' });
+      } catch (e) { say(errText(e, 'Não foi possível abrir o Mercado Pago agora. Tente de novo em instantes ou fale com o suporte.'), true); }
+      finally { busy = false; b.disabled = false; b.textContent = label; }
     };
 
     // Login Google (popup, com redirect de reserva). Sessão persistente: quem já entrou é reconhecido ao abrir.
@@ -330,10 +357,10 @@
     function planText(d) {
       const until = d.proUntil && d.proUntil.toDate ? d.proUntil.toDate() : null;
       const active = d.plan === 'pro' && until && until > new Date();
-      if (active) return { t: 'Pro ativo até ' + fmtDate(d.proUntil) + (d.supportPlan ? ' · plano ' + d.supportPlan : ''), k: 'ok' };
-      if (d.supportStatus === 'chargeback') return { t: 'Free · apoio encerrado por contestação', k: '' };
-      if (d.supportStatus === 'cancelled') return { t: 'Free · apoio cancelado', k: '' };
-      return { t: 'Free', k: '' };
+      if (active) return { t: 'Pro', k: 'ok', d: 'Apoio ativo até ' + fmtDate(d.proUntil) + (d.supportPlan ? ' · plano ' + d.supportPlan : '') };
+      if (d.supportStatus === 'chargeback') return { t: 'Free', k: '', d: 'Apoio encerrado por contestação' };
+      if (d.supportStatus === 'cancelled') return { t: 'Free', k: '', d: 'Apoio cancelado' };
+      return { t: 'Free', k: '', d: '' };
     }
 
     let unsub = null;
@@ -343,16 +370,18 @@
       if (!u) { profile = {}; closeCheckout(); return; }
       $('accName').textContent = u.displayName || 'Sua conta';
       $('accEmail').textContent = u.email || '';
-      if (u.photoURL && /^https:\/\//.test(u.photoURL)) { $('accPhoto').src = u.photoURL; $('accPhoto').hidden = false; } else $('accPhoto').hidden = true;
-      $('accPlan').textContent = 'Carregando plano…'; $('accPlan').className = 'ck-plan';
+      $('accInitial').textContent = (u.displayName || u.email || '?').trim().charAt(0).toUpperCase();
+      if (u.photoURL && /^https:\/\//.test(u.photoURL)) { $('accPhoto').src = u.photoURL; $('accPhoto').hidden = false; $('accPhoto').onerror = () => { $('accPhoto').hidden = true; }; } else $('accPhoto').hidden = true;
+      $('accPlan').textContent = '…'; $('accPlan').className = 'ck-plan';
       refreshStep();
       // Plano em users/{uid}, ao vivo (o dono lê; só o servidor grava). Confirma o apoio assim que o servidor liberar.
       unsub = onSnapshot(doc(db, 'users', u.uid), s => {
         profile = s.exists() ? s.data() : {};
-        const p = planText(profile); $('accPlan').textContent = p.t; $('accPlan').className = 'ck-plan ' + p.k;
+        const p = planText(profile); $('accPlan').textContent = p.t; $('accPlan').className = 'ck-plan ' + p.k; $('accPlan').title = p.d;
+        $('accEmail').textContent = (u.email || '') + (p.d ? ' · ' + p.d : '');
         const until = profile.proUntil && profile.proUntil.toMillis ? profile.proUntil.toMillis() : 0;
         if (selected && profile.plan === 'pro' && profile.supportStatus === 'active' && until > baseline) confirmed();
-      }, () => { $('accPlan').textContent = 'Não foi possível ler o plano agora.'; });
+      }, () => { $('accPlan').textContent = 'Free'; $('accPlan').title = 'Não foi possível ler o plano agora.'; });
     });
   </script>
 </body>
