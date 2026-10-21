@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0F1115">
+  <meta name="description" content="Apoie o Menos Pista com uma doação mensal, trimestral ou anual pelo Mercado Pago.">
+  <title>Apoiar · Menos Pista</title>
+  <link rel="icon" type="image/svg+xml" href="assets/branding/02_Vetores_SVG/simbolo_transparente.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav subhead">
+      <a class="brand" href="index.html" aria-label="Menos Pista — início"><img src="assets/branding/01_Logos_PNG/logo_horizontal_transparente_2400.png" alt="Menos Pista" width="2400" height="800"></a>
+      <nav class="subnav" aria-label="Navegação principal">
+        <a href="index.html">Início</a><a href="download.html">Baixar</a><a href="apoiar.html" aria-current="page">Apoiar</a><a href="privacidade.html">Privacidade</a><a href="termos.html">Termos</a><a href="suporte.html">Suporte</a><a href="excluir-conta.html">Excluir conta</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container doc">
+      <span class="eyebrow">Apoio</span>
+      <h1>Apoie o Menos Pista</h1>
+      <p class="lead">O apoio é uma <b>doação voluntária</b> que mantém o projeto vivo. Como agradecimento, enquanto o apoio estiver ativo sua conta tem <b>menos anúncios</b> (remove parte dos anúncios, não todos) e os <b>recursos Pro liberados</b>.</p>
+
+      <div class="card" id="statusBox" hidden></div>
+
+      <div class="card">
+        <h3>1. Entre com a mesma conta Google do app</h3>
+        <p id="who">Você ainda não entrou.</p>
+        <div class="actions"><button class="btn btn-primary" id="loginBtn" type="button">Entrar com Google</button><button class="btn btn-secondary" id="logoutBtn" type="button" hidden>Sair</button></div>
+      </div>
+
+      <div class="card" id="supportCard" hidden>
+        <h3>Seu apoio</h3>
+        <p id="supportInfo">Carregando…</p>
+      </div>
+
+      <h2>2. Escolha o plano</h2>
+      <p id="pricesMsg" class="small">Carregando valores…</p>
+      <div id="plans"></div>
+      <p style="margin-top:18px"><label for="coupon"><b>Cupom</b> (opcional)</label><br>
+        <input id="coupon" type="text" maxlength="40" autocomplete="off" placeholder="Digite o cupom" style="margin-top:8px;width:100%;max-width:320px;padding:12px 14px;border:1px solid var(--border);border-radius:11px;background:var(--panel2);color:#fff;font:inherit"></p>
+      <p id="msg" role="status" aria-live="polite" style="margin-top:14px"></p>
+
+      <h2>Como funciona</h2>
+      <ol>
+        <li>Você entra com Google, escolhe o plano e é levado ao <b>Mercado Pago</b> (Mercado Livre) para pagar.</li>
+        <li>Planos recorrentes viram uma <b>assinatura</b> no Mercado Pago; quando o pagamento é avulso, você paga com <b>Pix ou cartão</b>.</li>
+        <li>Quando o Mercado Pago confirma, nosso servidor libera o apoio na sua conta, e o app mostra “Apoio ativo até…”. Pode levar alguns minutos.</li>
+      </ol>
+
+      <h2>Condições</h2>
+      <ul>
+        <li>O apoio é uma doação voluntária e <b>não tem reembolso</b> pelo app ou pelo site. Disputas de pagamento seguem as regras do Mercado Pago.</li>
+        <li>A assinatura recorrente pode ser <b>cancelada quando você quiser</b> na sua conta do Mercado Pago. Os benefícios continuam até o fim do período já pago.</li>
+        <li>Se o pagamento for estornado, contestado (chargeback), cancelado ou reembolsado pelo Mercado Pago, os benefícios são removidos automaticamente.</li>
+        <li>O pagamento é feito só no site. O Menos Pista não recebe dados do seu cartão. Veja os <a href="termos.html">Termos de uso</a> e a <a href="privacidade.html">Política de privacidade</a>.</li>
+        <li>Dúvidas: <a href="suporte.html">Suporte</a> ou <a href="mailto:grupojadson@gmail.com">grupojadson@gmail.com</a>.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="subnav" aria-label="Links do rodapé">
+        <a href="index.html">Início</a><a href="download.html">Baixar</a><a href="apoiar.html">Apoiar</a><a href="privacidade.html">Política de privacidade</a><a href="termos.html">Termos de uso</a><a href="suporte.html">Suporte</a><a href="excluir-conta.html">Excluir conta</a>
+      </nav>
+      <p class="small">© 2026 Grupo Jadson · <a href="https://www.instagram.com/grupojadson/" target="_blank" rel="noopener noreferrer">@grupojadson</a></p>
+    </div>
+  </footer>
+
+  <script type="module">
+    // Config web do Firebase: é pública por design (a segurança está nas regras e no servidor).
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js';
+    import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js';
+    import { getFirestore, doc, getDoc, onSnapshot } from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js';
+    import { getFunctions, httpsCallable } from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-functions.js';
+
+    const app = initializeApp({
+      apiKey: 'AIzaSyA1R525o7a3ThSC4BEv-k2J0iaMal_JBN4',
+      authDomain: 'menos-pista.firebaseapp.com',
+      projectId: 'menos-pista',
+      storageBucket: 'menos-pista.firebasestorage.app',
+      messagingSenderId: '213910230748'
+    });
+    const auth = getAuth(app), db = getFirestore(app);
+    const createSupport = httpsCallable(getFunctions(app, 'southamerica-east1'), 'createSupport');
+    const $ = id => document.getElementById(id);
+    const brl = c => (c / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    const fmtDate = t => t && t.toDate ? t.toDate().toLocaleDateString('pt-BR') : '';
+    const PLANS = [
+      { id: 'mensal', key: 'monthly', name: 'Mensal', per: 'a cada mês' },
+      { id: 'trimestral', key: 'quarterly', name: 'Trimestral', per: 'a cada 3 meses' },
+      { id: 'anual', key: 'yearly', name: 'Anual', per: 'a cada 12 meses' }
+    ];
+    let user = null, busy = false;
+    const say = (t, err) => { $('msg').textContent = t; $('msg').style.color = err ? '#FF9B5B' : ''; };
+
+    // Retorno do Mercado Pago (?status=ok|pending|fail): só informativo, quem libera é o servidor.
+    const st = new URLSearchParams(location.search).get('status');
+    const ST = {
+      ok: 'Pagamento enviado. Assim que o Mercado Pago confirmar, o apoio é liberado na sua conta e o app mostra “Apoio ativo até…”. Pode levar alguns minutos.',
+      pending: 'Pagamento pendente. Quando o Mercado Pago aprovar, o apoio é liberado automaticamente. O Pix pode levar alguns minutos.',
+      fail: 'O pagamento não foi concluído. Você pode tentar de novo abaixo.'
+    };
+    if (ST[st]) { $('statusBox').hidden = false; $('statusBox').innerHTML = '<h3>Retorno do pagamento</h3><p></p>'; $('statusBox').querySelector('p').textContent = ST[st]; }
+
+    // Valores: config/prices (leitura pública), em centavos.
+    getDoc(doc(db, 'config', 'prices')).then(s => {
+      const p = s.exists() ? s.data() : {};
+      const avail = PLANS.filter(x => Number(p[x.key]) > 0);
+      if (!avail.length) { $('pricesMsg').textContent = 'Valores em breve.'; return; }
+      $('pricesMsg').textContent = p.recurring === false ? 'Pagamento avulso com Pix ou cartão.' : 'Assinatura recorrente no Mercado Pago; cancele quando quiser.';
+      avail.forEach(x => {
+        const c = document.createElement('div'); c.className = 'card';
+        c.innerHTML = '<h3></h3><p></p><div class="actions"><button class="btn btn-primary" type="button">Apoiar</button></div>';
+        c.querySelector('h3').textContent = x.name;
+        c.querySelector('p').innerHTML = '<b></b> ' + x.per;
+        c.querySelector('b').textContent = brl(Number(p[x.key]));
+        c.querySelector('button').onclick = () => go(x.id);
+        $('plans').appendChild(c);
+      });
+    }).catch(() => { $('pricesMsg').textContent = 'Valores em breve.'; });
+
+    const ERR = {
+      'functions/unauthenticated': 'Entre com sua conta Google antes de apoiar.',
+      'functions/invalid-argument': 'Plano ou cupom inválido. Confira o cupom (ou deixe em branco) e tente de novo.',
+      'functions/failed-precondition': 'Os valores ainda não foram configurados. Tente novamente mais tarde.'
+    };
+    async function go(planId) {
+      if (busy) return;
+      if (!user) { say('Entre com sua conta Google antes de apoiar.', true); return; }
+      busy = true; say('Abrindo o Mercado Pago…');
+      const coupon = $('coupon').value.trim();
+      try {
+        const r = await createSupport(coupon ? { planId, coupon } : { planId });
+        if (r.data && r.data.initPoint) location.href = r.data.initPoint; else throw new Error('sem initPoint');
+      } catch (e) {
+        say(ERR[e.code] || 'Não foi possível abrir o pagamento agora. Tente de novo em instantes ou fale com o suporte.', true);
+      } finally { busy = false; }
+    }
+
+    // Login Google (popup, com redirect de reserva).
+    const provider = new GoogleAuthProvider();
+    getRedirectResult(auth).catch(() => {});
+    $('loginBtn').onclick = async () => {
+      try { await signInWithPopup(auth, provider); }
+      catch (e) {
+        if (['auth/popup-blocked', 'auth/operation-not-supported-in-this-environment', 'auth/cancelled-popup-request'].includes(e.code)) return signInWithRedirect(auth, provider);
+        if (e.code !== 'auth/popup-closed-by-user') say(e.code === 'auth/unauthorized-domain' ? 'Login indisponível neste endereço no momento. Tente mais tarde.' : 'Não foi possível entrar. Tente de novo.', true);
+      }
+    };
+    $('logoutBtn').onclick = () => signOut(auth);
+
+    let unsub = null;
+    onAuthStateChanged(auth, u => {
+      user = u; if (unsub) { unsub(); unsub = null; }
+      $('loginBtn').hidden = !!u; $('logoutBtn').hidden = !u; $('supportCard').hidden = !u;
+      $('who').textContent = u ? 'Conectado como ' + (u.email || u.displayName || 'sua conta') + '.' : 'Você ainda não entrou.';
+      if (!u) return;
+      // Status do apoio em users/{uid} (o dono pode ler; só o servidor grava).
+      unsub = onSnapshot(doc(db, 'users', u.uid), s => {
+        const d = s.exists() ? s.data() : {};
+        const until = d.proUntil && d.proUntil.toDate ? d.proUntil.toDate() : null;
+        const active = d.plan === 'pro' && d.supportStatus === 'active' && until && until > new Date();
+        $('supportInfo').textContent = active
+          ? 'Apoio ativo até ' + fmtDate(d.proUntil) + (d.supportPlan ? ' (plano ' + d.supportPlan + ')' : '') + '. Obrigado!'
+          : d.supportStatus === 'chargeback' ? 'Apoio encerrado por contestação do pagamento.'
+          : d.supportStatus === 'cancelled' ? 'Apoio cancelado. Você pode apoiar de novo quando quiser.'
+          : 'Nenhum apoio ativo nesta conta.';
+      }, () => { $('supportInfo').textContent = 'Não foi possível ler o status agora. O app mostra o status do apoio em tempo real.'; });
+    });
+  </script>
+</body>
+</html>
