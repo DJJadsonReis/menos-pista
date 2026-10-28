@@ -469,3 +469,7 @@ footer,.site-footer{border-top:1px solid var(--border);padding:48px 0 30px;backg
 /* Seletor de idioma PT · EN · ES (rodapé) */
 .lang-switch{display:inline-flex;gap:6px;align-items:center;font-size:.85rem}
 .lang-switch a{color:var(--muted)}.lang-switch a[aria-current]{color:#fff;font-weight:700}
+.lang-top{margin-left:auto;gap:4px;color:var(--muted);font-weight:600;white-space:nowrap}
+.lang-top a{padding:6px 4px;border-radius:8px}.lang-top a:hover{color:#fff}
+@media(min-width:960px){.nav .brand{order:1}.nav .navlinks{order:2;margin-left:auto}.lang-top{order:3;margin-left:0;padding-left:12px;border-left:1px solid var(--border)}.nav .brand{flex-shrink:0}.navlinks a{white-space:nowrap}}
+@media(min-width:960px) and (max-width:1140px){.nav{gap:10px}.navlinks a{padding:8px 5px;font-size:.83rem}.navlinks .nav-cta{margin-left:6px;padding:10px 12px}.lang-top{padding-left:8px;font-size:.8rem}}
