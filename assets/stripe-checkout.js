@@ -6,12 +6,12 @@
 // O servidor (Worker menospista-pay, POST /stripe/checkout) confere o login e escolhe o preço; o Pro é liberado pelo webhook.
 export const WORKER_URL = 'https://menospista-pay.jadsonr.workers.dev';
 
-export async function createStripeCheckout(user, { currency, period, lang } = {}) {
+export async function createStripeCheckout(user, { currency, period, lang, test } = {}) {
   if (!user) throw Object.assign(new Error('login required'), { code: 'unauthenticated' });
   if (currency !== 'usd' && currency !== 'eur') throw Object.assign(new Error('invalid currency'), { code: 'invalid-argument' });
   if (period !== 'monthly' && period !== 'annual') throw Object.assign(new Error('invalid period'), { code: 'invalid-argument' });
   const idToken = await user.getIdToken();
-  const r = await fetch(WORKER_URL + '/stripe/checkout', {
+  const r = await fetch(WORKER_URL + (test === true ? '/stripe-test/checkout' : '/stripe/checkout'), {
     method: 'POST', headers: { 'Authorization': 'Bearer ' + idToken, 'Content-Type': 'application/json' },
     body: JSON.stringify({ currency, period, ...(lang === 'en' || lang === 'es' ? { lang } : {}) }),
     credentials: 'omit', referrerPolicy: 'no-referrer'

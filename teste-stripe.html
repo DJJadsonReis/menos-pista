@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Teste Stripe · Menos Pista</title>
+  <link rel="stylesheet" href="style.css?v=20261021b">
+</head>
+<body>
+  <main class="page" id="conteudo">
+    <div class="container doc">
+      <span class="eyebrow">Teste interno</span>
+      <h1>Teste da Stripe (sem cobrança real)</h1>
+      <p class="lead">Só para a conta admin. Use o cartão de teste 4242 4242 4242 4242, qualquer validade futura e qualquer CVC.</p>
+      <div class="card">
+        <p id="tsUser" class="small">Entre com o Google (conta admin).</p>
+        <button class="btn btn-secondary" id="tsLogin" type="button">Entrar com Google</button>
+        <p style="margin-top:14px">
+          <label><input type="radio" name="cur" value="usd" checked> US$</label>
+          <label style="margin-left:12px"><input type="radio" name="cur" value="eur"> €</label>
+          <label style="margin-left:24px"><input type="radio" name="per" value="monthly" checked> Mensal</label>
+          <label style="margin-left:12px"><input type="radio" name="per" value="annual"> Anual</label>
+        </p>
+        <button class="btn btn-primary" id="tsGo" type="button" disabled>Abrir checkout de teste</button>
+        <p class="sp-msg" id="tsMsg"></p>
+        <p class="small">Plano na conta agora: <b id="tsPlan">—</b></p>
+      </div>
+    </div>
+  </main>
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js';
+    import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js';
+    import { getFirestore, doc, onSnapshot } from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js';
+    import { startStripeCheckout, stripeReturnStatus } from '/assets/stripe-checkout.js?v=20261028t';
+    const app = initializeApp({ apiKey: 'AIzaSyA1R525o7a3ThSC4BEv-k2J0iaMal_JBN4', authDomain: 'menos-pista.firebaseapp.com', projectId: 'menos-pista' });
+    const auth = getAuth(app), db = getFirestore(app), $ = (i) => document.getElementById(i);
+    const st = stripeReturnStatus();
+    if (st) $('tsMsg').textContent = st === 'ok' ? 'Pagamento de teste concluído. O Pro aparece abaixo em alguns segundos.' : 'Checkout cancelado.';
+    $('tsLogin').onclick = () => signInWithPopup(auth, new GoogleAuthProvider()).catch(() => {});
+    let unsub = null;
+    onAuthStateChanged(auth, (u) => {
+      unsub?.(); $('tsGo').disabled = !u;
+      $('tsUser').textContent = u ? 'Conta: ' + (u.email || u.uid) : 'Entre com o Google (conta admin).';
+      if (u) unsub = onSnapshot(doc(db, 'users', u.uid), (s) => { const d = s.data() || {}; $('tsPlan').textContent = (d.plan || 'free') + (d.planSource ? ' · ' + d.planSource : '') + (d.stripeTest ? ' · teste' : '') + (d.proUntil?.toDate ? ' · até ' + d.proUntil.toDate().toLocaleDateString('pt-BR') : ''); }, () => {});
+    });
+    $('tsGo').onclick = async () => {
+      const cur = document.querySelector('input[name=cur]:checked').value, per = document.querySelector('input[name=per]:checked').value;
+      $('tsMsg').textContent = 'Abrindo…';
+      try { await startStripeCheckout(auth.currentUser, { currency: cur, period: per, lang: cur === 'eur' ? 'es' : 'en', test: true }); }
+      catch (e) { $('tsMsg').textContent = e.status === 403 ? 'Só a conta admin pode usar o teste.' : 'Erro: ' + (e.code || e.message); }
+    };
+  </script>
+</body>
+</html>
