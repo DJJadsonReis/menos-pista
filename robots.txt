@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://djjadsonreis.github.io/menos-pista/sitemap.xml
+Sitemap: https://menos-pista.pages.dev/sitemap.xml
