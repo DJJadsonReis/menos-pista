@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0B0D12">
+  <meta name="description" content="Your Menos Pista account: plan, Pro validity and support tickets.">
+  <meta name="robots" content="noindex">
+  <title>My account · Menos Pista</title>
+  <link rel="canonical" href="https://menos-pista.pages.dev/en/account">
+  <link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/minha-conta">
+  <link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/account">
+  <link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/cuenta">
+  <link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/minha-conta">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://menos-pista.pages.dev/en/account">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="pt_BR">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:site_name" content="Menos Pista">
+  <meta property="og:title" content="My account · Menos Pista">
+  <meta property="og:description" content="Your Menos Pista account: plan, Pro validity and support tickets.">
+  <meta property="og:image" content="https://menos-pista.pages.dev/assets/og-en.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="My account · Menos Pista">
+  <meta name="twitter:description" content="Your Menos Pista account: plan, Pro validity and support tickets.">
+  <meta name="twitter:image" content="https://menos-pista.pages.dev/assets/og-en.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/branding/02_Vetores_SVG/simbolo_transparente.svg">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=20261028b">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Skip to content</a>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="/en/" aria-label="Menos Pista — home"><img src="/assets/img/logo-h.webp" alt="Menos Pista" width="520" height="188"></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="navlinks" id="navLinks" aria-label="Main navigation">
+        <a href="/en/#features">Features</a><a href="/en/#how-it-works">How it works</a><a href="/en/#faq">FAQ</a><a href="/en/calculator">Calculator</a><a href="/en/support" >Support</a>
+        <a class="nav-cta" href="/en/download">Download free</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page" id="conteudo">
+    <div class="bg-grid"></div><div class="glow glow-a"></div>
+    <div class="container doc">
+      <span class="eyebrow">Account</span>
+      <h1>My account</h1>
+      <p class="lead">Your plan and your support tickets. Use the same Google account as in the app.</p>
+      <section class="sp" aria-labelledby="mcTitle">
+        <h2 id="mcTitle" hidden>Account</h2>
+        <div id="mcOut" class="card sp-gate">
+          <p>Sign in with Google to see your plan and your tickets.</p>
+          <button class="btn btn-primary" id="mcLogin" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.3z"/><path fill="#fff" opacity=".8" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22z"/></svg>Sign in with Google</button>
+          <p class="sp-msg" id="mcMsg"></p>
+        </div>
+        <div id="mcIn" hidden>
+          <div class="card sp-user"><img id="mcAvatar" alt="" width="40" height="40" referrerpolicy="no-referrer" hidden><div><b id="mcName"></b><small id="mcEmail"></small></div><button class="btn btn-secondary sp-sm" id="mcLogout" type="button">Sign out</button></div>
+          <div class="sp-grid">
+            <div class="card">
+              <div class="sp-chat-head"><h3>Plan</h3><span class="sp-st" id="mcPlan">…</span></div>
+              <p class="small">Source: <b id="mcSource">—</b></p>
+              <p class="small">Valid: <b id="mcUntil">—</b></p>
+              <a class="btn btn-primary" href="/en/#plans">See Pro plans</a>
+            </div>
+            <div class="card sp-mine">
+              <div class="sp-chat-head"><h3>My tickets</h3><span class="sp-count" id="mcCount"></span></div>
+              <div class="sp-list" id="mcList"><p class="small">Loading…</p></div>
+              <p class="small"><a href="/en/support">Open or reply to tickets in Support</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="/en/" aria-label="Menos Pista — home"><img src="/assets/img/logo-h.webp" alt="Menos Pista" width="520" height="188" loading="lazy"></a><p>More profit. Fewer wasted miles. The copilot that shows, right away, whether a ride is worth it.</p></div>
+        <div class="footer-col"><h3>Product</h3><ul class="footer-links"><li><a href="/en/#features">Features</a></li><li><a href="/en/#how-it-works">How it works</a></li><li><a href="/en/#faq">FAQ</a></li><li><a href="/en/download">Download the app</a></li><li><a href="/en/calculator">Ride calculator</a></li></ul></div>
+        <div class="footer-col"><h3>Help & legal</h3><ul class="footer-links"><li><a href="/en/support">Support</a><a href="/en/account">My account</a></li><li><a href="/en/privacy">Privacy policy</a></li><li><a href="/en/terms">Terms of use</a></li><li><a href="/en/delete-account">Delete account</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 Grupo Jadson · <a href="https://www.instagram.com/grupojadson/" target="_blank" rel="noopener noreferrer">@grupojadson</a></p><nav class="lang-switch" aria-label="Language"><a href="/minha-conta" lang="pt-BR" hreflang="pt-BR">PT</a> · <a href="/en/account" lang="en" hreflang="en" aria-current="true">EN</a> · <a href="/es/cuenta" lang="es" hreflang="es">ES</a></nav><a href="#conteudo">Back to top ↑</a></div>
+    </div>
+  </footer>
+  <script src="/site.js" defer></script>
+  <script type="module" src="/minha-conta.js?v=20261028"></script>
+</body>
+</html>

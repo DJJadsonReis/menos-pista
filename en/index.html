@@ -44,7 +44,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
       <nav class="navlinks" id="navLinks" aria-label="Main navigation">
-        <a href="/en/#features">Features</a><a href="/en/#how-it-works">How it works</a><a href="/en/#faq">FAQ</a><a href="/en/calculator">Calculator</a><a href="/en/support">Support</a><a href="/minha-conta">My account</a>
+        <a href="/en/#features">Features</a><a href="/en/#how-it-works">How it works</a><a href="/en/#faq">FAQ</a><a href="/en/calculator">Calculator</a><a href="/en/support">Support</a><a href="/en/account">My account</a>
         <a class="nav-cta" href="/en/download">Download free</a>
       </nav>
     </div>
@@ -154,8 +154,8 @@
           <article class="support-card featured"><div class="support-top"><span class="tag">Pro</span></div><h3>Pro: fewer ads</h3>
             <fieldset class="plan-pick" id="planPickX"><legend>Choose a plan</legend><label class="pp-opt" data-plan="monthly"><input type="radio" name="plan" value="monthly"><span class="pp-check" aria-hidden="true"></span><span class="pp-top"><b>Monthly</b></span><span class="price-now"><b data-price="monthly">$12.99</b><span>/month</span></span></label><label class="pp-opt" data-plan="yearly"><input type="radio" name="plan" value="yearly" checked><span class="pp-check" aria-hidden="true"></span><span class="pp-badge">Best value</span><span class="pp-top"><b>Yearly</b></span><span class="price-now"><b data-price="yearly">$99.99</b><span>/year</span></span></label></fieldset>
             <p>Prices in US dollars. Pro shows fewer ads (removes some of them, not all) and unlocks Pro features while active.</p>
-            <a class="btn btn-primary btn-xl" id="planCtaX" href="/apoiar?plan=yearly">Subscribe in BRL with Mercado Pago</a>
-            <p class="small" style="margin-top:10px">Payment in US dollars is not available yet. Today Pro can only be paid in Brazilian reais (BRL) through Mercado Pago.</p></article>
+            <a class="btn btn-primary btn-xl" id="planCtaX" href="/en/download">Download free</a>
+            <p class="small" style="margin-top:10px">Payment in US dollars is coming soon. For now, download the app for free.</p></article>
         </div>
       </div>
     </section>
@@ -194,7 +194,7 @@
 
   <script>
   (function () { var p = document.getElementById('planPickX'), a = document.getElementById('planCtaX'); if (!p || !a) return;
-    var sync = function () { var c = p.querySelector('input:checked'); p.querySelectorAll('.pp-opt').forEach(function (l) { l.classList.toggle('selected', l.contains(c)); }); a.href = '/apoiar?plan=' + (c ? c.value : 'yearly'); };
+    var sync = function () { var c = p.querySelector('input:checked'); p.querySelectorAll('.pp-opt').forEach(function (l) { l.classList.toggle('selected', l.contains(c)); }); };
     p.addEventListener('change', sync); sync(); })();
   </script>
 
