@@ -53,6 +53,12 @@
       <span class="eyebrow">Help</span>
       <h1>Support</h1>
       <p class="lead">Quick answers to the most common questions. If that does not solve it, get in touch. We answer in English, Spanish or Portuguese.</p>
+      <section class="card" id="pro" aria-labelledby="proTitle">
+        <h2 id="proTitle">Support Menos Pista with Pro</h2>
+        <p>Pro shows fewer ads (not all) and unlocks Pro features. Secure payment in US dollars by Stripe; sign in with Google and use the same account in the app. Cancel anytime.</p>
+        <p><a class="btn btn-primary" href="/en/#plans" data-stripe-cta data-period="monthly">Subscribe monthly · $12.99/month</a> <a class="btn btn-primary" href="/en/#plans" data-stripe-cta data-period="annual">Subscribe yearly · $99.99/year</a></p>
+        <p class="sp-msg" data-stripe-msg role="status" aria-live="polite" hidden></p>
+      </section>
       <section class="sp" aria-labelledby="spTitle">
         <div class="sp-head"><div><h2 id="spTitle">Open a ticket</h2><p class="small">The team replies right here, live. Use the same Google account as in the app. Some status labels in the chat are still in Portuguese.</p></div></div>
         <div id="spOut" class="card sp-gate">
@@ -92,7 +98,7 @@
       <div class="card"><h3>I see "Restricted setting". What now?</h3><p>On Android 13 or newer, apps installed outside the store need this permission. Open <b>Settings &gt; Apps &gt; Menos Pista</b>, tap the <b>three dots (⋮)</b> and <b>Allow restricted settings</b>. Confirm with your PIN or fingerprint and go back to turn on Accessibility.</p></div>
       <div class="card"><h3>Offer reading stopped or Accessibility turned itself off</h3><p>Go to <b>Settings &gt; Accessibility &gt; Menos Pista</b> and turn it on again. Set Menos Pista battery to <b>unrestricted</b> (Settings &gt; Apps &gt; Menos Pista &gt; Battery) and check that the ride app is turned on in Menos Pista settings.</p></div>
       <div class="card"><h3>Why does the app need Accessibility access?</h3><p>That is how it reads offers on the screen of ride and delivery apps and shows whether they are worth it. Reading happens on the phone, and the app does not read passwords or messages. Details in the <a href="/en/privacy">Privacy policy</a>.</p></div>
-      <div class="card"><h3>How does Pro work?</h3><p>Pro is a voluntary monthly or yearly support that shows fewer ads (not all) and unlocks Pro features. Payment in US dollars or euros is coming soon; today it can only be paid in Brazilian reais (BRL) through Mercado Pago. Full rules in the <a href="/en/terms">Terms of use</a>.</p></div>
+      <div class="card"><h3>How does Pro work?</h3><p>Pro is a voluntary monthly or yearly support that shows fewer ads (not all) and unlocks Pro features. You can pay in US dollars or euros by card through Stripe (see <a href="#pro">Subscribe</a> above), or in Brazilian reais (BRL) through Mercado Pago. Full rules in the <a href="/en/terms">Terms of use</a>.</p></div>
       <div class="card"><h3>How do I delete my account?</h3><p>In the app, go to <b>Settings &gt; Account and sync &gt; Delete account</b>. Without the app, see <a href="/en/delete-account">Delete account</a>.</p></div>
     </div>
   </main>
@@ -109,5 +115,6 @@
   </footer>
   <script src="/site.js" defer></script>
   <script type="module" src="/suporte.js"></script>
+  <script type="module" src="/assets/pro-checkout.js?v=20261028r"></script>
 </body>
 </html>

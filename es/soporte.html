@@ -53,6 +53,12 @@
       <span class="eyebrow">Ayuda</span>
       <h1>Soporte</h1>
       <p class="lead">Respuestas rápidas a las dudas más comunes. Si no se resuelve, escríbenos. Respondemos en español, inglés o portugués.</p>
+      <section class="card" id="pro" aria-labelledby="proTitle">
+        <h2 id="proTitle">Apoya Menos Pista con Pro</h2>
+        <p>Pro muestra menos anuncios (no todos) y desbloquea funciones Pro. Pago seguro en euros con Stripe; inicia sesión con Google y usa la misma cuenta en la app. Cancela cuando quieras.</p>
+        <p><a class="btn btn-primary" href="/es/#planes" data-stripe-cta data-period="monthly">Suscribirse mensual · 12,99 €/mes</a> <a class="btn btn-primary" href="/es/#planes" data-stripe-cta data-period="annual">Suscribirse anual · 99,99 €/año</a></p>
+        <p class="sp-msg" data-stripe-msg role="status" aria-live="polite" hidden></p>
+      </section>
       <section class="sp" aria-labelledby="spTitle">
         <div class="sp-head"><div><h2 id="spTitle">Abrir un ticket</h2><p class="small">El equipo responde aquí mismo, en vivo. Usa la misma cuenta de Google que en la app. Algunas etiquetas de estado del chat todavía están en portugués.</p></div></div>
         <div id="spOut" class="card sp-gate">
@@ -92,7 +98,7 @@
       <div class="card"><h3>Apareció "Ajuste restringido". ¿Y ahora?</h3><p>En Android 13 o más reciente, las apps instaladas fuera de la tienda necesitan este permiso. Abre <b>Ajustes &gt; Apps &gt; Menos Pista</b>, toca los <b>tres puntos (⋮)</b> y <b>Permitir ajustes restringidos</b>. Confirma con tu PIN o huella y vuelve para activar la Accesibilidad.</p></div>
       <div class="card"><h3>La lectura de ofertas se detuvo o la Accesibilidad se desactivó sola</h3><p>Ve a <b>Ajustes &gt; Accesibilidad &gt; Menos Pista</b> y actívala de nuevo. Deja la batería de Menos Pista <b>sin restricciones</b> (Ajustes &gt; Apps &gt; Menos Pista &gt; Batería) y verifica que la app de viajes esté activada en los ajustes de Menos Pista.</p></div>
       <div class="card"><h3>¿Por qué la app necesita la Accesibilidad?</h3><p>Así lee las ofertas en la pantalla de las apps de viajes y entregas y muestra si valen la pena. La lectura ocurre en el celular y la app no lee contraseñas ni mensajes. Detalles en la <a href="/es/privacidad">Política de privacidad</a>.</p></div>
-      <div class="card"><h3>¿Cómo funciona Pro?</h3><p>Pro es un apoyo voluntario mensual o anual que muestra menos anuncios (no todos) y desbloquea funciones Pro. El pago en euros o dólares llegará pronto; hoy solo se puede pagar en reales brasileños (BRL) por Mercado Pago. Reglas completas en los <a href="/es/terminos">Términos de uso</a>.</p></div>
+      <div class="card"><h3>¿Cómo funciona Pro?</h3><p>Pro es un apoyo voluntario mensual o anual que muestra menos anuncios (no todos) y desbloquea funciones Pro. Puedes pagar en euros o dólares con tarjeta a través de Stripe (ver <a href="#pro">Suscribirse</a> arriba), o en reales brasileños (BRL) por Mercado Pago. Reglas completas en los <a href="/es/terminos">Términos de uso</a>.</p></div>
       <div class="card"><h3>¿Cómo elimino mi cuenta?</h3><p>En la app, en <b>Ajustes &gt; Cuenta y sincronización &gt; Eliminar cuenta</b>. Sin la app, consulta <a href="/es/eliminar-cuenta">Eliminar cuenta</a>.</p></div>
     </div>
   </main>
@@ -109,5 +115,6 @@
   </footer>
   <script src="/site.js" defer></script>
   <script type="module" src="/suporte.js"></script>
+  <script type="module" src="/assets/pro-checkout.js?v=20261028r"></script>
 </body>
 </html>

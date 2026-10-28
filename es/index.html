@@ -154,8 +154,9 @@
           <article class="support-card featured"><div class="support-top"><span class="tag">Pro</span></div><h3>Pro: menos anuncios</h3>
             <fieldset class="plan-pick" id="planPickX"><legend>Elige el plan</legend><label class="pp-opt" data-plan="monthly"><input type="radio" name="plan" value="monthly"><span class="pp-check" aria-hidden="true"></span><span class="pp-top"><b>Mensual</b></span><span class="price-now"><b data-price="monthly">12,99 €</b><span>/mes</span></span></label><label class="pp-opt" data-plan="yearly"><input type="radio" name="plan" value="yearly" checked><span class="pp-check" aria-hidden="true"></span><span class="pp-badge">Mejor valor</span><span class="pp-top"><b>Anual</b></span><span class="price-now"><b data-price="yearly">99,99 €</b><span>/año</span></span></label></fieldset>
             <p>Precios en euros. Pro muestra menos anuncios (quita una parte, no todos) y desbloquea funciones Pro mientras está activo.</p>
-            <a class="btn btn-primary btn-xl" id="planCtaX" href="/es/descargar">Descargar gratis</a>
-            <p class="small" style="margin-top:10px">El pago en euros llegará pronto. Por ahora, descarga la app gratis.</p></article>
+            <a class="btn btn-primary btn-xl" id="planCtaX" href="#planes" data-stripe-cta>Suscribirse</a>
+            <p class="small" style="margin-top:10px">Pago seguro en euros con Stripe. Inicia sesión con Google para suscribirte; usa la misma cuenta en la app. Cancela cuando quieras.</p>
+            <p class="sp-msg" data-stripe-msg role="status" aria-live="polite" hidden></p></article>
         </div>
       </div>
     </section>
@@ -210,5 +211,6 @@
   </footer>
   <script src="/site.js" defer></script>
   <script src="/home.js?v=20261021c" defer></script>
+  <script type="module" src="/assets/pro-checkout.js?v=20261028r"></script>
 </body>
 </html>
