@@ -444,3 +444,24 @@ footer,.site-footer{border-top:1px solid var(--border);padding:48px 0 30px;backg
 .sp-reply{display:flex;gap:10px;align-items:flex-end;margin-top:8px}.sp-reply textarea{flex:1}
 .sp-closed{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;padding:12px 14px;border-radius:12px;border:1px dashed var(--border2);background:var(--panel2)}.sp-closed p{margin:0;color:var(--text)}
 .sp-reply[hidden],.sp-closed[hidden],.sp-msg[hidden]{display:none}
+/* Chat do suporte estilo WhatsApp: você à direita, equipe à esquerda */
+.sp-thread{gap:2px;padding:12px 12px 14px;border-radius:14px;border:1px solid var(--border);background-color:var(--bg);background-image:radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px);background-size:18px 18px;margin-top:12px}
+.wa-day{align-self:center;margin:10px 0 6px}.wa-day span{display:inline-block;padding:3px 12px;border-radius:8px;font-size:.75rem;font-weight:700;color:var(--muted);background:var(--panel2);border:1px solid var(--border)}
+.wa-row{display:flex;align-items:flex-start;gap:8px;margin-top:8px}.wa-row.cont{margin-top:2px}.wa-row.mine{flex-direction:row-reverse}
+.wa-av{flex:0 0 32px;width:32px;height:32px;border-radius:50%;object-fit:cover;background:var(--panel2)}
+.wa-av.staff{padding:5px;background:var(--panel);border:1px solid rgba(255,106,0,.35)}
+.wa-av.ini{display:grid;place-items:center;font-size:.72rem;font-weight:800;color:#fff;background:linear-gradient(135deg,#3b4256,#262c3a)}
+.wa-av.gap{visibility:hidden;height:1px}
+.wa-row .sp-bubble{position:relative;max-width:min(78%,520px);padding:6px 10px;border-radius:10px;min-width:0;box-shadow:0 1px 1px rgba(0,0,0,.18);align-self:auto}
+.wa-row .sp-bubble.me{background:#3A2312;border:1px solid rgba(255,106,0,.32)}.wa-row .sp-bubble.them{background:var(--panel2);border:1px solid var(--border2)}
+.wa-row:not(.cont) .sp-bubble.me{border-top-right-radius:0}.wa-row:not(.cont) .sp-bubble.them{border-top-left-radius:0}
+.wa-row:not(.cont) .sp-bubble::before{content:"";position:absolute;top:-1px;width:0;height:0;border-top:11px solid}
+.wa-row:not(.cont) .sp-bubble.me::before{right:-8px;border-top-color:#3A2312;border-right:8px solid transparent}
+.wa-row:not(.cont) .sp-bubble.them::before{left:-8px;border-top-color:var(--panel2);border-left:8px solid transparent}
+.wa-name{display:block;font-size:.75rem;color:var(--orange2);margin-bottom:1px}
+.wa-row .sp-bubble p{display:inline}.wa-row .sp-bubble small.wa-time{display:inline-block;float:right;margin:6px 0 -4px 12px;font-size:.68rem;line-height:1.6}
+.sp-reply{align-items:flex-end;margin-top:10px}.sp-reply textarea{min-height:46px;max-height:160px;border-radius:23px;padding:12px 18px;resize:none}
+.btn.wa-send{flex:0 0 46px;width:46px;min-height:46px;height:46px;padding:0;border-radius:50%}.btn.wa-send svg{margin-left:2px}
+@media (max-width:560px){.wa-row .sp-bubble{max-width:84%}.wa-av{flex-basis:28px;width:28px;height:28px}}
+.wa-av.ini{font-size:.85rem}
+.sp [hidden]{display:none!important}

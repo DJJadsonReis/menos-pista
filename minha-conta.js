@@ -59,7 +59,7 @@ onAuthStateChanged(auth, (u) => {
     if (!list.length) { box.append(el('p', 'small', 'Você ainda não abriu nenhum chamado.')); return; }
     for (const t of list) {
       const [lbl, cls] = STATUS[t.status] || [t.status || 'Aberto', 'st-open'];
-      const a = el('a', 'sp-item'); a.href = 'suporte.html';
+      const a = el('a', 'sp-item'); a.href = 'suporte';
       const top = el('div', 'sp-item-top'); top.append(el('b', null, t.subject || 'Chamado'), el('span', 'sp-st ' + cls, lbl));
       a.append(top, el('small', null, `${t.category || 'Outro'} · ${when(t.updatedAt)}`)); if (t.unreadByUser && !['resolvido', 'fechado'].includes(t.status)) a.append(el('span', 'sp-new', 'resposta nova'));
       box.append(a);

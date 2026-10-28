@@ -16,6 +16,15 @@ const $ = (id) => document.getElementById(id);
 const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
 const STATUS = { aberto: ['Aberto', 'st-open'], em_atendimento: ['Em andamento', 'st-work'], aguardando_usuario: ['Aguardando você', 'st-wait'], resolvido: ['Resolvido', 'st-ok'], fechado: ['Fechado', 'st-ok'] };
 const CLOSED = ['resolvido', 'fechado'];
+// Chat estilo WhatsApp: separador por dia, mensagens seguidas agrupadas, avatar só na primeira.
+const dayLabel = (d) => { if (!d) return 'Agora'; const t = new Date(), y = new Date(); y.setDate(t.getDate() - 1);
+  return d.toDateString() === t.toDateString() ? 'Hoje' : d.toDateString() === y.toDateString() ? 'Ontem' : d.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' }); };
+function avatar(staff) {
+  const p = !staff && user && user.photoURL;
+  if (staff || (p && /^https:\/\//.test(p))) { const i = el('img', 'wa-av' + (staff ? ' staff' : '')); i.alt = ''; i.referrerPolicy = 'no-referrer'; i.src = staff ? 'assets/branding/02_Vetores_SVG/simbolo_transparente.svg' : p; return i; }
+  const n = (user && (user.displayName || user.email)) || '?';
+  return el('span', 'wa-av ini', (n.replace(/@.*/, '').trim().charAt(0) || '?').toUpperCase());
+}
 const when = (t) => (t && t.toDate ? t.toDate().toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' }) : 'agora');
 let user = null, unsubList = null, unsubChat = null, openId = null, tickets = [];
 
@@ -80,9 +89,15 @@ function openTicket(id) {
   if (t.unreadByUser && !CLOSED.includes(t.status)) updateDoc(doc(db, 'supportTickets', id), { unreadByUser: false }).catch(() => {});
   const box = $('spThread'); box.replaceChildren(el('p', 'small', 'Carregando…'));
   unsubChat = onSnapshot(query(collection(db, 'supportTickets', id, 'messages'), orderBy('createdAt', 'asc')), (s) => {
-    box.replaceChildren();
-    s.docs.forEach((d) => { const m = d.data(); const b = el('div', 'sp-bubble ' + (m.from === 'admin' ? 'them' : 'me'));
-      b.append(el('p', null, m.text || ''), el('small', null, `${m.from === 'admin' ? (m.authorName || 'Suporte Menos Pista') : 'Você'} · ${when(m.createdAt)}`)); box.append(b); });
+    box.replaceChildren(); let prev = null, prevDay = '';
+    s.docs.forEach((d) => { const m = d.data(); const dt = m.createdAt && m.createdAt.toDate ? m.createdAt.toDate() : null; const k = dt ? dt.toDateString() : '';
+      if (k !== prevDay) { const sep = el('div', 'wa-day'); sep.append(el('span', null, dayLabel(dt))); box.append(sep); prev = null; prevDay = k; }
+      const staff = m.from === 'admin', cont = prev === m.from; prev = m.from;
+      const row = el('div', 'wa-row ' + (staff ? 'theirs' : 'mine') + (cont ? ' cont' : ''));
+      const b = el('div', 'sp-bubble ' + (staff ? 'them' : 'me'));
+      if (!cont && staff) b.append(el('b', 'wa-name', m.authorName || 'Suporte Menos Pista'));
+      b.append(el('p', null, m.text || ''), el('small', 'wa-time', (dt ? dt.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }) : '…') + ' ✓'));
+      row.append(cont ? el('span', 'wa-av gap') : avatar(staff), b); box.append(row); });
     if (!s.size) box.append(el('p', 'small', 'Sem mensagens ainda.'));
     box.scrollTop = box.scrollHeight;
   }, (e) => box.replaceChildren(el('p', 'small', errText(e))));
