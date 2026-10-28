@@ -56,7 +56,29 @@ function paintPlan(d) {
   $('mcPlan').textContent = pro ? 'Pro' : 'Free'; $('mcPlan').className = 'sp-st ' + (pro ? 'st-ok' : 'st-open');
   $('mcSource').textContent = pro ? tr(SOURCE[d.planSource] || d.planSource) : '—';
   $('mcUntil').textContent = pro ? (d.proUntil == null ? tr('sem data de fim') : tr('até ') + fmtDate(d.proUntil)) : (d.plan === 'pro' && d.proUntil ? tr('venceu em ') + fmtDate(d.proUntil) : '—');
+  // Botão do portal Stripe: só existe em /en/account e /es/cuenta; aparece só para Pro ativo vindo do Stripe.
+  if ($('mcPortalBox')) { $('mcPortalBox').hidden = !(pro && d.planSource === 'stripe'); portalTest = d.stripeTest === true; }
 }
+
+let portalTest = false;
+const PORTAL_TXT = {
+  en: { wait: 'Opening the subscription portal…', none: 'No Stripe subscription found on this account.', err: 'Could not open the portal right now. Please try again later.' },
+  es: { wait: 'Abriendo el portal de la suscripción…', none: 'No hay ninguna suscripción de Stripe en esta cuenta.', err: 'No se pudo abrir el portal ahora. Inténtalo más tarde.' }
+}[LANG];
+if ($('mcPortal')) $('mcPortal').onclick = async () => {
+  const m = $('mcPortalMsg'), say = (t, err) => { m.textContent = t; m.hidden = false; m.className = 'sp-msg' + (err ? ' err' : ''); };
+  const u = auth.currentUser; if (!u || !PORTAL_TXT) return;
+  say(PORTAL_TXT.wait); $('mcPortal').disabled = true;
+  try {
+    const r = await fetch('https://menospista-pay.jadsonr.workers.dev' + (portalTest ? '/stripe-test/portal' : '/stripe/portal'), {
+      method: 'POST', headers: { Authorization: 'Bearer ' + await u.getIdToken(), 'Content-Type': 'application/json' },
+      body: JSON.stringify({ lang: LANG }), credentials: 'omit', referrerPolicy: 'no-referrer' });
+    const j = await r.json().catch(() => ({}));
+    if (r.ok && typeof j.url === 'string' && /^https:\/\/billing\.stripe\.com\//.test(j.url)) return location.assign(j.url);
+    say(r.status === 404 ? PORTAL_TXT.none : PORTAL_TXT.err, true);
+  } catch { say(PORTAL_TXT.err, true); }
+  $('mcPortal').disabled = false;
+};
 
 onAuthStateChanged(auth, (u) => {
   unsubUser?.(); unsubList?.(); unsubUser = unsubList = null;
