@@ -152,9 +152,9 @@
         <div class="support-grid reveal d1">
           <article class="support-card"><div class="support-top"><span class="tag">Free</span></div><h3>Free, with ads</h3><div class="price-now"><b>$0</b><span>forever</span></div><p>Essential tools are free, with no required subscription, funded by Google AdMob ads.</p><ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>No required monthly fee for the essential tools.</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Google AdMob ads, never while an offer is on screen.</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Made for rideshare and delivery drivers.</li></ul><a href="/en/download" class="btn btn-secondary">Download free</a></article>
           <article class="support-card featured"><div class="support-top"><span class="tag">Pro</span></div><h3>Pro: fewer ads</h3>
-            <div class="plan-pick"><div class="pp-opt"><span class="pp-top"><b>Monthly</b></span><span class="price-now"><b data-price="monthly">$12.99</b><span>/month</span></span></div><div class="pp-opt"><span class="pp-top"><b>Yearly</b></span><span class="price-now"><b data-price="yearly">$99.99</b><span>/year</span></span></div></div>
+            <fieldset class="plan-pick" id="planPickX"><legend>Choose a plan</legend><label class="pp-opt" data-plan="monthly"><input type="radio" name="plan" value="monthly"><span class="pp-check" aria-hidden="true"></span><span class="pp-top"><b>Monthly</b></span><span class="price-now"><b data-price="monthly">$12.99</b><span>/month</span></span></label><label class="pp-opt" data-plan="yearly"><input type="radio" name="plan" value="yearly" checked><span class="pp-check" aria-hidden="true"></span><span class="pp-badge">Best value</span><span class="pp-top"><b>Yearly</b></span><span class="price-now"><b data-price="yearly">$99.99</b><span>/year</span></span></label></fieldset>
             <p>Prices in US dollars. Pro shows fewer ads (removes some of them, not all) and unlocks Pro features while active.</p>
-            <button class="btn btn-primary btn-xl price-soon" type="button" disabled aria-disabled="true">Coming soon</button>
+            <a class="btn btn-primary btn-xl" id="planCtaX" href="/apoiar?plan=yearly">Subscribe in BRL with Mercado Pago</a>
             <p class="small" style="margin-top:10px">Payment in US dollars is not available yet. Today Pro can only be paid in Brazilian reais (BRL) through Mercado Pago.</p></article>
         </div>
       </div>
@@ -191,6 +191,12 @@
   })();
   </script>
 
+
+  <script>
+  (function () { var p = document.getElementById('planPickX'), a = document.getElementById('planCtaX'); if (!p || !a) return;
+    var sync = function () { var c = p.querySelector('input:checked'); p.querySelectorAll('.pp-opt').forEach(function (l) { l.classList.toggle('selected', l.contains(c)); }); a.href = '/apoiar?plan=' + (c ? c.value : 'yearly'); };
+    p.addEventListener('change', sync); sync(); })();
+  </script>
 
   <footer>
     <div class="container">
