@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0B0D12">
+  <meta name="description" content="Ayuda y contacto de la app Menos Pista.">
+  <meta name="robots" content="index, follow">
+  <title>Soporte · Menos Pista</title>
+  <link rel="canonical" href="https://menos-pista.pages.dev/es/soporte">
+  <link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/suporte">
+  <link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/support">
+  <link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/soporte">
+  <link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/suporte">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://menos-pista.pages.dev/es/soporte">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="pt_BR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Menos Pista">
+  <meta property="og:title" content="Soporte · Menos Pista">
+  <meta property="og:description" content="Ayuda y contacto de la app Menos Pista.">
+  <meta property="og:image" content="https://menos-pista.pages.dev/assets/og-es.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Soporte · Menos Pista">
+  <meta name="twitter:description" content="Ayuda y contacto de la app Menos Pista.">
+  <meta name="twitter:image" content="https://menos-pista.pages.dev/assets/og-es.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/branding/02_Vetores_SVG/simbolo_transparente.svg">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=20261028b">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Saltar al contenido</a>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="/es/" aria-label="Menos Pista — inicio"><img src="/assets/img/logo-h.webp" alt="Menos Pista" width="520" height="188"></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="navlinks" id="navLinks" aria-label="Navegación principal">
+        <a href="/es/#funciones">Funciones</a><a href="/es/#como-funciona">Cómo funciona</a><a href="/es/#faq">Preguntas</a><a href="/es/calculadora">Calculadora</a><a href="/es/soporte" aria-current="page">Soporte</a>
+        <a class="nav-cta" href="/es/descargar">Descargar gratis</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page" id="conteudo">
+    <div class="bg-grid"></div><div class="glow glow-a"></div>
+    <div class="container doc">
+      <span class="eyebrow">Ayuda</span>
+      <h1>Soporte</h1>
+      <p class="lead">Respuestas rápidas a las dudas más comunes. Si no se resuelve, escríbenos. Respondemos en español, inglés o portugués.</p>
+      <section class="sp" aria-labelledby="spTitle">
+        <div class="sp-head"><div><h2 id="spTitle">Abrir un ticket</h2><p class="small">El equipo responde aquí mismo, en vivo. Usa la misma cuenta de Google que en la app. Algunas etiquetas de estado del chat todavía están en portugués.</p></div></div>
+        <div id="spOut" class="card sp-gate">
+          <p>Inicia sesión con Google para abrir un ticket y seguir las respuestas.</p>
+          <button class="btn btn-primary" id="spLogin" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.3z"/><path fill="#fff" opacity=".8" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22z"/></svg>Iniciar sesión con Google</button>
+          <p class="small">¿Prefieres correo? <a href="mailto:grupojadson@gmail.com?subject=Soporte%20Menos%20Pista">grupojadson@gmail.com</a></p>
+        </div>
+        <div id="spIn" hidden>
+          <div class="card sp-user"><img id="spAvatar" alt="" width="40" height="40" referrerpolicy="no-referrer" hidden><div><b id="spWho"></b><small id="spEmail"></small></div><button class="btn btn-secondary sp-sm" id="spLogout" type="button">Cambiar de cuenta</button></div>
+          <div class="sp-grid">
+            <form id="spForm" class="card sp-form" novalidate>
+              <h3>Nuevo ticket</h3>
+              <label>Asunto<input id="spSubject" maxlength="140" required placeholder="Ej.: la lectura de ofertas se detuvo"></label>
+              <label>Categoría<select id="spCategory"><option value="Pagamento ou apoio">Pago o apoyo</option><option value="Conta">Cuenta</option><option value="Bug">Error (bug)</option><option value="Sugestão">Sugerencia</option><option value="Outro">Otro</option></select></label>
+              <label>Mensaje<textarea id="spText" maxlength="5000" rows="5" required placeholder="Cuéntanos qué pasó, el modelo del celular y la versión de Android."></textarea></label>
+              <button class="btn btn-primary" id="spSend" type="submit">Enviar ticket</button>
+              <p id="spFormMsg" class="sp-msg" role="status"></p>
+            </form>
+            <div class="card sp-mine"><h3>Mis tickets <span id="spCount" class="sp-count"></span></h3><div id="spList" class="sp-list"><p class="small">Cargando…</p></div></div>
+          </div>
+          <div id="spChat" class="card sp-chat" hidden>
+            <div class="sp-chat-head"><h3 id="spChatTitle"></h3><span id="spChatStatus" class="sp-st"></span></div>
+            <div id="spThread" class="sp-thread" aria-live="polite"></div>
+            <form id="spReplyForm" class="sp-reply"><textarea id="spReply" maxlength="5000" rows="1" placeholder="Escribe tu respuesta" aria-label="Tu respuesta"></textarea><button class="btn btn-primary wa-send" id="spReplySend" type="submit" aria-label="Enviar" title="Enviar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.4 20.4 21 12 3.4 3.6 3.4 10l12.6 2-12.6 2z" fill="currentColor"/></svg></button></form>
+            <p id="spReplyMsg" class="sp-msg" role="status"></p>
+            <div id="spClosed" class="sp-closed" hidden><p>Ticket cerrado. ¿Necesitas más ayuda?</p><button class="btn btn-primary sp-sm" id="spNew" type="button">Abrir un ticket nuevo</button></div>
+          </div>
+        </div>
+        <div class="card">
+          <p><b>Por correo:</b> <a href="mailto:grupojadson@gmail.com?subject=Soporte%20Menos%20Pista">grupojadson@gmail.com</a>. Cuéntanos el modelo del celular, la versión de Android y qué pasó.</p>
+          <p><b>Comercial y alianzas:</b> Grupo Jadson · <a href="https://www.instagram.com/grupojadson/" target="_blank" rel="noopener noreferrer">@grupojadson</a></p>
+        </div>
+      </section>
+      <h2>Preguntas frecuentes</h2>
+      <div class="card"><h3>¿La lectura de ofertas funciona en mi país?</h3><p>Hoy funciona solo con apps de viajes y entregas de Brasil (pantallas en portugués, precios en BRL). Pronto llegarán más países. La <a href="/es/calculadora">calculadora de viajes</a> funciona en cualquier lugar.</p></div>
+      <div class="card"><h3>¿Cómo instalo la app?</h3><p>Descarga el APK en <a href="/es/descargar">Descargar</a>, permite la instalación desde el navegador o la app Archivos y toca Instalar. El paso a paso completo está en la página de descarga.</p></div>
+      <div class="card"><h3>Apareció "Ajuste restringido". ¿Y ahora?</h3><p>En Android 13 o más reciente, las apps instaladas fuera de la tienda necesitan este permiso. Abre <b>Ajustes &gt; Apps &gt; Menos Pista</b>, toca los <b>tres puntos (⋮)</b> y <b>Permitir ajustes restringidos</b>. Confirma con tu PIN o huella y vuelve para activar la Accesibilidad.</p></div>
+      <div class="card"><h3>La lectura de ofertas se detuvo o la Accesibilidad se desactivó sola</h3><p>Ve a <b>Ajustes &gt; Accesibilidad &gt; Menos Pista</b> y actívala de nuevo. Deja la batería de Menos Pista <b>sin restricciones</b> (Ajustes &gt; Apps &gt; Menos Pista &gt; Batería) y verifica que la app de viajes esté activada en los ajustes de Menos Pista.</p></div>
+      <div class="card"><h3>¿Por qué la app necesita la Accesibilidad?</h3><p>Así lee las ofertas en la pantalla de las apps de viajes y entregas y muestra si valen la pena. La lectura ocurre en el celular y la app no lee contraseñas ni mensajes. Detalles en la <a href="/es/privacidad">Política de privacidad</a>.</p></div>
+      <div class="card"><h3>¿Cómo funciona Pro?</h3><p>Pro es un apoyo voluntario mensual o anual que muestra menos anuncios (no todos) y desbloquea funciones Pro. El pago en euros o dólares llegará pronto; hoy solo se puede pagar en reales brasileños (BRL) por Mercado Pago. Reglas completas en los <a href="/es/terminos">Términos de uso</a>.</p></div>
+      <div class="card"><h3>¿Cómo elimino mi cuenta?</h3><p>En la app, en <b>Ajustes &gt; Cuenta y sincronización &gt; Eliminar cuenta</b>. Sin la app, consulta <a href="/es/eliminar-cuenta">Eliminar cuenta</a>.</p></div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="/es/" aria-label="Menos Pista — inicio"><img src="/assets/img/logo-h.webp" alt="Menos Pista" width="520" height="188" loading="lazy"></a><p>Más ganancia. Menos kilómetros en vano. El copiloto que te muestra, al instante, si el viaje vale la pena.</p></div>
+        <div class="footer-col"><h3>Producto</h3><ul class="footer-links"><li><a href="/es/#funciones">Funciones</a></li><li><a href="/es/#como-funciona">Cómo funciona</a></li><li><a href="/es/#faq">Preguntas</a></li><li><a href="/es/descargar">Descargar la app</a></li><li><a href="/es/calculadora">Calculadora de viajes</a></li></ul></div>
+        <div class="footer-col"><h3>Ayuda y legal</h3><ul class="footer-links"><li><a href="/es/soporte">Soporte</a></li><li><a href="/es/privacidad">Política de privacidad</a></li><li><a href="/es/terminos">Términos de uso</a></li><li><a href="/es/eliminar-cuenta">Eliminar cuenta</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 Grupo Jadson · <a href="https://www.instagram.com/grupojadson/" target="_blank" rel="noopener noreferrer">@grupojadson</a></p><nav class="lang-switch" aria-label="Idioma"><a href="/suporte" lang="pt-BR" hreflang="pt-BR">PT</a> · <a href="/en/support" lang="en" hreflang="en">EN</a> · <a href="/es/soporte" lang="es" hreflang="es" aria-current="true">ES</a></nav><a href="#conteudo">Volver arriba ↑</a></div>
+    </div>
+  </footer>
+  <script src="/site.js" defer></script>
+  <script type="module" src="/suporte.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0B0D12">
+  <meta name="description" content="Calculadora gratis para conductores de Uber/DiDi y repartidores: escribe la oferta y mira la ganancia por km, por hora, el beneficio con el costo de tu vehículo y si el viaje vale la pena.">
+  <meta name="robots" content="index, follow">
+  <title>Calculadora de viajes para conductores: ganancia por km, por hora y beneficio | Menos Pista</title>
+  <link rel="canonical" href="https://menos-pista.pages.dev/es/calculadora">
+  <link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/calculadora">
+  <link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/calculator">
+  <link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/calculadora">
+  <link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/calculadora">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://menos-pista.pages.dev/es/calculadora">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="pt_BR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Menos Pista">
+  <meta property="og:title" content="Calculadora de viajes para conductores: ganancia por km, por hora y beneficio | Menos Pista">
+  <meta property="og:description" content="Calculadora gratis para conductores de Uber/DiDi y repartidores: escribe la oferta y mira la ganancia por km, por hora, el beneficio con el costo de tu vehículo y si el viaje vale la pena.">
+  <meta property="og:image" content="https://menos-pista.pages.dev/assets/og-es.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calculadora de viajes para conductores: ganancia por km, por hora y beneficio | Menos Pista">
+  <meta name="twitter:description" content="Calculadora gratis para conductores de Uber/DiDi y repartidores: escribe la oferta y mira la ganancia por km, por hora, el beneficio con el costo de tu vehículo y si el viaje vale la pena.">
+  <meta name="twitter:image" content="https://menos-pista.pages.dev/assets/og-es.png">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de viajes para conductores", "url": "https://menos-pista.pages.dev/es/calculadora", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "inLanguage": "es", "description": "Calculadora gratis para conductores de Uber/DiDi y repartidores: escribe la oferta y mira la ganancia por km, por hora, el beneficio con el costo de tu vehículo y si el viaje vale la pena.", "isAccessibleForFree": true, "publisher": {"@type": "Organization", "name": "Grupo Jadson"}}</script>
+  <link rel="icon" type="image/svg+xml" href="/assets/branding/02_Vetores_SVG/simbolo_transparente.svg">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=20261028b">
+  <link rel="stylesheet" href="/calc.css?v=20261028">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Saltar al contenido</a>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="/es/" aria-label="Menos Pista — inicio"><img src="/assets/img/logo-h.webp" alt="Menos Pista" width="520" height="188"></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="navlinks" id="navLinks" aria-label="Navegación principal">
+        <a href="/es/#funciones">Funciones</a><a href="/es/#como-funciona">Cómo funciona</a><a href="/es/#faq">Preguntas</a><a href="/es/calculadora" aria-current="page">Calculadora</a><a href="/es/soporte">Soporte</a>
+        <a class="nav-cta" href="/es/descargar">Descargar gratis</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page" id="conteudo">
+    <div class="bg-grid"></div><div class="glow glow-a"></div>
+    <div class="container doc">
+      <span class="eyebrow">Calculadora gratis</span>
+      <h1>¿El viaje <span class="gradient-text">vale la pena?</span></h1>
+      <p class="lead">Escribe los datos de la oferta y el costo de tu vehículo. La calculadora muestra la ganancia por km, por hora y el beneficio, y los compara con las metas que definas. Todo se calcula en tu navegador; tus metas se guardan solo en este dispositivo.</p>
+      <div class="calc">
+        <form id="calcForm" class="card calc-form" data-lang="es" data-locale="es-ES" novalidate>
+          <fieldset><legend>Moneda y unidad</legend><div class="calc-row"><label>Moneda<select id="cCurrency"><option value="BRL">Real (R$)</option><option value="USD">US Dollar (US$)</option><option value="EUR" selected>Euro (€)</option><option value="MXN">Peso MX (MX$)</option><option value="ARS">Peso AR</option><option value="COP">Peso CO</option><option value="CLP">Peso CL</option><option value="OTHER">Otra</option></select></label><label>Distancia<select id="cUnit"><option value="km" selected>Kilómetros</option><option value="mi">Millas</option></select></label></div></fieldset>
+          <fieldset><legend>La oferta</legend>
+            <label>Monto de la oferta <span data-c></span><input id="cValue" type="text" inputmode="decimal" autocomplete="off" placeholder="Ej.: 12,50"></label>
+            <div class="calc-row"><label>Hasta el pasajero (<span data-u></span>)<input id="cPickup" type="text" inputmode="decimal" autocomplete="off" placeholder="Ej.: 2,1"></label><label>Distancia del viaje (<span data-u></span>)<input id="cTrip" type="text" inputmode="decimal" autocomplete="off" placeholder="Ej.: 7,4"></label></div>
+            <label>Duración total (min)<input id="cMin" type="text" inputmode="numeric" autocomplete="off" placeholder="Ej.: 25"></label>
+          </fieldset>
+          <fieldset><legend>Tu vehículo y tus metas</legend>
+            <label>Costo por <span data-un></span> <span data-c></span><input id="cCost" type="text" inputmode="decimal" autocomplete="off" placeholder="Ej.: 0,15"></label><p class="small" style="margin:-4px 0 0">Combustible + desgaste (neumáticos, mantenimiento). Tú lo defines.</p>
+            <div class="calc-row"><label>Mínimo por <span data-un></span> <span data-c></span><input id="cGoalKm" type="text" inputmode="decimal" autocomplete="off" placeholder="Ej.: 1,00"></label><label>Mínimo por hora <span data-c></span><input id="cGoalH" type="text" inputmode="decimal" autocomplete="off" placeholder="Ej.: 15"></label></div>
+          </fieldset>
+        </form>
+        <section class="card calc-res" aria-live="polite" aria-labelledby="calcRes">
+          <h2 id="calcRes" style="margin:0 0 12px">Resultado</h2>
+          <output id="cVerdict" class="calc-verdict" for="calcForm">—</output>
+          <p id="cWhy" class="calc-why"></p>
+          <ul class="calc-list"><li><span>Distancia total</span><b id="rDist">—</b></li><li><span>Ganancia por distancia</span><b id="rPerKm">—</b></li><li><span>Ganancia por hora</span><b id="rPerH">—</b></li><li><span>Costo del vehículo</span><b id="rCost">—</b></li><li><span>Beneficio</span><b id="rProfit">—</b></li><li><span>Beneficio por hora</span><b id="rProfitH">—</b></li></ul>
+          <p class="small" style="margin-top:12px"><b>Vale la pena</b>: cumple tu meta por distancia y tu meta por hora. <b>Atención</b>: cumple solo una. <b>No vale</b>: no cumple ninguna.</p>
+          <p class="small">Los resultados son estimaciones con los números que escribiste.</p>
+        </section>
+      </div>
+      <h2>Cómo se calcula</h2>
+      <ul><li>Distancia total = hasta el pasajero + viaje.</li><li>Ganancia por km = monto ÷ distancia total. Ganancia por hora = monto ÷ (minutos ÷ 60).</li><li>Costo = costo por km × distancia total. Beneficio = monto − costo. Beneficio por hora = beneficio ÷ (minutos ÷ 60).</li></ul>
+      <div class="card"><p>La app Menos Pista hace esta cuenta sola cuando llega una oferta. Por ahora, la lectura automática de ofertas solo funciona con apps de Brasil (pantallas en portugués, precios en BRL); pronto llegarán más países. Esta calculadora funciona en cualquier lugar.</p><p><a class="btn btn-primary" href="/es/descargar">Descargar la app</a></p></div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="/es/" aria-label="Menos Pista — inicio"><img src="/assets/img/logo-h.webp" alt="Menos Pista" width="520" height="188" loading="lazy"></a><p>Más ganancia. Menos kilómetros en vano. El copiloto que te muestra, al instante, si el viaje vale la pena.</p></div>
+        <div class="footer-col"><h3>Producto</h3><ul class="footer-links"><li><a href="/es/#funciones">Funciones</a></li><li><a href="/es/#como-funciona">Cómo funciona</a></li><li><a href="/es/#faq">Preguntas</a></li><li><a href="/es/descargar">Descargar la app</a></li><li><a href="/es/calculadora">Calculadora de viajes</a></li></ul></div>
+        <div class="footer-col"><h3>Ayuda y legal</h3><ul class="footer-links"><li><a href="/es/soporte">Soporte</a></li><li><a href="/es/privacidad">Política de privacidad</a></li><li><a href="/es/terminos">Términos de uso</a></li><li><a href="/es/eliminar-cuenta">Eliminar cuenta</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 Grupo Jadson · <a href="https://www.instagram.com/grupojadson/" target="_blank" rel="noopener noreferrer">@grupojadson</a></p><nav class="lang-switch" aria-label="Idioma"><a href="/calculadora" lang="pt-BR" hreflang="pt-BR">PT</a> · <a href="/en/calculator" lang="en" hreflang="en">EN</a> · <a href="/es/calculadora" lang="es" hreflang="es" aria-current="true">ES</a></nav><a href="#conteudo">Volver arriba ↑</a></div>
+    </div>
+  </footer>
+  <script src="/site.js" defer></script>
+  <script src="/calc.js?v=20261028" defer></script>
+</body>
+</html>

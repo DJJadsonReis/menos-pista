@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0B0D12">
+  <meta name="description" content="Calculadora grátis para motorista de aplicativo e entregador: digite a oferta e veja R$/km, R$/hora, lucro com o custo do seu veículo e se a corrida vale a pena.">
+  <meta name="robots" content="index, follow">
+  <title>Calculadora de corrida: R$/km, R$/hora e lucro | Menos Pista</title>
+  <link rel="canonical" href="https://menos-pista.pages.dev/calculadora">
+  <link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/calculadora">
+  <link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/calculator">
+  <link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/calculadora">
+  <link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/calculadora">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://menos-pista.pages.dev/calculadora">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:site_name" content="Menos Pista">
+  <meta property="og:title" content="Calculadora de corrida: R$/km, R$/hora e lucro | Menos Pista">
+  <meta property="og:description" content="Calculadora grátis para motorista de aplicativo e entregador: digite a oferta e veja R$/km, R$/hora, lucro com o custo do seu veículo e se a corrida vale a pena.">
+  <meta property="og:image" content="https://menos-pista.pages.dev/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calculadora de corrida: R$/km, R$/hora e lucro | Menos Pista">
+  <meta name="twitter:description" content="Calculadora grátis para motorista de aplicativo e entregador: digite a oferta e veja R$/km, R$/hora, lucro com o custo do seu veículo e se a corrida vale a pena.">
+  <meta name="twitter:image" content="https://menos-pista.pages.dev/assets/og.png">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de corrida", "url": "https://menos-pista.pages.dev/calculadora", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "inLanguage": "pt-BR", "description": "Calculadora grátis para motorista de aplicativo e entregador: digite a oferta e veja R$/km, R$/hora, lucro com o custo do seu veículo e se a corrida vale a pena.", "isAccessibleForFree": true, "publisher": {"@type": "Organization", "name": "Grupo Jadson"}}</script>
+  <link rel="icon" type="image/svg+xml" href="/assets/branding/02_Vetores_SVG/simbolo_transparente.svg">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=20261028b">
+  <link rel="stylesheet" href="/calc.css?v=20261028">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="Menos Pista — início"><img src="/assets/img/logo-h.webp" alt="Menos Pista" width="520" height="188"></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="navlinks" id="navLinks" aria-label="Navegação principal">
+        <a href="/#recursos">Recursos</a><a href="/#como-funciona">Como funciona</a><a href="/#faq">Dúvidas</a><a href="/calculadora" aria-current="page">Calculadora</a><a href="/apoiar">Apoiar</a><a href="/suporte">Suporte</a><a href="/minha-conta">Minha conta</a>
+        <a class="nav-cta" href="/download">Baixar grátis</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page" id="conteudo">
+    <div class="bg-grid"></div><div class="glow glow-a"></div>
+    <div class="container doc">
+      <span class="eyebrow">Calculadora grátis</span>
+      <h1>A corrida <span class="gradient-text">vale a pena?</span></h1>
+      <p class="lead">Digite os dados da oferta e o custo do seu veículo. A calculadora mostra o valor por km, por hora e o lucro, e compara com as metas que você definir. Tudo é calculado no seu navegador; suas metas ficam salvas só neste aparelho.</p>
+      <div class="calc">
+        <form id="calcForm" class="card calc-form" data-lang="pt" data-locale="pt-BR" data-fixed="1" novalidate>
+          
+          <fieldset><legend>A oferta</legend>
+            <label>Valor da oferta <span data-c></span><input id="cValue" type="text" inputmode="decimal" autocomplete="off" placeholder="Ex.: 18,50"></label>
+            <div class="calc-row"><label>Até o passageiro (<span data-u></span>)<input id="cPickup" type="text" inputmode="decimal" autocomplete="off" placeholder="Ex.: 2,1"></label><label>Distância da corrida (<span data-u></span>)<input id="cTrip" type="text" inputmode="decimal" autocomplete="off" placeholder="Ex.: 7,4"></label></div>
+            <label>Duração total (min)<input id="cMin" type="text" inputmode="numeric" autocomplete="off" placeholder="Ex.: 25"></label>
+          </fieldset>
+          <fieldset><legend>Seu veículo e suas metas</legend>
+            <label>Custo por <span data-un></span> <span data-c></span><input id="cCost" type="text" inputmode="decimal" autocomplete="off" placeholder="Ex.: 0,60"></label><p class="small" style="margin:-4px 0 0">Combustível + desgaste (pneus, manutenção). Você define.</p>
+            <div class="calc-row"><label>Meta mínima por <span data-un></span> <span data-c></span><input id="cGoalKm" type="text" inputmode="decimal" autocomplete="off" placeholder="Ex.: 2,00"></label><label>Meta mínima por hora <span data-c></span><input id="cGoalH" type="text" inputmode="decimal" autocomplete="off" placeholder="Ex.: 35"></label></div>
+          </fieldset>
+        </form>
+        <section class="card calc-res" aria-live="polite" aria-labelledby="calcRes">
+          <h2 id="calcRes" style="margin:0 0 12px">Resultado</h2>
+          <output id="cVerdict" class="calc-verdict" for="calcForm">—</output>
+          <p id="cWhy" class="calc-why"></p>
+          <ul class="calc-list"><li><span>Distância total</span><b id="rDist">—</b></li><li><span>Valor por distância</span><b id="rPerKm">—</b></li><li><span>Valor por hora</span><b id="rPerH">—</b></li><li><span>Custo do veículo</span><b id="rCost">—</b></li><li><span>Lucro</span><b id="rProfit">—</b></li><li><span>Lucro por hora</span><b id="rProfitH">—</b></li></ul>
+          <p class="small" style="margin-top:12px"><b>Vale a pena</b>: bate a meta por km e a meta por hora. <b>Atenção</b>: bate só uma. <b>Não vale</b>: não bate nenhuma.</p>
+          <p class="small">Resultados são estimativas com os números que você digitou.</p>
+        </section>
+      </div>
+      <h2>Como a conta é feita</h2>
+      <ul><li>Distância total = até o passageiro + corrida.</li><li>Valor por km = valor ÷ distância total. Valor por hora = valor ÷ (minutos ÷ 60).</li><li>Custo = custo por km × distância total. Lucro = valor − custo. Lucro por hora = lucro ÷ (minutos ÷ 60).</li></ul>
+      <div class="card"><p>No app Menos Pista essa conta é feita sozinha, na hora em que a oferta chega na tela do Uber, 99, inDrive, iFood e outros.</p><p><a class="btn btn-primary" href="/download">Baixar o app grátis</a></p></div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="/" aria-label="Menos Pista — início"><img src="/assets/img/logo-h.webp" alt="Menos Pista" width="520" height="188" loading="lazy"></a><p>Mais lucro. Menos quilômetros à toa. O copiloto que mostra, na hora, se a corrida vale a pena.</p></div>
+        <div class="footer-col"><h3>Produto</h3><ul class="footer-links"><li><a href="/#recursos">Recursos</a></li><li><a href="/#como-funciona">Como funciona</a></li><li><a href="/#faq">Dúvidas</a></li><li><a href="/download">Baixar o app</a></li><li><a href="/calculadora">Calculadora</a></li><li><a href="/apoiar">Apoiar</a></li></ul></div>
+        <div class="footer-col"><h3>Ajuda e legal</h3><ul class="footer-links"><li><a href="/suporte">Suporte</a></li><li><a href="/privacidade">Política de privacidade</a></li><li><a href="/termos">Termos de uso</a></li><li><a href="/excluir-conta">Excluir conta</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 Grupo Jadson · <a href="https://www.instagram.com/grupojadson/" target="_blank" rel="noopener noreferrer">@grupojadson</a></p><nav class="lang-switch" aria-label="Idioma"><a href="/calculadora" lang="pt-BR" hreflang="pt-BR" aria-current="true">PT</a> · <a href="/en/calculator" lang="en" hreflang="en">EN</a> · <a href="/es/calculadora" lang="es" hreflang="es">ES</a></nav><a href="#conteudo">Voltar ao topo ↑</a></div>
+    </div>
+  </footer>
+  <script src="/site.js" defer></script>
+  <script src="/calc.js?v=20261028" defer></script>
+</body>
+</html>

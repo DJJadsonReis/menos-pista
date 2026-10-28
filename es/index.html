@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0B0D12">
+  <meta name="description" content="App gratis para conductores y repartidores: muestra la ganancia por km, por hora y el beneficio, y si la oferta vale la pena. Android. Hoy la lectura de ofertas funciona en Brasil.">
+  <meta name="robots" content="index, follow">
+  <title>Menos Pista: app para conductores de Uber/DiDi que muestra si el viaje vale la pena</title>
+  <link rel="canonical" href="https://menos-pista.pages.dev/es/">
+  <link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/">
+  <link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/">
+  <link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/">
+  <link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://menos-pista.pages.dev/es/">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="pt_BR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Menos Pista">
+  <meta property="og:title" content="Menos Pista: app para conductores de Uber/DiDi que muestra si el viaje vale la pena">
+  <meta property="og:description" content="App gratis para conductores y repartidores: muestra la ganancia por km, por hora y el beneficio, y si la oferta vale la pena. Android. Hoy la lectura de ofertas funciona en Brasil.">
+  <meta property="og:image" content="https://menos-pista.pages.dev/assets/og-es.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Menos Pista: app para conductores de Uber/DiDi que muestra si el viaje vale la pena">
+  <meta name="twitter:description" content="App gratis para conductores y repartidores: muestra la ganancia por km, por hora y el beneficio, y si la oferta vale la pena. Android. Hoy la lectura de ofertas funciona en Brasil.">
+  <meta name="twitter:image" content="https://menos-pista.pages.dev/assets/og-es.png">
+  <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Menos Pista", "operatingSystem": "Android 8.0+", "applicationCategory": "BusinessApplication", "inLanguage": "es", "description": "Copiloto para conductores de Uber/DiDi y repartidores: muestra la ganancia por km, por hora y si una oferta vale la pena.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "url": "https://menos-pista.pages.dev/es/descargar", "publisher": {"@type": "Organization", "name": "Grupo Jadson"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Menos Pista es gratis?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Las herramientas esenciales son gratuitas, sin suscripción obligatoria. La app se financia con anuncios de Google AdMob, que nunca aparecen mientras hay una oferta en pantalla. El plan Pro (mensual o anual) muestra menos anuncios y desbloquea funciones Pro."}}, {"@type": "Question", "name": "¿Funciona en mi país?", "acceptedAnswer": {"@type": "Answer", "text": "Hoy, la lectura automática de ofertas solo funciona con las versiones de Brasil de las apps de viajes y entregas (pantallas en portugués, precios en BRL). Pronto llegarán más países e idiomas. La calculadora de viajes gratis de este sitio funciona en cualquier lugar, en cualquier moneda, en kilómetros o millas."}}, {"@type": "Question", "name": "¿Qué apps lee?", "acceptedAnswer": {"@type": "Answer", "text": "En Brasil: Uber, inDrive, Rappi, Lalamove, Loggi, Cabify y otras apps de viajes y entregas. Tú eliges cuáles monitorear en los ajustes de la app."}}, {"@type": "Question", "name": "¿Por qué la app necesita la Accesibilidad?", "acceptedAnswer": {"@type": "Answer", "text": "Así lee las ofertas en la pantalla de las apps de viajes y entregas y te muestra si valen la pena. La lectura ocurre en el celular y la app no lee contraseñas ni mensajes. Más detalles en la Política de privacidad."}}, {"@type": "Question", "name": "¿La app acepta o rechaza viajes por mí?", "acceptedAnswer": {"@type": "Answer", "text": "No. Solo muestra el análisis en una tarjeta. Aceptar o rechazar siempre es tu decisión, en la app de la plataforma."}}, {"@type": "Question", "name": "¿Funciona en mi celular?", "acceptedAnswer": {"@type": "Answer", "text": "Funciona en Android 8.0 o más reciente. En Android 13 o más reciente hay que permitir los ajustes restringidos, como se explica en la página de descarga."}}]}]</script>
+  <link rel="icon" type="image/svg+xml" href="/assets/branding/02_Vetores_SVG/simbolo_transparente.svg">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="/assets/screens/copiloto.webp">
+  <link rel="stylesheet" href="/style.css?v=20261028b">
+  <link rel="stylesheet" href="/home.css?v=20261021c">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Saltar al contenido</a>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="/es/" aria-label="Menos Pista — inicio"><img src="/assets/img/logo-h.webp" alt="Menos Pista" width="520" height="188"></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="navlinks" id="navLinks" aria-label="Navegación principal">
+        <a href="/es/#funciones">Funciones</a><a href="/es/#como-funciona">Cómo funciona</a><a href="/es/#faq">Preguntas</a><a href="/es/calculadora">Calculadora</a><a href="/es/soporte">Soporte</a>
+        <a class="nav-cta" href="/es/descargar">Descargar gratis</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero hero-v2" id="inicio">
+      <div class="bg-grid"></div><div class="glow glow-a"></div><div class="glow glow-b"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="pill reveal"><span class="pulse-dot"></span> Versión 3.2.1 · gratis para Android</div>
+          <h1 class="reveal d1">Deja de aceptar <span class="strike-word">viajes malos</span>.<br><span class="gradient-text">Gana más por km.</span></h1>
+          <p class="reveal d2">Cuando llega una oferta, Menos Pista lee la pantalla, calcula la ganancia por km, por hora, el beneficio % y la nota, y muestra el veredicto al instante: <b class="v-txt g">ACEPTAR</b>, <b class="v-txt y">EVALUAR</b> o <b class="v-txt r">RECHAZAR</b>. Hecho para conductores de Uber/DiDi y repartidores.</p>
+          <div class="actions reveal d3">
+            <a class="btn btn-primary btn-xl btn-glow" href="/es/descargar">Descargar gratis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></a>
+            <a class="btn btn-secondary btn-xl" href="/es/calculadora">Probar la calculadora</a>
+          </div>
+          <p class="hero-meta reveal d3">Versión 3.2.1 · Android 8.0 o más reciente · 24,7 MB · APK oficial</p>
+        </div>
+        <div class="stage" role="img" aria-label="Pantalla real de inicio de Menos Pista: Copiloto leyendo ofertas">
+          <div class="ring" aria-hidden="true"></div><div class="floor" aria-hidden="true"></div>
+          <div class="phone3d" aria-hidden="true">
+            <div class="phone-back"></div>
+            <div class="phone-body"><div class="screen shot"><img src="/assets/screens/copiloto.webp" alt="Pantalla de inicio de Menos Pista con el Copiloto leyendo ofertas" width="720" height="1600" fetchpriority="high"><div class="sheen"></div></div></div>
+            <div class="fly fly-a"><span class="lights3"><i class="g"></i><i class="y"></i><i class="r"></i></span><span><small>Veredicto</small><b>al instante</b></span></div>
+            <div class="fly fly-b"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg></span><span><small>Lectura</small><b>en tu celular</b></span></div>
+          </div>
+          <p class="stage-note">Pantalla real de la app (en portugués)</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Disponibilidad">
+      <div class="container"><div class="notice reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 11v5M12 7h.01"/></svg><p><strong>Dónde funciona hoy:</strong> la lectura automática de ofertas funciona por ahora solo con apps de viajes y entregas de Brasil (pantallas en portugués, precios en BRL), y la interfaz de la app está en portugués. Pronto llegarán más países e idiomas. Mientras tanto, la <a href="/es/calculadora">calculadora de viajes</a> funciona en cualquier lugar, en tu moneda y en km o millas.</p></div></div>
+    </section>
+
+    <section class="facts" aria-label="Menos Pista en cifras">
+      <div class="container facts-grid">
+        <div class="fact reveal"><strong>Gratis</strong><span>para descargar y usar</span></div>
+        <div class="fact reveal d1"><strong>Brasil</strong><span>lectura de ofertas hoy, más países pronto</span></div>
+        <div class="fact reveal d2"><strong>En el celular</strong><span>las ofertas se leen en el dispositivo</span></div>
+        <div class="fact reveal d3"><strong>24,7 MB</strong><span>Android 8.0 o más reciente</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="veredicto">
+      <div class="container split">
+        <div class="reveal">
+          <span class="eyebrow">El veredicto</span>
+          <h2 class="heading">De un vistazo sabes si <span class="orange">conviene.</span></h2>
+          <p class="lead-sm">Menos Pista compara cada oferta con los rangos por distancia y por hora que configuras y con el costo de tu vehículo. En la pantalla de detalle, el <b>Análisis</b> explica el motivo en líneas cortas.</p>
+          <ul class="verdicts">
+            <li><span class="vd g">ACEPTAR</span><p>Cumple tus rangos por distancia y por hora.</p></li>
+            <li><span class="vd y">EVALUAR</span><p>Cerca del límite. Mira el destino y el horario.</p></li>
+            <li><span class="vd r">RECHAZAR</span><p>Por debajo de lo que definiste: mucho recorrido para ganar poco.</p></li>
+          </ul>
+          <p class="small">La app solo muestra el análisis. Nunca toca la pantalla ni acepta o rechaza viajes por ti.</p>
+        </div>
+        <div class="duo reveal d1" aria-label="Dos pantallas reales de detalle de oferta">
+          <figure class="mini-phone tilt-l"><img src="/assets/screens/oferta-recusar.webp" alt="Pantalla real: oferta de Uber con veredicto RECHAZAR y los motivos (app en portugués)" width="720" height="1600" loading="lazy"><figcaption>RECHAZAR, con el motivo</figcaption></figure>
+          <figure class="mini-phone tilt-r"><img src="/assets/screens/oferta-avaliar.webp" alt="Pantalla real: oferta de Uber con veredicto EVALUAR (app en portugués)" width="720" height="1600" loading="lazy"><figcaption>EVALUAR, cerca del límite</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery-sec" id="pantallas">
+      <div class="container"><div class="section-head reveal"><span class="eyebrow">Pantallas reales</span><h2 class="heading">Por dentro de <span class="orange">Menos Pista</span></h2><p class="subheading">Capturas de la app funcionando en un celular Android (interfaz en portugués). Direcciones ocultas por privacidad.</p></div></div>
+      <div class="carousel" id="carousel" role="region" aria-roledescription="carrusel" aria-label="Pantallas de la app">
+        <button class="car-arrow prev" type="button" aria-label="Pantalla anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+        <div class="car-track" id="carTrack" tabindex="0"><figure class="g-item" data-i="0" data-title="Copiloto" data-desc="Muestra que está leyendo ofertas, de qué app, y la tarjeta de la oferta en pantalla"><div class="device"><div class="device-screen"><img src="/assets/screens/copiloto.webp" alt="Pantalla de inicio con el Copiloto leyendo ofertas (app en portugués)" width="720" height="1600" loading="lazy"></div></div></figure><figure class="g-item" data-i="1" data-title="Apps monitoreadas" data-desc="Tú eliges qué apps lee el Copiloto"><div class="device"><div class="device-screen"><img src="/assets/screens/apps-monitorados.webp" alt="Pantalla de apps monitoreadas (app en portugués)" width="720" height="1600" loading="lazy"></div></div></figure><figure class="g-item" data-i="2" data-title="Detalle de la oferta" data-desc="Distancia, tiempo, ganancia por km y por hora, beneficio %, nota y el análisis del veredicto"><div class="device"><div class="device-screen"><img src="/assets/screens/oferta-recusar.webp" alt="Detalle de una oferta con veredicto RECHAZAR y análisis (app en portugués)" width="720" height="1600" loading="lazy"></div></div></figure><figure class="g-item" data-i="3" data-title="Historial" data-desc="Filtros por período y veredicto, con promedios por km y por hora"><div class="device"><div class="device-screen"><img src="/assets/screens/historico.webp" alt="Historial con filtros y promedios (app en portugués)" width="720" height="1600" loading="lazy"></div></div></figure><figure class="g-item" data-i="4" data-title="Lectura de pantalla" data-desc="Accesibilidad y OCR en el propio celular, con ahorro de batería"><div class="device"><div class="device-screen"><img src="/assets/screens/leitura-da-tela.webp" alt="Ajustes de lectura de pantalla con Accesibilidad y OCR en el dispositivo (app en portugués)" width="720" height="1600" loading="lazy"></div></div></figure><figure class="g-item" data-i="5" data-title="Permisos" data-desc="Muestra lo que falta activar, con un toque"><div class="device"><div class="device-screen"><img src="/assets/screens/permissoes.webp" alt="Pantalla de permisos (app en portugués)" width="720" height="1600" loading="lazy"></div></div></figure></div>
+        <button class="car-arrow next" type="button" aria-label="Pantalla siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+      </div>
+      <div class="car-caption" aria-live="polite"><b id="carTitle">Copiloto</b><span id="carDesc">Muestra que está leyendo ofertas, de qué app, y la tarjeta de la oferta en pantalla</span></div>
+      <div class="car-dots" id="carDots"><button type="button" aria-label="Pantalla 1: Copiloto"></button><button type="button" aria-label="Pantalla 2: Apps monitoreadas"></button><button type="button" aria-label="Pantalla 3: Detalle de la oferta"></button><button type="button" aria-label="Pantalla 4: Historial"></button><button type="button" aria-label="Pantalla 5: Lectura de pantalla"></button><button type="button" aria-label="Pantalla 6: Permisos"></button></div>
+    </section>
+
+    <section class="section features" id="funciones">
+      <div class="container">
+        <div class="section-head reveal"><span class="eyebrow">Funciones</span><h2 class="heading">Todo lo que la app hace <span class="orange">por ti.</span></h2></div>
+        <div class="feature-grid">
+          <article class="feature reveal"><h3>Ventana con el veredicto</h3><p>En cuanto aparece la oferta, una tarjeta muestra el monto, la ganancia por distancia y por hora, el beneficio % y la nota, con ACEPTAR, EVALUAR o RECHAZAR.</p></article>
+          <article class="feature reveal d1"><h3>Beneficio estimado</h3><p>Estima el beneficio con el costo por distancia de tu vehículo (combustible, mantenimiento, neumáticos y depreciación), configurado en Ajustes &gt; Vehículos.</p></article>
+          <article class="feature reveal d2"><h3>Recogida y viaje por separado</h3><p>Muestra la distancia y el tiempo hasta el pasajero y del viaje, además de la distancia y el tiempo totales.</p></article>
+          <article class="feature reveal"><h3>Historial y finanzas</h3><p>Guarda las ofertas analizadas, filtra por Hoy, 7 días o 30 días, mira promedios por distancia y por hora, registra ingresos y gastos y sigue metas diarias, semanales y mensuales.</p></article>
+          <article class="feature reveal d1"><h3>Lectura en el dispositivo</h3><p>Lee la oferta por la Accesibilidad y, cuando hace falta, por captura con OCR en el propio celular. No lee contraseñas ni mensajes.</p></article>
+          <article class="feature reveal d2"><h3>Turnos y ahorro de batería</h3><p>Marca el inicio y el fin del turno para medir tu día. Con el ahorro de batería activado, la app lee con menos frecuencia para gastar menos.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <div class="section-head reveal"><span class="eyebrow">En 3 pasos</span><h2 class="heading">Configura una vez. <span class="orange">Decide siempre.</span></h2></div>
+        <div class="steps">
+          <div class="step reveal"><span class="step-num">1</span><h3>Descarga e instala</h3><p>Descarga el APK desde el enlace oficial y sigue el paso a paso. Lleva pocos minutos.</p></div>
+          <div class="step reveal d1"><span class="step-num">2</span><h3>Activa la lectura</h3><p>Activa la Accesibilidad, elige las apps a monitorear y registra tu vehículo.</p></div>
+          <div class="step reveal d2"><span class="step-num">3</span><h3>Conduce y decide</h3><p>Cuando llega la oferta, el veredicto aparece en pantalla. La decisión sigue siendo tuya.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section support" id="planes">
+      <div class="container">
+        <div class="section-head reveal"><span class="eyebrow">Planes</span><h2 class="heading">Gratis con anuncios, <span class="orange">Pro disponible.</span></h2><p class="subheading">Nadie tiene que pagar para usar las herramientas esenciales. El modo gratis se financia con anuncios; el plan Pro muestra menos anuncios (quita una parte, no todos) y desbloquea funciones Pro.</p></div>
+        <div class="support-grid reveal d1">
+          <article class="support-card"><div class="support-top"><span class="tag">Gratis</span></div><h3>Gratis, con anuncios</h3><div class="price-now"><b>0 €</b><span>para siempre</span></div><p>Las herramientas esenciales son gratuitas, sin suscripción obligatoria, financiadas por anuncios de Google AdMob.</p><ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Sin cuota mensual obligatoria para las herramientas esenciales.</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Anuncios de Google AdMob, nunca mientras hay una oferta en pantalla.</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Hecho para conductores y repartidores.</li></ul><a href="/es/descargar" class="btn btn-secondary">Descargar gratis</a></article>
+          <article class="support-card featured"><div class="support-top"><span class="tag">Pro</span></div><h3>Pro: menos anuncios</h3>
+            <div class="plan-pick"><div class="pp-opt"><span class="pp-top"><b>Mensual</b></span><span class="price-now"><b data-price="monthly">12,99 €</b><span>/mes</span></span></div><div class="pp-opt"><span class="pp-top"><b>Anual</b></span><span class="price-now"><b data-price="yearly">99,99 €</b><span>/año</span></span></div></div>
+            <p>Precios en euros. Pro muestra menos anuncios (quita una parte, no todos) y desbloquea funciones Pro mientras está activo.</p>
+            <button class="btn btn-primary btn-xl price-soon" type="button" disabled aria-disabled="true">Próximamente</button>
+            <p class="small" style="margin-top:10px">El pago en euros todavía no está disponible. Hoy Pro solo se puede pagar en reales brasileños (BRL) por Mercado Pago.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head reveal"><span class="eyebrow">Preguntas</span><h2 class="heading">Preguntas <span class="orange">frecuentes</span></h2></div>
+        <div class="faq reveal"><details><summary>¿Menos Pista es gratis?</summary><p>Sí. Las herramientas esenciales son gratuitas, sin suscripción obligatoria. La app se financia con anuncios de Google AdMob, que nunca aparecen mientras hay una oferta en pantalla. El plan Pro (mensual o anual) muestra menos anuncios y desbloquea funciones Pro.</p></details><details><summary>¿Funciona en mi país?</summary><p>Hoy, la lectura automática de ofertas solo funciona con las versiones de Brasil de las apps de viajes y entregas (pantallas en portugués, precios en BRL). Pronto llegarán más países e idiomas. La calculadora de viajes gratis de este sitio funciona en cualquier lugar, en cualquier moneda, en kilómetros o millas.</p></details><details><summary>¿Qué apps lee?</summary><p>En Brasil: Uber, inDrive, Rappi, Lalamove, Loggi, Cabify y otras apps de viajes y entregas. Tú eliges cuáles monitorear en los ajustes de la app.</p></details><details><summary>¿Por qué la app necesita la Accesibilidad?</summary><p>Así lee las ofertas en la pantalla de las apps de viajes y entregas y te muestra si valen la pena. La lectura ocurre en el celular y la app no lee contraseñas ni mensajes. Más detalles en la Política de privacidad.</p></details><details><summary>¿La app acepta o rechaza viajes por mí?</summary><p>No. Solo muestra el análisis en una tarjeta. Aceptar o rechazar siempre es tu decisión, en la app de la plataforma.</p></details><details><summary>¿Funciona en mi celular?</summary><p>Funciona en Android 8.0 o más reciente. En Android 13 o más reciente hay que permitir los ajustes restringidos, como se explica en la página de descarga.</p></details><details><summary>Necesito ayuda. ¿Cómo los contacto?</summary><p>Abre un ticket en la app (Ajustes) o en la página de <a href="/es/soporte">Soporte</a>.</p></details></div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container"><div class="cta-panel reveal"><div class="bg-grid"></div><span class="eyebrow">Tu trabajo vale mucho</span><h2 class="heading">Basta de conducir<br><span class="gradient-text">a pérdida.</span></h2><p>Mira cuánto paga cada oferta por km y por hora antes de aceptar, empezando por la calculadora gratis.</p><a href="/es/descargar" class="cta-action">DESCARGAR GRATIS <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></a>
+        <div class="cta-meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 4 4L19 6"/></svg>Versión 3.2.1</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 4 4L19 6"/></svg>Android 8.0+</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 4 4L19 6"/></svg>24,7 MB</span></div>
+        <span class="cta-caption">Hecho para quien hace de la calle su lugar de trabajo.</span></div></div>
+    </section>
+  </main>
+
+  <div class="sticky-dl" id="stickyDl" aria-hidden="true">
+    <div><b>Menos Pista 3.2.1</b><small>Gratis · Android 8.0+ · 24,7 MB</small></div>
+    <a class="btn btn-primary" href="/es/descargar" tabindex="-1">Descargar gratis</a>
+  </div>
+  <script>
+  // Precios Pro (solo muestra, EUR) desde config/prices; por ahora el pago es solo en BRL.
+  (function () {
+    var fmt = function (c) { return new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(c / 100); };
+    var set = function (k, c) { var e = document.querySelector('[data-price="' + k + '"]'); if (e && c > 0) e.textContent = fmt(c); };
+    set('monthly', 1299); set('yearly', 9999);
+    fetch('https://firestore.googleapis.com/v1/projects/menos-pista/databases/(default)/documents/config/prices?key=AIzaSyA1R525o7a3ThSC4BEv-k2J0iaMal_JBN4')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) { var f = d && d.fields; if (!f) return; var n = function (x) { return x ? Number(x.integerValue || x.doubleValue) : 0; }; set('monthly', n(f.monthlyEUR)); set('yearly', n(f.yearlyEUR)); })
+      .catch(function () {});
+  })();
+  </script>
+
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="/es/" aria-label="Menos Pista — inicio"><img src="/assets/img/logo-h.webp" alt="Menos Pista" width="520" height="188" loading="lazy"></a><p>Más ganancia. Menos kilómetros en vano. El copiloto que te muestra, al instante, si el viaje vale la pena.</p></div>
+        <div class="footer-col"><h3>Producto</h3><ul class="footer-links"><li><a href="/es/#funciones">Funciones</a></li><li><a href="/es/#como-funciona">Cómo funciona</a></li><li><a href="/es/#faq">Preguntas</a></li><li><a href="/es/descargar">Descargar la app</a></li><li><a href="/es/calculadora">Calculadora de viajes</a></li></ul></div>
+        <div class="footer-col"><h3>Ayuda y legal</h3><ul class="footer-links"><li><a href="/es/soporte">Soporte</a></li><li><a href="/es/privacidad">Política de privacidad</a></li><li><a href="/es/terminos">Términos de uso</a></li><li><a href="/es/eliminar-cuenta">Eliminar cuenta</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 Grupo Jadson · <a href="https://www.instagram.com/grupojadson/" target="_blank" rel="noopener noreferrer">@grupojadson</a></p><nav class="lang-switch" aria-label="Idioma"><a href="/" lang="pt-BR" hreflang="pt-BR">PT</a> · <a href="/en/" lang="en" hreflang="en">EN</a> · <a href="/es/" lang="es" hreflang="es" aria-current="true">ES</a></nav><a href="#conteudo">Volver arriba ↑</a></div>
+    </div>
+  </footer>
+  <script src="/site.js" defer></script>
+  <script src="/home.js?v=20261021c" defer></script>
+</body>
+</html>

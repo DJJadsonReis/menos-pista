@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0B0D12">
+  <meta name="description" content="Help and contact for the Menos Pista app.">
+  <meta name="robots" content="index, follow">
+  <title>Support · Menos Pista</title>
+  <link rel="canonical" href="https://menos-pista.pages.dev/en/support">
+  <link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/suporte">
+  <link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/support">
+  <link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/soporte">
+  <link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/suporte">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://menos-pista.pages.dev/en/support">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="pt_BR">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:site_name" content="Menos Pista">
+  <meta property="og:title" content="Support · Menos Pista">
+  <meta property="og:description" content="Help and contact for the Menos Pista app.">
+  <meta property="og:image" content="https://menos-pista.pages.dev/assets/og-en.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Support · Menos Pista">
+  <meta name="twitter:description" content="Help and contact for the Menos Pista app.">
+  <meta name="twitter:image" content="https://menos-pista.pages.dev/assets/og-en.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/branding/02_Vetores_SVG/simbolo_transparente.svg">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=20261028b">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Skip to content</a>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="/en/" aria-label="Menos Pista — home"><img src="/assets/img/logo-h.webp" alt="Menos Pista" width="520" height="188"></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="navlinks" id="navLinks" aria-label="Main navigation">
+        <a href="/en/#features">Features</a><a href="/en/#how-it-works">How it works</a><a href="/en/#faq">FAQ</a><a href="/en/calculator">Calculator</a><a href="/en/support" aria-current="page">Support</a>
+        <a class="nav-cta" href="/en/download">Download free</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page" id="conteudo">
+    <div class="bg-grid"></div><div class="glow glow-a"></div>
+    <div class="container doc">
+      <span class="eyebrow">Help</span>
+      <h1>Support</h1>
+      <p class="lead">Quick answers to the most common questions. If that does not solve it, get in touch. We answer in English, Spanish or Portuguese.</p>
+      <section class="sp" aria-labelledby="spTitle">
+        <div class="sp-head"><div><h2 id="spTitle">Open a ticket</h2><p class="small">The team replies right here, live. Use the same Google account as in the app. Some status labels in the chat are still in Portuguese.</p></div></div>
+        <div id="spOut" class="card sp-gate">
+          <p>Sign in with Google to open a ticket and follow the replies.</p>
+          <button class="btn btn-primary" id="spLogin" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.3z"/><path fill="#fff" opacity=".8" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22z"/></svg>Sign in with Google</button>
+          <p class="small">Prefer email? <a href="mailto:grupojadson@gmail.com?subject=Menos%20Pista%20support">grupojadson@gmail.com</a></p>
+        </div>
+        <div id="spIn" hidden>
+          <div class="card sp-user"><img id="spAvatar" alt="" width="40" height="40" referrerpolicy="no-referrer" hidden><div><b id="spWho"></b><small id="spEmail"></small></div><button class="btn btn-secondary sp-sm" id="spLogout" type="button">Switch account</button></div>
+          <div class="sp-grid">
+            <form id="spForm" class="card sp-form" novalidate>
+              <h3>New ticket</h3>
+              <label>Subject<input id="spSubject" maxlength="140" required placeholder="e.g. offer reading stopped"></label>
+              <label>Category<select id="spCategory"><option value="Pagamento ou apoio">Payment or support plan</option><option value="Conta">Account</option><option value="Bug">Bug</option><option value="Sugestão">Suggestion</option><option value="Outro">Other</option></select></label>
+              <label>Message<textarea id="spText" maxlength="5000" rows="5" required placeholder="Tell us what happened, your phone model and Android version."></textarea></label>
+              <button class="btn btn-primary" id="spSend" type="submit">Send ticket</button>
+              <p id="spFormMsg" class="sp-msg" role="status"></p>
+            </form>
+            <div class="card sp-mine"><h3>My tickets <span id="spCount" class="sp-count"></span></h3><div id="spList" class="sp-list"><p class="small">Loading…</p></div></div>
+          </div>
+          <div id="spChat" class="card sp-chat" hidden>
+            <div class="sp-chat-head"><h3 id="spChatTitle"></h3><span id="spChatStatus" class="sp-st"></span></div>
+            <div id="spThread" class="sp-thread" aria-live="polite"></div>
+            <form id="spReplyForm" class="sp-reply"><textarea id="spReply" maxlength="5000" rows="1" placeholder="Write your reply" aria-label="Your reply"></textarea><button class="btn btn-primary wa-send" id="spReplySend" type="submit" aria-label="Send" title="Send"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.4 20.4 21 12 3.4 3.6 3.4 10l12.6 2-12.6 2z" fill="currentColor"/></svg></button></form>
+            <p id="spReplyMsg" class="sp-msg" role="status"></p>
+            <div id="spClosed" class="sp-closed" hidden><p>Ticket closed. Need more help?</p><button class="btn btn-primary sp-sm" id="spNew" type="button">Open a new ticket</button></div>
+          </div>
+        </div>
+        <div class="card">
+          <p><b>By email:</b> <a href="mailto:grupojadson@gmail.com?subject=Menos%20Pista%20support">grupojadson@gmail.com</a>. Tell us your phone model, Android version and what happened.</p>
+          <p><b>Business and partnerships:</b> Grupo Jadson · <a href="https://www.instagram.com/grupojadson/" target="_blank" rel="noopener noreferrer">@grupojadson</a></p>
+        </div>
+      </section>
+      <h2>Frequently asked questions</h2>
+      <div class="card"><h3>Does offer reading work in my country?</h3><p>Today it works only with ride and delivery apps in Brazil (Portuguese screens, prices in BRL). More countries are coming soon. The <a href="/en/calculator">ride calculator</a> works anywhere.</p></div>
+      <div class="card"><h3>How do I install the app?</h3><p>Download the APK on the <a href="/en/download">Download</a> page, allow installing from your browser or the Files app and tap Install. The full step-by-step guide is on the download page.</p></div>
+      <div class="card"><h3>I see "Restricted setting". What now?</h3><p>On Android 13 or newer, apps installed outside the store need this permission. Open <b>Settings &gt; Apps &gt; Menos Pista</b>, tap the <b>three dots (⋮)</b> and <b>Allow restricted settings</b>. Confirm with your PIN or fingerprint and go back to turn on Accessibility.</p></div>
+      <div class="card"><h3>Offer reading stopped or Accessibility turned itself off</h3><p>Go to <b>Settings &gt; Accessibility &gt; Menos Pista</b> and turn it on again. Set Menos Pista battery to <b>unrestricted</b> (Settings &gt; Apps &gt; Menos Pista &gt; Battery) and check that the ride app is turned on in Menos Pista settings.</p></div>
+      <div class="card"><h3>Why does the app need Accessibility access?</h3><p>That is how it reads offers on the screen of ride and delivery apps and shows whether they are worth it. Reading happens on the phone, and the app does not read passwords or messages. Details in the <a href="/en/privacy">Privacy policy</a>.</p></div>
+      <div class="card"><h3>How does Pro work?</h3><p>Pro is a voluntary monthly or yearly support that shows fewer ads (not all) and unlocks Pro features. Payment in US dollars or euros is coming soon; today it can only be paid in Brazilian reais (BRL) through Mercado Pago. Full rules in the <a href="/en/terms">Terms of use</a>.</p></div>
+      <div class="card"><h3>How do I delete my account?</h3><p>In the app, go to <b>Settings &gt; Account and sync &gt; Delete account</b>. Without the app, see <a href="/en/delete-account">Delete account</a>.</p></div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="/en/" aria-label="Menos Pista — home"><img src="/assets/img/logo-h.webp" alt="Menos Pista" width="520" height="188" loading="lazy"></a><p>More profit. Fewer wasted miles. The copilot that shows, right away, whether a ride is worth it.</p></div>
+        <div class="footer-col"><h3>Product</h3><ul class="footer-links"><li><a href="/en/#features">Features</a></li><li><a href="/en/#how-it-works">How it works</a></li><li><a href="/en/#faq">FAQ</a></li><li><a href="/en/download">Download the app</a></li><li><a href="/en/calculator">Ride calculator</a></li></ul></div>
+        <div class="footer-col"><h3>Help & legal</h3><ul class="footer-links"><li><a href="/en/support">Support</a></li><li><a href="/en/privacy">Privacy policy</a></li><li><a href="/en/terms">Terms of use</a></li><li><a href="/en/delete-account">Delete account</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 Grupo Jadson · <a href="https://www.instagram.com/grupojadson/" target="_blank" rel="noopener noreferrer">@grupojadson</a></p><nav class="lang-switch" aria-label="Language"><a href="/suporte" lang="pt-BR" hreflang="pt-BR">PT</a> · <a href="/en/support" lang="en" hreflang="en" aria-current="true">EN</a> · <a href="/es/soporte" lang="es" hreflang="es">ES</a></nav><a href="#conteudo">Back to top ↑</a></div>
+    </div>
+  </footer>
+  <script src="/site.js" defer></script>
+  <script type="module" src="/suporte.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0B0D12">
+  <meta name="description" content="Free calculator for rideshare and delivery drivers: enter an offer and see earnings per mile or km, per hour, profit after vehicle cost and whether the ride is worth it.">
+  <meta name="robots" content="index, follow">
+  <title>Rideshare Ride Calculator: earnings per mile, per hour and profit | Menos Pista</title>
+  <link rel="canonical" href="https://menos-pista.pages.dev/en/calculator">
+  <link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/calculadora">
+  <link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/calculator">
+  <link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/calculadora">
+  <link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/calculadora">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://menos-pista.pages.dev/en/calculator">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="pt_BR">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:site_name" content="Menos Pista">
+  <meta property="og:title" content="Rideshare Ride Calculator: earnings per mile, per hour and profit | Menos Pista">
+  <meta property="og:description" content="Free calculator for rideshare and delivery drivers: enter an offer and see earnings per mile or km, per hour, profit after vehicle cost and whether the ride is worth it.">
+  <meta property="og:image" content="https://menos-pista.pages.dev/assets/og-en.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rideshare Ride Calculator: earnings per mile, per hour and profit | Menos Pista">
+  <meta name="twitter:description" content="Free calculator for rideshare and delivery drivers: enter an offer and see earnings per mile or km, per hour, profit after vehicle cost and whether the ride is worth it.">
+  <meta name="twitter:image" content="https://menos-pista.pages.dev/assets/og-en.png">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Rideshare Ride Calculator", "url": "https://menos-pista.pages.dev/en/calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "inLanguage": "en", "description": "Free calculator for rideshare and delivery drivers: enter an offer and see earnings per mile or km, per hour, profit after vehicle cost and whether the ride is worth it.", "isAccessibleForFree": true, "publisher": {"@type": "Organization", "name": "Grupo Jadson"}}</script>
+  <link rel="icon" type="image/svg+xml" href="/assets/branding/02_Vetores_SVG/simbolo_transparente.svg">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=20261028b">
+  <link rel="stylesheet" href="/calc.css?v=20261028">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Skip to content</a>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="/en/" aria-label="Menos Pista — home"><img src="/assets/img/logo-h.webp" alt="Menos Pista" width="520" height="188"></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="navlinks" id="navLinks" aria-label="Main navigation">
+        <a href="/en/#features">Features</a><a href="/en/#how-it-works">How it works</a><a href="/en/#faq">FAQ</a><a href="/en/calculator" aria-current="page">Calculator</a><a href="/en/support">Support</a>
+        <a class="nav-cta" href="/en/download">Download free</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page" id="conteudo">
+    <div class="bg-grid"></div><div class="glow glow-a"></div>
+    <div class="container doc">
+      <span class="eyebrow">Free calculator</span>
+      <h1>Is this ride <span class="gradient-text">worth it?</span></h1>
+      <p class="lead">Enter the offer details and your vehicle cost. The calculator shows earnings per mile (or km), per hour and profit, and checks them against the goals you set. Everything runs in your browser; your goals are saved only on this device.</p>
+      <div class="calc">
+        <form id="calcForm" class="card calc-form" data-lang="en" data-locale="en-US" novalidate>
+          <fieldset><legend>Currency and unit</legend><div class="calc-row"><label>Currency<select id="cCurrency"><option value="BRL">Real (R$)</option><option value="USD" selected>US Dollar (US$)</option><option value="EUR">Euro (€)</option><option value="MXN">Peso MX (MX$)</option><option value="ARS">Peso AR</option><option value="COP">Peso CO</option><option value="CLP">Peso CL</option><option value="OTHER">Other</option></select></label><label>Distance<select id="cUnit"><option value="mi" selected>Miles</option><option value="km">Kilometers</option></select></label></div></fieldset>
+          <fieldset><legend>The offer</legend>
+            <label>Offer amount <span data-c></span><input id="cValue" type="text" inputmode="decimal" autocomplete="off" placeholder="e.g. 14.50"></label>
+            <div class="calc-row"><label>Pickup distance (<span data-u></span>)<input id="cPickup" type="text" inputmode="decimal" autocomplete="off" placeholder="e.g. 1.5"></label><label>Trip distance (<span data-u></span>)<input id="cTrip" type="text" inputmode="decimal" autocomplete="off" placeholder="e.g. 6.2"></label></div>
+            <label>Total time (min)<input id="cMin" type="text" inputmode="numeric" autocomplete="off" placeholder="e.g. 25"></label>
+          </fieldset>
+          <fieldset><legend>Your vehicle and goals</legend>
+            <label>Cost per <span data-un></span> <span data-c></span><input id="cCost" type="text" inputmode="decimal" autocomplete="off" placeholder="e.g. 0.30"></label><p class="small" style="margin:-4px 0 0">Fuel + wear and tear (tires, maintenance). You decide.</p>
+            <div class="calc-row"><label>Minimum per <span data-un></span> <span data-c></span><input id="cGoalKm" type="text" inputmode="decimal" autocomplete="off" placeholder="e.g. 1.50"></label><label>Minimum per hour <span data-c></span><input id="cGoalH" type="text" inputmode="decimal" autocomplete="off" placeholder="e.g. 25"></label></div>
+          </fieldset>
+        </form>
+        <section class="card calc-res" aria-live="polite" aria-labelledby="calcRes">
+          <h2 id="calcRes" style="margin:0 0 12px">Result</h2>
+          <output id="cVerdict" class="calc-verdict" for="calcForm">—</output>
+          <p id="cWhy" class="calc-why"></p>
+          <ul class="calc-list"><li><span>Total distance</span><b id="rDist">—</b></li><li><span>Earnings per distance</span><b id="rPerKm">—</b></li><li><span>Earnings per hour</span><b id="rPerH">—</b></li><li><span>Vehicle cost</span><b id="rCost">—</b></li><li><span>Profit</span><b id="rProfit">—</b></li><li><span>Profit per hour</span><b id="rProfitH">—</b></li></ul>
+          <p class="small" style="margin-top:12px"><b>Worth it</b>: meets both your per-distance and per-hour goals. <b>Caution</b>: meets only one. <b>Not worth it</b>: meets neither.</p>
+          <p class="small">Results are estimates based on the numbers you entered.</p>
+        </section>
+      </div>
+      <h2>How it is calculated</h2>
+      <ul><li>Total distance = pickup distance + trip distance.</li><li>Earnings per mile/km = amount ÷ total distance. Earnings per hour = amount ÷ (minutes ÷ 60).</li><li>Cost = cost per mile/km × total distance. Profit = amount − cost. Profit per hour = profit ÷ (minutes ÷ 60).</li></ul>
+      <div class="card"><p>The Menos Pista app does this math automatically when an offer shows up. For now, automatic offer reading works only with apps in Brazil (Portuguese screens, prices in BRL); more countries are coming soon. This calculator works anywhere.</p><p><a class="btn btn-primary" href="/en/download">Download the app</a></p></div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="/en/" aria-label="Menos Pista — home"><img src="/assets/img/logo-h.webp" alt="Menos Pista" width="520" height="188" loading="lazy"></a><p>More profit. Fewer wasted miles. The copilot that shows, right away, whether a ride is worth it.</p></div>
+        <div class="footer-col"><h3>Product</h3><ul class="footer-links"><li><a href="/en/#features">Features</a></li><li><a href="/en/#how-it-works">How it works</a></li><li><a href="/en/#faq">FAQ</a></li><li><a href="/en/download">Download the app</a></li><li><a href="/en/calculator">Ride calculator</a></li></ul></div>
+        <div class="footer-col"><h3>Help & legal</h3><ul class="footer-links"><li><a href="/en/support">Support</a></li><li><a href="/en/privacy">Privacy policy</a></li><li><a href="/en/terms">Terms of use</a></li><li><a href="/en/delete-account">Delete account</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 Grupo Jadson · <a href="https://www.instagram.com/grupojadson/" target="_blank" rel="noopener noreferrer">@grupojadson</a></p><nav class="lang-switch" aria-label="Language"><a href="/calculadora" lang="pt-BR" hreflang="pt-BR">PT</a> · <a href="/en/calculator" lang="en" hreflang="en" aria-current="true">EN</a> · <a href="/es/calculadora" lang="es" hreflang="es">ES</a></nav><a href="#conteudo">Back to top ↑</a></div>
+    </div>
+  </footer>
+  <script src="/site.js" defer></script>
+  <script src="/calc.js?v=20261028" defer></script>
+</body>
+</html>

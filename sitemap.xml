@@ -1,9 +1,171 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://menos-pista.pages.dev/</loc><lastmod>2026-10-28</lastmod></url>
-  <url><loc>https://menos-pista.pages.dev/download</loc><lastmod>2026-10-28</lastmod></url>
-  <url><loc>https://menos-pista.pages.dev/suporte</loc><lastmod>2026-10-28</lastmod></url>
-  <url><loc>https://menos-pista.pages.dev/privacidade</loc><lastmod>2026-10-28</lastmod></url>
-  <url><loc>https://menos-pista.pages.dev/termos</loc><lastmod>2026-10-28</lastmod></url>
-  <url><loc>https://menos-pista.pages.dev/excluir-conta</loc><lastmod>2026-10-28</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://menos-pista.pages.dev/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/"/>
+  </url>
+  <url>
+    <loc>https://menos-pista.pages.dev/en/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/"/>
+  </url>
+  <url>
+    <loc>https://menos-pista.pages.dev/es/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/"/>
+  </url>
+  <url>
+    <loc>https://menos-pista.pages.dev/download</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/download"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/download"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/descargar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/download"/>
+  </url>
+  <url>
+    <loc>https://menos-pista.pages.dev/en/download</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/download"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/download"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/descargar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/download"/>
+  </url>
+  <url>
+    <loc>https://menos-pista.pages.dev/es/descargar</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/download"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/download"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/descargar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/download"/>
+  </url>
+  <url>
+    <loc>https://menos-pista.pages.dev/calculadora</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/calculadora"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/calculadora"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/calculadora"/>
+  </url>
+  <url>
+    <loc>https://menos-pista.pages.dev/en/calculator</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/calculadora"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/calculadora"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/calculadora"/>
+  </url>
+  <url>
+    <loc>https://menos-pista.pages.dev/es/calculadora</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/calculadora"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/calculadora"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/calculadora"/>
+  </url>
+  <url>
+    <loc>https://menos-pista.pages.dev/suporte</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/suporte"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/support"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/soporte"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/suporte"/>
+  </url>
+  <url>
+    <loc>https://menos-pista.pages.dev/en/support</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/suporte"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/support"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/soporte"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/suporte"/>
+  </url>
+  <url>
+    <loc>https://menos-pista.pages.dev/es/soporte</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/suporte"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/support"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/soporte"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/suporte"/>
+  </url>
+  <url>
+    <loc>https://menos-pista.pages.dev/privacidade</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/privacidade"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/privacidad"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/privacidade"/>
+  </url>
+  <url>
+    <loc>https://menos-pista.pages.dev/en/privacy</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/privacidade"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/privacidad"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/privacidade"/>
+  </url>
+  <url>
+    <loc>https://menos-pista.pages.dev/es/privacidad</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/privacidade"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/privacidad"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/privacidade"/>
+  </url>
+  <url>
+    <loc>https://menos-pista.pages.dev/termos</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/termos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/terminos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/termos"/>
+  </url>
+  <url>
+    <loc>https://menos-pista.pages.dev/en/terms</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/termos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/terminos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/termos"/>
+  </url>
+  <url>
+    <loc>https://menos-pista.pages.dev/es/terminos</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/termos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/terminos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/termos"/>
+  </url>
+  <url>
+    <loc>https://menos-pista.pages.dev/excluir-conta</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/excluir-conta"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/delete-account"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/eliminar-cuenta"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/excluir-conta"/>
+  </url>
+  <url>
+    <loc>https://menos-pista.pages.dev/en/delete-account</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/excluir-conta"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/delete-account"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/eliminar-cuenta"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/excluir-conta"/>
+  </url>
+  <url>
+    <loc>https://menos-pista.pages.dev/es/eliminar-cuenta</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://menos-pista.pages.dev/excluir-conta"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menos-pista.pages.dev/en/delete-account"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menos-pista.pages.dev/es/eliminar-cuenta"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://menos-pista.pages.dev/excluir-conta"/>
+  </url>
 </urlset>
