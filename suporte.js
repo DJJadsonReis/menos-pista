@@ -15,6 +15,7 @@ getRedirectResult(auth).catch(() => {});
 const $ = (id) => document.getElementById(id);
 const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
 const STATUS = { aberto: ['Aberto', 'st-open'], em_atendimento: ['Em andamento', 'st-work'], aguardando_usuario: ['Aguardando você', 'st-wait'], resolvido: ['Resolvido', 'st-ok'], fechado: ['Fechado', 'st-ok'] };
+const CLOSED = ['resolvido', 'fechado'];
 const when = (t) => (t && t.toDate ? t.toDate().toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' }) : 'agora');
 let user = null, unsubList = null, unsubChat = null, openId = null, tickets = [];
 
@@ -53,7 +54,7 @@ function renderList() {
     const b = el('button', 'sp-item' + (t.id === openId ? ' on' : '')); b.type = 'button';
     const top = el('div', 'sp-item-top'); top.append(el('b', null, t.subject || 'Chamado'), el('span', 'sp-st ' + cls, lbl));
     const sub = el('small', null, `${t.category || 'Outro'} · ${when(t.updatedAt)}`);
-    b.append(top, sub); if (t.unreadByUser) b.append(el('span', 'sp-new', 'resposta nova'));
+    b.append(top, sub); if (t.unreadByUser && !CLOSED.includes(t.status)) b.append(el('span', 'sp-new', 'resposta nova'));
     b.onclick = () => openTicket(t.id); box.append(b);
   }
   if (openId) { const t = tickets.find((x) => x.id === openId); if (t) paintHead(t); }
@@ -63,14 +64,20 @@ function paintHead(t) {
   const [lbl, cls] = STATUS[t.status] || [t.status, 'st-open'];
   $('spChatTitle').textContent = t.subject || 'Chamado';
   const st = $('spChatStatus'); st.textContent = lbl; st.className = 'sp-st ' + cls;
-  $('spReopenHint').hidden = !['resolvido', 'fechado'].includes(t.status);
+  // Encerrado ('resolvido' ou 'fechado'): a regra não deixa o dono responder nem reabrir; ele abre um chamado novo.
+  const closed = CLOSED.includes(t.status);
+  $('spReplyForm').hidden = closed; $('spReplyMsg').hidden = closed; $('spClosed').hidden = !closed;
 }
+$('spNew').onclick = () => {
+  unsubChat?.(); unsubChat = null; openId = null; $('spChat').hidden = true; renderList();
+  $('spForm').scrollIntoView({ behavior: 'smooth', block: 'start' }); $('spSubject').focus({ preventScroll: true });
+};
 
 function openTicket(id) {
   unsubChat?.(); openId = id; renderList();
   const t = tickets.find((x) => x.id === id); if (!t) return;
   $('spChat').hidden = false; paintHead(t);
-  if (t.unreadByUser) updateDoc(doc(db, 'supportTickets', id), { unreadByUser: false }).catch(() => {});
+  if (t.unreadByUser && !CLOSED.includes(t.status)) updateDoc(doc(db, 'supportTickets', id), { unreadByUser: false }).catch(() => {});
   const box = $('spThread'); box.replaceChildren(el('p', 'small', 'Carregando…'));
   unsubChat = onSnapshot(query(collection(db, 'supportTickets', id, 'messages'), orderBy('createdAt', 'asc')), (s) => {
     box.replaceChildren();
@@ -108,7 +115,7 @@ $('spReplyForm').onsubmit = async (ev) => {
   try {
     const tRef = doc(db, 'supportTickets', openId); const t = tickets.find((x) => x.id === openId);
     await addDoc(collection(tRef, 'messages'), { from: 'user', text: text.slice(0, 5000), authorUid: user.uid, createdAt: serverTimestamp() });
-    await updateDoc(tRef, { unreadByAdmin: true, unreadByUser: false, lastReplyBy: 'user', updatedAt: serverTimestamp(), ...(t && t.status !== 'aberto' && t.status !== 'em_atendimento' ? { status: 'aberto' } : {}) });
+    await updateDoc(tRef, { unreadByAdmin: true, unreadByUser: false, lastReplyBy: 'user', updatedAt: serverTimestamp(), ...(t && t.status === 'aguardando_usuario' ? { status: 'aberto' } : {}) });
     $('spReply').value = '';
   } catch (e) { console.error(e); say($('spReplyMsg'), errText(e), true); } finally { btn.disabled = false; }
 };

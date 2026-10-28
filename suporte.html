@@ -10,7 +10,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/branding/02_Vetores_SVG/simbolo_transparente.svg">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261021b">
+  <link rel="stylesheet" href="style.css?v=20261028a">
 </head>
 <body>
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -60,9 +60,10 @@
           <div id="spChat" class="card sp-chat" hidden>
             <div class="sp-chat-head"><h3 id="spChatTitle"></h3><span id="spChatStatus" class="sp-st"></span></div>
             <div id="spThread" class="sp-thread" aria-live="polite"></div>
-            <p id="spReopenHint" class="small" hidden>Este chamado foi resolvido. Se responder, ele é reaberto.</p>
+
             <form id="spReplyForm" class="sp-reply"><textarea id="spReply" maxlength="5000" rows="2" placeholder="Escreva sua resposta"></textarea><button class="btn btn-primary" id="spReplySend" type="submit">Enviar</button></form>
             <p id="spReplyMsg" class="sp-msg" role="status"></p>
+            <div id="spClosed" class="sp-closed" hidden><p>Chamado encerrado. Precisa de mais ajuda?</p><button class="btn btn-primary sp-sm" id="spNew" type="button">Abrir novo chamado</button></div>
           </div>
         </div>
         <div class="card">

@@ -61,7 +61,7 @@ onAuthStateChanged(auth, (u) => {
       const [lbl, cls] = STATUS[t.status] || [t.status || 'Aberto', 'st-open'];
       const a = el('a', 'sp-item'); a.href = 'suporte.html';
       const top = el('div', 'sp-item-top'); top.append(el('b', null, t.subject || 'Chamado'), el('span', 'sp-st ' + cls, lbl));
-      a.append(top, el('small', null, `${t.category || 'Outro'} · ${when(t.updatedAt)}`)); if (t.unreadByUser) a.append(el('span', 'sp-new', 'resposta nova'));
+      a.append(top, el('small', null, `${t.category || 'Outro'} · ${when(t.updatedAt)}`)); if (t.unreadByUser && !['resolvido', 'fechado'].includes(t.status)) a.append(el('span', 'sp-new', 'resposta nova'));
       box.append(a);
     }
   }, () => { $('mcList').replaceChildren(el('p', 'small', 'Não foi possível carregar os chamados agora.')); });
