@@ -354,10 +354,15 @@
     $('switchBtn').onclick = () => login(true);
     $('logoutBtn').onclick = () => { closeCheckout(); signOut(auth); };
 
+    // Mesmo critério do app: plan 'pro' + planSource válido + (proUntil ausente = sem fim, ou proUntil > agora).
+    function isPro(d, now) {
+      if (!d || d.plan !== 'pro' || !['manual', 'mercadopago', 'play'].includes(d.planSource)) return false;
+      if (d.proUntil == null) return true;
+      const until = d.proUntil.toMillis ? d.proUntil.toMillis() : NaN;
+      return until > (now == null ? Date.now() : now);
+    }
     function planText(d) {
-      const until = d.proUntil && d.proUntil.toDate ? d.proUntil.toDate() : null;
-      const active = d.plan === 'pro' && until && until > new Date();
-      if (active) return { t: 'Pro', k: 'ok', d: 'Apoio ativo até ' + fmtDate(d.proUntil) + (d.supportPlan ? ' · plano ' + d.supportPlan : '') };
+      if (isPro(d)) return { t: 'Pro', k: 'ok', d: (d.proUntil ? 'Apoio ativo até ' + fmtDate(d.proUntil) : 'Pro sem data de fim') + (d.supportPlan ? ' · plano ' + d.supportPlan : '') };
       if (d.supportStatus === 'chargeback') return { t: 'Free', k: '', d: 'Apoio encerrado por contestação' };
       if (d.supportStatus === 'cancelled') return { t: 'Free', k: '', d: 'Apoio cancelado' };
       return { t: 'Free', k: '', d: '' };
