@@ -4,16 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0B0D12">
-  <meta name="description" content="Menos Pista — mais lucro, menos quilômetros à toa. Organize ganhos, acompanhe despesas e entenda melhor o resultado do seu trabalho na rua.">
+  <meta name="description" content="App grátis para motorista de aplicativo e entregador: mostra na hora o R$/km e se a corrida vale a pena no Uber, 99, inDrive, iFood e outros. Android.">
   <meta name="robots" content="index, follow">
-  <title>Menos Pista — Mais lucro. Menos quilômetros à toa.</title>
+  <title>Menos Pista: app para saber se a corrida vale a pena (Uber, 99, iFood)</title>
+  <link rel="canonical" href="https://djjadsonreis.github.io/menos-pista/">
   <link rel="icon" type="image/svg+xml" href="assets/branding/02_Vetores_SVG/simbolo_transparente.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  <meta property="og:title" content="Menos Pista — Mais lucro. Menos quilômetros à toa.">
+  <meta property="og:title" content="Menos Pista: app para saber se a corrida vale a pena (Uber, 99, iFood)">
   <meta property="og:description" content="Copiloto grátis para motoristas e entregadores: mostra na hora se a corrida vale a pena.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://djjadsonreis.github.io/menos-pista/">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:image" content="https://djjadsonreis.github.io/menos-pista/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Menos Pista: app para saber se a corrida vale a pena (Uber, 99, iFood)">
+  <meta name="twitter:description" content="Copiloto grátis para motoristas e entregadores: mostra na hora se a corrida vale a pena.">
+  <meta name="twitter:image" content="https://djjadsonreis.github.io/menos-pista/assets/og.png">
+  <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Menos Pista", "operatingSystem": "Android", "applicationCategory": "BusinessApplication", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}, "url": "https://djjadsonreis.github.io/menos-pista/download.html"}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "O Menos Pista é grátis?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. As ferramentas essenciais são gratuitas, sem mensalidade obrigatória. A manutenção do app é financiada por anúncios do Google AdMob, que nunca aparecem enquanto uma oferta está na tela, e por doações de quem quiser apoiar."}}, {"@type": "Question", "name": "Quais apps ele lê?", "acceptedAnswer": {"@type": "Answer", "text": "Uber, 99, inDrive, iFood, Rappi, Lalamove, Loggi, Cabify e outros apps de corrida e entrega. Você escolhe quais usa nos ajustes do app."}}, {"@type": "Question", "name": "Por que o app precisa da Acessibilidade?", "acceptedAnswer": {"@type": "Answer", "text": "É assim que ele lê as ofertas na tela dos apps de corrida e entrega e mostra se valem a pena. A leitura acontece no celular, e o app não lê senhas nem mensagens. Detalhes na Política de privacidade."}}, {"@type": "Question", "name": "O app aceita ou recusa corridas por mim?", "acceptedAnswer": {"@type": "Answer", "text": "Não. Ele só mostra a análise no card. A decisão de aceitar ou recusar é sempre sua, no app da plataforma."}}, {"@type": "Question", "name": "Funciona no meu celular?", "acceptedAnswer": {"@type": "Answer", "text": "Funciona em celulares Android 8.0 ou mais novos. No Android 13 ou mais novo, é preciso liberar as configurações restritas, como explicado na página de download."}}, {"@type": "Question", "name": "O que ganho apoiando?", "acceptedAnswer": {"@type": "Answer", "text": "Com um apoio mensal ou anual pelo Mercado Pago (Mercado Livre), sua conta vira Pro: menos anúncios (remove parte deles, não todos) e recursos Pro liberados enquanto o apoio estiver ativo. É uma doação voluntária, sem reembolso. Veja em Apoiar."}}]}]</script>
   <link rel="preload" as="image" href="assets/screens/copiloto.webp">
   <link rel="stylesheet" href="style.css?v=20261021c">
   <link rel="stylesheet" href="home.css?v=20261021c">
@@ -27,7 +38,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
       <nav class="navlinks" id="navLinks" aria-label="Navegação principal">
-        <a href="index.html#telas">Telas</a><a href="index.html#recursos">Recursos</a><a href="index.html#como-funciona">Como funciona</a><a href="index.html#faq">Dúvidas</a><a href="apoiar.html">Apoiar</a><a href="suporte.html">Suporte</a>
+        <a href="index.html#telas">Telas</a><a href="index.html#recursos">Recursos</a><a href="index.html#como-funciona">Como funciona</a><a href="index.html#faq">Dúvidas</a><a href="apoiar.html">Apoiar</a><a href="suporte.html">Suporte</a><a href="minha-conta.html">Minha conta</a>
         <a class="nav-cta" href="download">Baixar grátis</a>
       </nav>
     </div>
@@ -53,7 +64,7 @@
           <div class="phone3d" aria-hidden="true">
             <div class="phone-back"></div>
             <div class="phone-body"><div class="screen shot">
-              <img src="assets/screens/copiloto.webp" alt="" width="720" height="1600" fetchpriority="high">
+              <img src="assets/screens/copiloto.webp" alt="Tela inicial do Menos Pista com o Copiloto lendo ofertas" width="720" height="1600" fetchpriority="high">
               <div class="sheen"></div>
             </div></div>
             <div class="fly fly-a"><span class="lights3"><i class="g"></i><i class="y"></i><i class="r"></i></span><span><small>Veredito</small><b>na hora</b></span></div>
